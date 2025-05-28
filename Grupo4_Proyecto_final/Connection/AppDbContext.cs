@@ -14,6 +14,10 @@ namespace Grupo4_Proyecto_final.Connection
         public DbSet<AlumnoModel> Alumnos { get; set; }
         public DbSet<DocenteModel> Docentes { get; set; }
         public DbSet<RolModel> Rol { get; set; }
+        public DbSet<GradoModel> Grados { get; set; }
+        public DbSet<SeccionModel> Secciones { get; set; }
+
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

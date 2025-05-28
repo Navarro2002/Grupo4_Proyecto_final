@@ -14,7 +14,7 @@ namespace Grupo4_Proyecto_final
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new GestionAdminForm());
+            Application.Run(new HomeAdminForm());
         }
     }
 }

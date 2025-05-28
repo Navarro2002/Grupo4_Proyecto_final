@@ -37,11 +37,12 @@ namespace Grupo4_Proyecto_final.Views.Login
                 else if (user.Rol.nombre == "Docente")
                 {
 
-                } else if (user.Rol.nombre == "Alumno")
+                }
+                else if (user.Rol.nombre == "Alumno")
                 {
 
                 }
-            } 
+            }
             else
             {
                 MessageBox.Show("Credenciales inválidas");
@@ -53,6 +54,11 @@ namespace Grupo4_Proyecto_final.Views.Login
             txtUsuario.Text = "";
             txtContrasenia.Text = "";
             txtUsuario.Focus();
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

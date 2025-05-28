@@ -131,5 +131,81 @@ namespace Grupo4_Proyecto_final.Controllers
             }
         }
 
+        // Docentes 
+        public List<DocenteListadoDTO> ListarDocentes()
+        {
+            using (var context = new AppDbContext())
+            {
+                return (from d in context.Docentes
+                        join g in context.Grados on d.GradoId equals g.Id
+                        join s in context.Secciones on d.SeccionId equals s.Id
+                        join u in context.Usuarios on d.UsuarioId equals u.Id
+                        select new DocenteListadoDTO
+                        {
+                            Id = d.Id,
+                            NombreCompleto = d.Nombres + " " + d.Apellidos,
+                            Edad = d.Edad,
+                            FechaNacimiento = d.FechaNacimiento,
+                            GradoNombre = g.Nombre,
+                            IdGrado = d.GradoId,
+                            SeccionNombre = s.Nombre, 
+                            IdSeccion = d.SeccionId,
+                            Telefono = d.Telefono,
+                            Usuario = u.Usuario,
+
+                        }).ToList();
+            }
+        }
+
+        public bool CrearDocente(
+                    string usuarioLogin, string clave,
+                    string nombres, string apellidos, string telefono, int edad, DateTime fechaNacimiento,
+                    int gradoId, int seccionId)
+        {
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+                    // Verificar si el usuario ya existe
+                    if (context.Usuarios.Any(u => u.Usuario == usuarioLogin))
+                        return false;
+
+                    // Crear usuario
+                    var nuevoUsuario = new UsuarioModel
+                    {
+                        Usuario = usuarioLogin,
+                        Contrasenia = HashHelper.Sha256(clave),
+                        RolId = 2
+                    };
+
+                    context.Usuarios.Add(nuevoUsuario);
+                    context.SaveChanges(); // Importante: para que se genere el ID
+
+                    // Crear docente usando el ID del usuario recién creado
+                    var nuevoDocente = new DocenteModel
+                    {
+                        Nombres = nombres,
+                        Apellidos = apellidos,
+                        Telefono = telefono,
+                        Edad = edad,
+                        FechaNacimiento = fechaNacimiento,
+                        GradoId = gradoId,
+                        SeccionId = seccionId,
+                        UsuarioId = nuevoUsuario.Id
+                    };
+
+                    context.Docentes.Add(nuevoDocente);
+                    context.SaveChanges();
+
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
     }
 }

@@ -128,6 +128,7 @@
             btnAdministrarDocentes.TabIndex = 10;
             btnAdministrarDocentes.Text = "Docentes";
             btnAdministrarDocentes.UseVisualStyleBackColor = true;
+            btnAdministrarDocentes.Click += btnAdministrarDocentes_Click;
             // 
             // lblCantUsuarios
             // 
