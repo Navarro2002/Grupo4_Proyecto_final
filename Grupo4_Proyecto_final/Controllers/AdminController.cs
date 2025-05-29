@@ -206,6 +206,144 @@ namespace Grupo4_Proyecto_final.Controllers
             }
         }
 
+        public bool EditarDocente(
+                int docenteId,
+                string nuevosNombres, string nuevosApellidos, string nuevoTelefono, int nuevaEdad, DateTime nuevaFechaNacimiento,
+                int nuevoGradoId, int nuevaSeccionId)
+        {
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+                    // Buscar al docente existente
+                    var docente = context.Docentes.FirstOrDefault(d => d.Id == docenteId);
+
+                    if (docente == null)
+                        return false;
+
+                    // Actualizar datos del docente
+                    docente.Nombres = nuevosNombres;
+                    docente.Apellidos = nuevosApellidos;
+                    docente.Telefono = nuevoTelefono;
+                    docente.Edad = nuevaEdad;
+                    docente.FechaNacimiento = nuevaFechaNacimiento;
+                    docente.GradoId = nuevoGradoId;
+                    docente.SeccionId = nuevaSeccionId;
+
+                    context.SaveChanges();
+
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool EliminarDocente(int docenteId)
+        {
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+                    var docente = context.Docentes.FirstOrDefault(d => d.Id == docenteId);
+                    if (docente == null)
+                        return false;
+
+                    context.Docentes.Remove(docente);
+                    context.SaveChanges();
+
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
+        //Alumno
+        public List<AlumnoListadoDTO> ListarAlumnos()
+        {
+            using (var context = new AppDbContext())
+            {
+                return (from a in context.Alumnos
+                        join g in context.Grados on a.GradoId equals g.Id into gradoJoin
+                        from g in gradoJoin.DefaultIfEmpty()
+
+                        join s in context.Secciones on a.SeccionId equals s.Id into seccionJoin
+                        from s in seccionJoin.DefaultIfEmpty()
+
+                        join u in context.Usuarios on a.UsuarioId equals u.Id into usuarioJoin
+                        from u in usuarioJoin.DefaultIfEmpty()
+
+                        select new AlumnoListadoDTO
+                        {
+                            Id = a.Id,
+                            NombreCompleto = a.Nombres + " " + a.Apellidos,
+                            Edad = a.Edad,
+                            FechaNacimiento = a.FechaNacimiento,
+                            GradoNombre = g != null ? g.Nombre : " ",
+                            IdGrado = a.GradoId,
+                            SeccionNombre = s != null ? s.Nombre : "",
+                            IdSeccion = a.SeccionId,
+                            Telefono = a.Telefono,
+                            Usuario = u != null ? u.Usuario : ""
+                        }).ToList();
+            }
+        }
+
+        public bool CrearAlumno(
+            string usuarioLogin, string clave,
+            string nombres, string apellidos, string telefono, int edad, DateTime fechaNacimiento,
+            int gradoId, int seccionId)
+        {
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+                    // Verificar si el usuario ya existe
+                    if (context.Usuarios.Any(u => u.Usuario == usuarioLogin))
+                        return false;
+
+                    // Crear usuario
+                    var nuevoUsuario = new UsuarioModel
+                    {
+                        Usuario = usuarioLogin,
+                        Contrasenia = HashHelper.Sha256(clave),
+                        RolId = 3
+                    };
+
+                    context.Usuarios.Add(nuevoUsuario);
+                    context.SaveChanges(); // Importante: para que se genere el ID
+
+                    // Crear docente usando el ID del usuario recién creado
+                    var nuevoAlumnno = new AlumnoModel
+                    {
+                        Nombres = nombres,
+                        Apellidos = apellidos,
+                        Telefono = telefono,
+                        Edad = edad,
+                        FechaNacimiento = fechaNacimiento,
+                        GradoId = gradoId,
+                        SeccionId = seccionId,
+                        UsuarioId = nuevoUsuario.Id
+                    };
+
+                    context.Alumnos.Add(nuevoAlumnno);
+                    context.SaveChanges();
+
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
 
     }
 }

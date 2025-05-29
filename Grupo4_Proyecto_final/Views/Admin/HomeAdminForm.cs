@@ -45,5 +45,11 @@ namespace Grupo4_Proyecto_final.Views.Admin
             GestionarDocenteForm formAdminDocentes = new GestionarDocenteForm();
             formAdminDocentes.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            GestionAlumnoForm formAdminAlumnos= new GestionAlumnoForm();
+            formAdminAlumnos.Show();
+        }
     }
 }

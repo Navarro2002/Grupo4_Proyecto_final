@@ -253,6 +253,7 @@
             // 
             // txtContrasenia
             // 
+            txtContrasenia.Enabled = false;
             txtContrasenia.Location = new Point(271, 34);
             txtContrasenia.Name = "txtContrasenia";
             txtContrasenia.ReadOnly = true;
@@ -261,6 +262,7 @@
             // 
             // txtUsuario
             // 
+            txtUsuario.Enabled = false;
             txtUsuario.Location = new Point(69, 34);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.ReadOnly = true;

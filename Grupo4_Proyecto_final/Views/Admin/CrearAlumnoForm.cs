@@ -13,24 +13,17 @@ using System.Windows.Forms;
 
 namespace Grupo4_Proyecto_final.Views.Admin
 {
-    public partial class CrearDocenteForm : Form
+    public partial class CrearAlumnoForm : Form
     {
         private int childFormNumber = 0;
 
-        public CrearDocenteForm()
+        public CrearAlumnoForm()
         {
             InitializeComponent();
-            txtNombre.Focus();
         }
 
-        private void txtNombre_Leave(object sender, EventArgs e)
+        private void CrearAlumnoForm_Load(object sender, EventArgs e)
         {
-            GenerarUsuario();
-        }
-
-        private void CrearDocenteForm_Load(object sender, EventArgs e)
-        {
-            GenerarUsuario();
             txtNombre.Focus();
 
             using (var context = new AppDbContext())
@@ -48,30 +41,6 @@ namespace Grupo4_Proyecto_final.Views.Admin
                 cmbSeccion.ValueMember = "id";
 
             }
-
-        }
-
-        private void GenerarUsuario()
-        {
-            string nombres = txtNombre.Text.Trim();
-
-            if (!string.IsNullOrWhiteSpace(nombres) && dtFechaNacimiento.Value != null)
-            {
-                string primerNombre = nombres.Split(' ')[0].ToLower();
-
-                int anioNacimiento = dtFechaNacimiento.Value.Year;
-                DateTime fechaNacimiento = dtFechaNacimiento.Value;
-                int diaNacimiento = dtFechaNacimiento.Value.Day;
-
-                txtUsuario.Text = $"{primerNombre}{diaNacimiento}{anioNacimiento}";
-                txtContrasenia.Text = fechaNacimiento.ToString("ddMMyyyy");
-
-            }
-        }
-
-        private void dtFechaNacimiento_ValueChanged(object sender, EventArgs e)
-        {
-            GenerarUsuario();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -105,7 +74,7 @@ namespace Grupo4_Proyecto_final.Views.Admin
                 string nombre = txtNombre.Text;
                 string apellido = txtApellido.Text;
                 string telefono = txtTelefono.Text;
-                int edaddocente = (int)txtEdad.Value;
+                int edad = (int)txtEdad.Value;
                 DateTime fechaNacimiento = dtFechaNacimiento.Value;
                 int gradoId = Convert.ToInt32(cmbGrado.SelectedValue);
                 int seccionId = Convert.ToInt32(cmbSeccion.SelectedValue);
@@ -113,7 +82,7 @@ namespace Grupo4_Proyecto_final.Views.Admin
                 // Crear usuario
                 var controller = new AdminController();
 
-                bool creado = controller.CrearDocente(usuario, contrasenia, nombre, apellido, telefono, edaddocente, fechaNacimiento, gradoId, seccionId);
+                bool creado = controller.CrearAlumno(usuario, contrasenia, nombre, apellido, telefono, edad, fechaNacimiento, gradoId, seccionId);
 
                 if (creado)
                 {
@@ -148,6 +117,39 @@ namespace Grupo4_Proyecto_final.Views.Admin
             {
                 MessageBox.Show("Ocurrió un error al crear el usuario:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void GenerarUsuario()
+        {
+            string nombres = txtNombre.Text.Trim();
+
+            if (!string.IsNullOrWhiteSpace(nombres) && dtFechaNacimiento.Value != null)
+            {
+                string primerNombre = nombres.Split(' ')[0].ToLower();
+
+                int anioNacimiento = dtFechaNacimiento.Value.Year;
+                DateTime fechaNacimiento = dtFechaNacimiento.Value;
+                int diaNacimiento = dtFechaNacimiento.Value.Day;
+
+                txtUsuario.Text = $"{primerNombre}{diaNacimiento}{anioNacimiento}";
+                txtContrasenia.Text = fechaNacimiento.ToString("ddMMyyyy");
+
+            }
+        }
+
+        private void txtUsuario_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombre_Leave(object sender, EventArgs e)
+        {
+            GenerarUsuario();
+        }
+
+        private void dtFechaNacimiento_ValueChanged(object sender, EventArgs e)
+        {
+            GenerarUsuario();
         }
     }
 }

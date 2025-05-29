@@ -47,18 +47,18 @@ namespace Grupo4_Proyecto_final.Views.Admin
             AdminController controller = new AdminController();
             listaDocente = controller.ListarDocentes();
 
-            if (dataGridViewDocentes.Columns.Count == 0)
+            if (dataGridViewAlumnos.Columns.Count == 0)
             {
-                dataGridViewDocentes.Columns.Add("Id", "Id");
-                dataGridViewDocentes.Columns.Add("NombreCompleto", "NombreCompleto");
-                dataGridViewDocentes.Columns.Add("Edad", "Edad");
-                dataGridViewDocentes.Columns.Add("Telefono", "Telefono");
-                dataGridViewDocentes.Columns.Add("FechaNacimiento", "FechaNacimiento");
-                dataGridViewDocentes.Columns.Add("GradoNombre", "GradoNombre");
-                dataGridViewDocentes.Columns.Add("IdGrado", "IdGrado");
-                dataGridViewDocentes.Columns.Add("SeccionNombre", "SeccionNombre");
-                dataGridViewDocentes.Columns.Add("IdSeccion", "IdSeccion");
-                dataGridViewDocentes.Columns.Add("Usuario", "Usuario");
+                dataGridViewAlumnos.Columns.Add("Id", "Id");
+                dataGridViewAlumnos.Columns.Add("NombreCompleto", "NombreCompleto");
+                dataGridViewAlumnos.Columns.Add("Edad", "Edad");
+                dataGridViewAlumnos.Columns.Add("Telefono", "Telefono");
+                dataGridViewAlumnos.Columns.Add("FechaNacimiento", "FechaNacimiento");
+                dataGridViewAlumnos.Columns.Add("GradoNombre", "GradoNombre");
+                dataGridViewAlumnos.Columns.Add("IdGrado", "IdGrado");
+                dataGridViewAlumnos.Columns.Add("SeccionNombre", "SeccionNombre");
+                dataGridViewAlumnos.Columns.Add("IdSeccion", "IdSeccion");
+                dataGridViewAlumnos.Columns.Add("Usuario", "Usuario");
 
             }
 
@@ -67,11 +67,11 @@ namespace Grupo4_Proyecto_final.Views.Admin
 
         private void MostrarDocentes(List<DocenteListadoDTO> usuarios)
         {
-            dataGridViewDocentes.Rows.Clear();
+            dataGridViewAlumnos.Rows.Clear();
 
             foreach (var usuario in usuarios)
             {
-                dataGridViewDocentes.Rows.Add(
+                dataGridViewAlumnos.Rows.Add(
                     usuario.Id,
                     usuario.NombreCompleto,
                     usuario.Edad,
@@ -140,15 +140,15 @@ namespace Grupo4_Proyecto_final.Views.Admin
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (dataGridViewDocentes.SelectedRows.Count > 0)
+            if (dataGridViewAlumnos.SelectedRows.Count > 0)
             {
-                DataGridViewRow fila = dataGridViewDocentes.SelectedRows[0];
+                DataGridViewRow fila = dataGridViewAlumnos.SelectedRows[0];
 
                 int id = Convert.ToInt32(fila.Cells["Id"].Value);
                 string usuario = fila.Cells["Usuario"].Value.ToString();
                 string nombre = fila.Cells["Nombre"].Value.ToString().Split(' ')[0];
                 string apellido = fila.Cells["Nombre"].Value.ToString().Split(' ').Length > 1
-                    ? fila.Cells["Nombre"].Value.ToString().Split(' ')[1] : ""; // Mismo campo
+                    ? fila.Cells["Nombre"].Value.ToString().Split(' ')[1] : "";
                 string telefono = fila.Cells["Telefono"].Value.ToString();
                 int edad = Convert.ToInt32(fila.Cells["Edad"].Value);
                 DateTime fechaNacimiento = Convert.ToDateTime(fila.Cells["FechaNacimiento"].Value);
@@ -157,7 +157,6 @@ namespace Grupo4_Proyecto_final.Views.Admin
                 int gradoId = Convert.ToInt32(fila.Cells["IdGrado"].Value);
                 string seccion = fila.Cells["Seccion"].Value.ToString();
                 int seccionId = Convert.ToInt32(fila.Cells["IdSeccion"].Value);
-                // Asume que tenés seccionId en tu modelo si querés usarlo
 
                 EditarDocenteForm editarForm = new EditarDocenteForm(
                     id, usuario, nombre, apellido, telefono, edad,
@@ -174,6 +173,46 @@ namespace Grupo4_Proyecto_final.Views.Admin
             else
             {
                 MessageBox.Show("Seleccione un docente de la lista para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewAlumnos.SelectedRows.Count > 0)
+            {
+                DataGridViewRow fila = dataGridViewAlumnos.SelectedRows[0];
+                int id = Convert.ToInt32(fila.Cells["Id"].Value);
+                string nombre = fila.Cells["Nombre"].Value.ToString();
+
+
+                DialogResult confirmacion = MessageBox.Show(
+                    $"¿Estás seguro que deseas eliminar al docente '{nombre}'?",
+                    "Confirmar eliminación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                if (confirmacion == DialogResult.Yes)
+                {
+                    var controller = new AdminController();
+                    bool eliminado = controller.EliminarDocente(id);
+
+                    if (eliminado)
+                    {
+                        MessageBox.Show("Docente eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CargarDocentes();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrió un error al eliminar el docente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un docente de la lista para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
         }
