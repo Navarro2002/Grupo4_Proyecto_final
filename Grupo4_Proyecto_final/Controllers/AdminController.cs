@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Collections.Specialized.BitVector32;
 
 namespace Grupo4_Proyecto_final.Controllers
 {
@@ -304,11 +305,9 @@ namespace Grupo4_Proyecto_final.Controllers
             {
                 using (var context = new AppDbContext())
                 {
-                    // Verificar si el usuario ya existe
                     if (context.Usuarios.Any(u => u.Usuario == usuarioLogin))
                         return false;
 
-                    // Crear usuario
                     var nuevoUsuario = new UsuarioModel
                     {
                         Usuario = usuarioLogin,
@@ -317,9 +316,8 @@ namespace Grupo4_Proyecto_final.Controllers
                     };
 
                     context.Usuarios.Add(nuevoUsuario);
-                    context.SaveChanges(); // Importante: para que se genere el ID
+                    context.SaveChanges(); 
 
-                    // Crear docente usando el ID del usuario recién creado
                     var nuevoAlumnno = new AlumnoModel
                     {
                         Nombres = nombres,
@@ -341,6 +339,156 @@ namespace Grupo4_Proyecto_final.Controllers
             catch
             {
                 return false;
+            }
+        }
+
+        public bool EditarAlumno(
+                int alumnoId,
+                string nuevosNombres, string nuevosApellidos, string nuevoTelefono, int nuevaEdad, DateTime nuevaFechaNacimiento,
+                int nuevoGradoId, int nuevaSeccionId)
+        {
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+                    var alumno = context.Alumnos.FirstOrDefault(a => a.Id == alumnoId);
+
+                    if (alumno == null)
+                        return false;
+
+                    alumno.Nombres = nuevosNombres;
+                    alumno.Apellidos = nuevosApellidos;
+                    alumno.Telefono = nuevoTelefono;
+                    alumno.Edad = nuevaEdad;
+                    alumno.FechaNacimiento = nuevaFechaNacimiento;
+                    alumno.GradoId = nuevoGradoId;
+                    alumno.SeccionId = nuevaSeccionId;
+
+                    context.SaveChanges();
+
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool EliminarAlumno(int alumnoId)
+        {
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+                    var alumno = context.Alumnos.FirstOrDefault(a => a.Id == alumnoId);
+                    if (alumno == null)
+                        return false;
+
+                    context.Alumnos.Remove(alumno);
+                    context.SaveChanges();
+
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error al eliminar el alumno: {e.Message}");
+                return false;
+            }
+        }
+
+        // Secciones 
+        public List<SeccionListadoDTO> ListarSecciones()
+        {
+            using (var context = new AppDbContext())
+            {
+                return (from d in context.Secciones
+                        select new SeccionListadoDTO
+                        {
+                            Id = d.Id,
+                            Nombre = d.Nombre
+                        }).ToList();
+            }
+        }
+
+        public bool CrearSeccion(string nombre)
+        {
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+                    var nuevaSeccion = new SeccionModel
+                    {
+                        Nombre = nombre 
+                    };
+
+                    context.Secciones.Add(nuevaSeccion);
+                    context.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al crear la sección: {ex.Message}");
+                return false;
+            }
+        }
+
+        public bool EditarSeccion(int id, string nuevoNombre)
+        {
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+                    var seccion = context.Secciones.FirstOrDefault(s => s.Id == id);
+                    if (seccion == null)
+                        return false;
+
+                    seccion.Nombre = nuevoNombre;
+                    context.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al editar la sección: {ex.Message}");
+                return false;
+            }
+        }
+
+        public bool EliminarSeccion(int id)
+        {
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+                    var seccion = context.Secciones.FirstOrDefault(s => s.Id == id);
+                    if (seccion == null)
+                        return false;
+
+                    context.Secciones.Remove(seccion);
+                    context.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al eliminar la sección: {ex.Message}");
+                return false;
+            }
+        }
+
+        public List<MateriasListadoDTO> ListarMaterias()
+        {
+            using (var context = new AppDbContext())
+            {
+                return (from d in context.Materias
+                        select new MateriasListadoDTO
+                        {
+                            Id = d.Id,
+                            Nombre = d.Nombre
+                        }).ToList();
             }
         }
 

@@ -33,8 +33,10 @@
             panel1 = new Panel();
             lblCantDocentes = new Label();
             groupBox1 = new GroupBox();
-            button2 = new Button();
-            button1 = new Button();
+            BtnGrados = new Button();
+            btnSeccion = new Button();
+            btnMaterias = new Button();
+            btnAlumnos = new Button();
             btnAdministrarUsuarios = new Button();
             btnAdministrarDocentes = new Button();
             lblCantUsuarios = new Label();
@@ -62,9 +64,10 @@
             panel1.Controls.Add(label4);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(-2, -2);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(674, 525);
+            panel1.Size = new Size(668, 570);
             panel1.TabIndex = 4;
             // 
             // lblCantDocentes
@@ -80,36 +83,58 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button2);
-            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(BtnGrados);
+            groupBox1.Controls.Add(btnSeccion);
+            groupBox1.Controls.Add(btnMaterias);
+            groupBox1.Controls.Add(btnAlumnos);
             groupBox1.Controls.Add(btnAdministrarUsuarios);
             groupBox1.Controls.Add(btnAdministrarDocentes);
             groupBox1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.Location = new Point(32, 372);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(626, 127);
+            groupBox1.Size = new Size(626, 157);
             groupBox1.TabIndex = 14;
             groupBox1.TabStop = false;
             groupBox1.Text = "Administración";
             // 
-            // button2
+            // BtnGrados
             // 
-            button2.Location = new Point(477, 48);
-            button2.Name = "button2";
-            button2.Size = new Size(133, 37);
-            button2.TabIndex = 13;
-            button2.Text = "Materias";
-            button2.UseVisualStyleBackColor = true;
+            BtnGrados.Location = new Point(383, 102);
+            BtnGrados.Name = "BtnGrados";
+            BtnGrados.Size = new Size(133, 37);
+            BtnGrados.TabIndex = 15;
+            BtnGrados.Text = "Grados";
+            BtnGrados.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnSeccion
             // 
-            button1.Location = new Point(329, 48);
-            button1.Name = "button1";
-            button1.Size = new Size(133, 37);
-            button1.TabIndex = 12;
-            button1.Text = "Alumnos";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnSeccion.Location = new Point(88, 102);
+            btnSeccion.Name = "btnSeccion";
+            btnSeccion.Size = new Size(133, 37);
+            btnSeccion.TabIndex = 14;
+            btnSeccion.Text = "Secciones";
+            btnSeccion.UseVisualStyleBackColor = true;
+            btnSeccion.Click += btnSeccion_Click;
+            // 
+            // btnMaterias
+            // 
+            btnMaterias.Location = new Point(477, 48);
+            btnMaterias.Name = "btnMaterias";
+            btnMaterias.Size = new Size(133, 37);
+            btnMaterias.TabIndex = 13;
+            btnMaterias.Text = "Materias";
+            btnMaterias.UseVisualStyleBackColor = true;
+            btnMaterias.Click += btnMaterias_Click;
+            // 
+            // btnAlumnos
+            // 
+            btnAlumnos.Location = new Point(329, 48);
+            btnAlumnos.Name = "btnAlumnos";
+            btnAlumnos.Size = new Size(133, 37);
+            btnAlumnos.TabIndex = 12;
+            btnAlumnos.Text = "Alumnos";
+            btnAlumnos.UseVisualStyleBackColor = true;
+            btnAlumnos.Click += btnAlumnos_Click;
             // 
             // btnAdministrarUsuarios
             // 
@@ -212,7 +237,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(668, 523);
+            ClientSize = new Size(668, 570);
             Controls.Add(panel1);
             IsMdiContainer = true;
             Margin = new Padding(4, 3, 4, 3);
@@ -240,9 +265,11 @@
         private Label label3;
         private Label lblCantUsuarios;
         private GroupBox groupBox1;
-        private Button button2;
-        private Button button1;
+        private Button btnMaterias;
+        private Button btnAlumnos;
         private Label lblCantDocentes;
+        private Button btnSeccion;
+        private Button BtnGrados;
     }
 }
 

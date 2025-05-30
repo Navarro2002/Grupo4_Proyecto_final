@@ -47,18 +47,18 @@ namespace Grupo4_Proyecto_final.Views.Admin
             AdminController controller = new AdminController();
             listaDocente = controller.ListarDocentes();
 
-            if (dataGridViewAlumnos.Columns.Count == 0)
+            if (dataGridViewDocentes.Columns.Count == 0)
             {
-                dataGridViewAlumnos.Columns.Add("Id", "Id");
-                dataGridViewAlumnos.Columns.Add("NombreCompleto", "NombreCompleto");
-                dataGridViewAlumnos.Columns.Add("Edad", "Edad");
-                dataGridViewAlumnos.Columns.Add("Telefono", "Telefono");
-                dataGridViewAlumnos.Columns.Add("FechaNacimiento", "FechaNacimiento");
-                dataGridViewAlumnos.Columns.Add("GradoNombre", "GradoNombre");
-                dataGridViewAlumnos.Columns.Add("IdGrado", "IdGrado");
-                dataGridViewAlumnos.Columns.Add("SeccionNombre", "SeccionNombre");
-                dataGridViewAlumnos.Columns.Add("IdSeccion", "IdSeccion");
-                dataGridViewAlumnos.Columns.Add("Usuario", "Usuario");
+                dataGridViewDocentes.Columns.Add("Id", "Id");
+                dataGridViewDocentes.Columns.Add("NombreCompleto", "NombreCompleto");
+                dataGridViewDocentes.Columns.Add("Edad", "Edad");
+                dataGridViewDocentes.Columns.Add("Telefono", "Telefono");
+                dataGridViewDocentes.Columns.Add("FechaNacimiento", "FechaNacimiento");
+                dataGridViewDocentes.Columns.Add("GradoNombre", "GradoNombre");
+                dataGridViewDocentes.Columns.Add("IdGrado", "IdGrado");
+                dataGridViewDocentes.Columns.Add("SeccionNombre", "SeccionNombre");
+                dataGridViewDocentes.Columns.Add("IdSeccion", "IdSeccion");
+                dataGridViewDocentes.Columns.Add("Usuario", "Usuario");
 
             }
 
@@ -67,11 +67,11 @@ namespace Grupo4_Proyecto_final.Views.Admin
 
         private void MostrarDocentes(List<DocenteListadoDTO> usuarios)
         {
-            dataGridViewAlumnos.Rows.Clear();
+            dataGridViewDocentes.Rows.Clear();
 
             foreach (var usuario in usuarios)
             {
-                dataGridViewAlumnos.Rows.Add(
+                dataGridViewDocentes.Rows.Add(
                     usuario.Id,
                     usuario.NombreCompleto,
                     usuario.Edad,
@@ -140,9 +140,9 @@ namespace Grupo4_Proyecto_final.Views.Admin
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (dataGridViewAlumnos.SelectedRows.Count > 0)
+            if (dataGridViewDocentes.SelectedRows.Count > 0)
             {
-                DataGridViewRow fila = dataGridViewAlumnos.SelectedRows[0];
+                DataGridViewRow fila = dataGridViewDocentes.SelectedRows[0];
 
                 int id = Convert.ToInt32(fila.Cells["Id"].Value);
                 string usuario = fila.Cells["Usuario"].Value.ToString();
@@ -179,9 +179,9 @@ namespace Grupo4_Proyecto_final.Views.Admin
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (dataGridViewAlumnos.SelectedRows.Count > 0)
+            if (dataGridViewDocentes.SelectedRows.Count > 0)
             {
-                DataGridViewRow fila = dataGridViewAlumnos.SelectedRows[0];
+                DataGridViewRow fila = dataGridViewDocentes.SelectedRows[0];
                 int id = Convert.ToInt32(fila.Cells["Id"].Value);
                 string nombre = fila.Cells["Nombre"].Value.ToString();
 

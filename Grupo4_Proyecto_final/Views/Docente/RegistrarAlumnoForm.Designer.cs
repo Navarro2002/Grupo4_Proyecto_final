@@ -1,6 +1,6 @@
-﻿namespace Grupo4_Proyecto_final.Views.Admin
+﻿namespace Grupo4_Proyecto_final.Views.Docente
 {
-    partial class CrearAlumnoForm
+    partial class RegistrarAlumnoForm
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -62,6 +62,7 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.BurlyWood;
             panel1.Controls.Add(btnCancelar);
             panel1.Controls.Add(btnCrear);
             panel1.Controls.Add(groupBox2);
@@ -76,10 +77,10 @@
             // btnCancelar
             // 
             btnCancelar.Font = new Font("Segoe UI Symbol", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCancelar.Location = new Point(402, 458);
+            btnCancelar.Location = new Point(402, 462);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(82, 32);
-            btnCancelar.TabIndex = 9;
+            btnCancelar.TabIndex = 14;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
@@ -87,13 +88,12 @@
             // btnCrear
             // 
             btnCrear.Font = new Font("Segoe UI Symbol", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCrear.Location = new Point(192, 458);
+            btnCrear.Location = new Point(192, 462);
             btnCrear.Name = "btnCrear";
             btnCrear.Size = new Size(82, 32);
-            btnCrear.TabIndex = 8;
+            btnCrear.TabIndex = 13;
             btnCrear.Text = "Crear";
             btnCrear.UseVisualStyleBackColor = true;
-            btnCrear.Click += btnCrear_Click;
             // 
             // groupBox2
             // 
@@ -112,10 +112,10 @@
             groupBox2.Controls.Add(label5);
             groupBox2.Controls.Add(label4);
             groupBox2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox2.Location = new Point(40, 173);
+            groupBox2.Location = new Point(40, 177);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(657, 260);
-            groupBox2.TabIndex = 7;
+            groupBox2.TabIndex = 12;
             groupBox2.TabStop = false;
             groupBox2.Text = "Datos Alumno";
             // 
@@ -155,7 +155,6 @@
             dtFechaNacimiento.Name = "dtFechaNacimiento";
             dtFechaNacimiento.Size = new Size(200, 25);
             dtFechaNacimiento.TabIndex = 9;
-            dtFechaNacimiento.ValueChanged += dtFechaNacimiento_ValueChanged;
             // 
             // txtApellido
             // 
@@ -170,7 +169,6 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(203, 25);
             txtNombre.TabIndex = 7;
-            txtNombre.Leave += txtNombre_Leave;
             // 
             // label10
             // 
@@ -243,10 +241,10 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
             groupBox1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(40, 69);
+            groupBox1.Location = new Point(40, 73);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(395, 77);
-            groupBox1.TabIndex = 6;
+            groupBox1.TabIndex = 11;
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos de Usuario";
             // 
@@ -292,14 +290,14 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(294, 24);
+            label1.Location = new Point(294, 28);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(147, 25);
-            label1.TabIndex = 5;
-            label1.Text = "Nuevo Alumno";
+            label1.Size = new Size(168, 25);
+            label1.TabIndex = 10;
+            label1.Text = "Registrar Alumno";
             // 
-            // CrearAlumnoForm
+            // RegistrarAlumnoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -307,9 +305,9 @@
             Controls.Add(panel1);
             IsMdiContainer = true;
             Margin = new Padding(4, 3, 4, 3);
-            Name = "CrearAlumnoForm";
-            Text = "CrearAlumnoForm";
-            Load += CrearAlumnoForm_Load;
+            Name = "RegistrarAlumnoForm";
+            Text = "RegistrarAlumnoForm";
+            Load += RegistrarAlumnoForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             groupBox2.ResumeLayout(false);

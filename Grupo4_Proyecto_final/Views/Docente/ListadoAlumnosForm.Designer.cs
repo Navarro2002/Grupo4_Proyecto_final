@@ -1,6 +1,6 @@
-﻿namespace Grupo4_Proyecto_final.Views.Admin
+﻿namespace Grupo4_Proyecto_final.Views.Docente
 {
-    partial class GestionarDocenteForm
+    partial class ListadoAlumnosForm
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -31,18 +31,13 @@
             components = new System.ComponentModel.Container();
             toolTip = new ToolTip(components);
             panel1 = new Panel();
-            groupBox2 = new GroupBox();
-            cmbGrado = new ComboBox();
-            label3 = new Label();
-            pictureBox1 = new PictureBox();
+            button3 = new Button();
+            btnAsignarEvalucacion = new Button();
             btnSalir = new Button();
             btnLimpiar = new Button();
-            btnEliminar = new Button();
-            btnEditar = new Button();
             lblFecha = new Label();
             label4 = new Label();
-            btnNuevo = new Button();
-            dataGridViewDocentes = new DataGridView();
+            dataGridViewAlumnos = new DataGridView();
             Id = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             Edad = new DataGridViewTextBoxColumn();
@@ -58,154 +53,94 @@
             label2 = new Label();
             label1 = new Label();
             panel1.SuspendLayout();
-            groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewDocentes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewAlumnos).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Controls.Add(groupBox2);
-            panel1.Controls.Add(pictureBox1);
+            panel1.BackColor = Color.BurlyWood;
+            panel1.Controls.Add(button3);
+            panel1.Controls.Add(btnAsignarEvalucacion);
             panel1.Controls.Add(btnSalir);
             panel1.Controls.Add(btnLimpiar);
-            panel1.Controls.Add(btnEliminar);
-            panel1.Controls.Add(btnEditar);
             panel1.Controls.Add(lblFecha);
             panel1.Controls.Add(label4);
-            panel1.Controls.Add(btnNuevo);
-            panel1.Controls.Add(dataGridViewDocentes);
+            panel1.Controls.Add(dataGridViewAlumnos);
             panel1.Controls.Add(groupBox1);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(874, 523);
+            panel1.Size = new Size(931, 539);
             panel1.TabIndex = 4;
             // 
-            // groupBox2
+            // button3
             // 
-            groupBox2.Controls.Add(cmbGrado);
-            groupBox2.Controls.Add(label3);
-            groupBox2.Location = new Point(271, 117);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(235, 53);
-            groupBox2.TabIndex = 25;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Buscar por";
+            button3.Location = new Point(345, 443);
+            button3.Name = "button3";
+            button3.Size = new Size(117, 40);
+            button3.TabIndex = 53;
+            button3.Text = "Generar Reporte";
+            button3.UseVisualStyleBackColor = true;
             // 
-            // cmbGrado
+            // btnAsignarEvalucacion
             // 
-            cmbGrado.FormattingEnabled = true;
-            cmbGrado.Location = new Point(53, 21);
-            cmbGrado.Name = "cmbGrado";
-            cmbGrado.Size = new Size(121, 23);
-            cmbGrado.TabIndex = 1;
-            cmbGrado.SelectedIndexChanged += cmbGrado_SelectedIndexChanged;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(8, 24);
-            label3.Name = "label3";
-            label3.Size = new Size(39, 15);
-            label3.TabIndex = 0;
-            label3.Text = "Grado";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.Logo_;
-            pictureBox1.Location = new Point(16, 21);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(82, 72);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 34;
-            pictureBox1.TabStop = false;
+            btnAsignarEvalucacion.Location = new Point(53, 443);
+            btnAsignarEvalucacion.Name = "btnAsignarEvalucacion";
+            btnAsignarEvalucacion.Size = new Size(117, 40);
+            btnAsignarEvalucacion.TabIndex = 52;
+            btnAsignarEvalucacion.Text = "Asignar Evaluación";
+            btnAsignarEvalucacion.UseVisualStyleBackColor = true;
+            btnAsignarEvalucacion.Click += btnAsignarEvalucacion_Click;
             // 
             // btnSalir
             // 
-            btnSalir.BackColor = Color.FromArgb(255, 128, 128);
-            btnSalir.BackgroundImageLayout = ImageLayout.None;
-            btnSalir.Location = new Point(648, 467);
+            btnSalir.Location = new Point(850, 487);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(67, 35);
-            btnSalir.TabIndex = 33;
+            btnSalir.Size = new Size(60, 40);
+            btnSalir.TabIndex = 50;
             btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.UseVisualStyleBackColor = true;
             btnSalir.Click += btnSalir_Click;
             // 
             // btnLimpiar
             // 
             btnLimpiar.BackColor = SystemColors.ScrollBar;
-            btnLimpiar.Location = new Point(527, 131);
+            btnLimpiar.Location = new Point(587, 138);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(66, 35);
-            btnLimpiar.TabIndex = 32;
+            btnLimpiar.TabIndex = 48;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = false;
-            btnLimpiar.Click += btnLimpiar_Click;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.BackColor = SystemColors.ControlLight;
-            btnEliminar.Location = new Point(260, 467);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(86, 35);
-            btnEliminar.TabIndex = 31;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = false;
-            btnEliminar.Click += btnEliminar_Click;
-            // 
-            // btnEditar
-            // 
-            btnEditar.BackColor = SystemColors.ControlLight;
-            btnEditar.Location = new Point(136, 467);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(87, 35);
-            btnEditar.TabIndex = 30;
-            btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = false;
-            btnEditar.Click += btnEditar_Click;
             // 
             // lblFecha
             // 
             lblFecha.AutoSize = true;
-            lblFecha.Location = new Point(715, 141);
+            lblFecha.Location = new Point(807, 148);
             lblFecha.Name = "lblFecha";
             lblFecha.RightToLeft = RightToLeft.No;
             lblFecha.Size = new Size(0, 15);
-            lblFecha.TabIndex = 29;
+            lblFecha.TabIndex = 47;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(671, 141);
+            label4.Location = new Point(757, 148);
             label4.Name = "label4";
             label4.Size = new Size(44, 15);
-            label4.TabIndex = 28;
+            label4.TabIndex = 46;
             label4.Text = "Fecha: ";
             // 
-            // btnNuevo
+            // dataGridViewAlumnos
             // 
-            btnNuevo.BackColor = SystemColors.ControlLight;
-            btnNuevo.Location = new Point(20, 467);
-            btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(78, 35);
-            btnNuevo.TabIndex = 27;
-            btnNuevo.Text = "Nuevo";
-            btnNuevo.UseVisualStyleBackColor = false;
-            btnNuevo.Click += btnNuevo_Click;
-            // 
-            // dataGridViewDocentes
-            // 
-            dataGridViewDocentes.AllowUserToOrderColumns = true;
-            dataGridViewDocentes.Columns.AddRange(new DataGridViewColumn[] { Id, Nombre, Edad, Telefono, FechaNacimiento, Grado, IdGrado, Seccion, IdSeccion, Usuario });
-            dataGridViewDocentes.Location = new Point(16, 176);
-            dataGridViewDocentes.Name = "dataGridViewDocentes";
-            dataGridViewDocentes.RightToLeft = RightToLeft.No;
-            dataGridViewDocentes.Size = new Size(842, 270);
-            dataGridViewDocentes.TabIndex = 26;
+            dataGridViewAlumnos.AllowUserToOrderColumns = true;
+            dataGridViewAlumnos.Columns.AddRange(new DataGridViewColumn[] { Id, Nombre, Edad, Telefono, FechaNacimiento, Grado, IdGrado, Seccion, IdSeccion, Usuario });
+            dataGridViewAlumnos.Location = new Point(53, 189);
+            dataGridViewAlumnos.Name = "dataGridViewAlumnos";
+            dataGridViewAlumnos.RightToLeft = RightToLeft.No;
+            dataGridViewAlumnos.Size = new Size(824, 226);
+            dataGridViewAlumnos.TabIndex = 45;
             // 
             // Id
             // 
@@ -263,20 +198,19 @@
             // 
             groupBox1.Controls.Add(txtDocenteBusq);
             groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(16, 117);
+            groupBox1.Location = new Point(53, 124);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(235, 53);
-            groupBox1.TabIndex = 24;
+            groupBox1.TabIndex = 43;
             groupBox1.TabStop = false;
             groupBox1.Text = "Buscar por";
             // 
             // txtDocenteBusq
             // 
-            txtDocenteBusq.Location = new Point(61, 21);
+            txtDocenteBusq.Location = new Point(75, 21);
             txtDocenteBusq.Name = "txtDocenteBusq";
             txtDocenteBusq.Size = new Size(154, 23);
             txtDocenteBusq.TabIndex = 1;
-            txtDocenteBusq.TextChanged += txtDocenteBusq_TextChanged;
             // 
             // label2
             // 
@@ -290,30 +224,27 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(271, 40);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(227, 33);
             label1.Name = "label1";
-            label1.Size = new Size(206, 20);
-            label1.TabIndex = 23;
-            label1.Text = "Administración de Docentes";
+            label1.RightToLeft = RightToLeft.Yes;
+            label1.Size = new Size(78, 21);
+            label1.TabIndex = 0;
+            label1.Text = "Alumnos";
             // 
-            // GestionarDocenteForm
+            // ListadoAlumnosForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(874, 523);
+            ClientSize = new Size(931, 539);
             Controls.Add(panel1);
             IsMdiContainer = true;
             Margin = new Padding(4, 3, 4, 3);
-            Name = "GestionarDocenteForm";
-            Text = "GestionarDocenteForm";
-            Load += GestionarDocenteForm_Load;
+            Name = "ListadoAlumnosForm";
+            Text = "ListadoAlumnosForm";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewDocentes).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewAlumnos).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -322,22 +253,12 @@
         #endregion
         private System.Windows.Forms.ToolTip toolTip;
         private Panel panel1;
-        private PictureBox pictureBox1;
+        private Label label1;
         private Button btnSalir;
         private Button btnLimpiar;
-        private Button btnEliminar;
-        private Button btnEditar;
         private Label lblFecha;
         private Label label4;
-        private Button btnNuevo;
-        private DataGridView dataGridViewDocentes;
-        private GroupBox groupBox1;
-        private TextBox txtDocenteBusq;
-        private Label label2;
-        private Label label1;
-        private GroupBox groupBox2;
-        private ComboBox cmbGrado;
-        private Label label3;
+        private DataGridView dataGridViewAlumnos;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Edad;
@@ -348,6 +269,11 @@
         private DataGridViewTextBoxColumn Seccion;
         private DataGridViewTextBoxColumn IdSeccion;
         private DataGridViewTextBoxColumn Usuario;
+        private GroupBox groupBox1;
+        private TextBox txtDocenteBusq;
+        private Label label2;
+        private Button button3;
+        private Button btnAsignarEvalucacion;
     }
 }
 

@@ -91,7 +91,7 @@ namespace Grupo4_Proyecto_final.Views.Admin
                                      $"Contraseña: {contrasenia}\n" +
                                      $"Nombre: {nombre}\n";
 
-                    MessageBox.Show(resumen, "Datos del usuario del docente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(resumen, "Datos del usuario del alumno", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtUsuario.Text = "";
                     txtContrasenia.Text = "";
                     txtNombre.Text = "";
@@ -106,16 +106,12 @@ namespace Grupo4_Proyecto_final.Views.Admin
                 }
                 else
                 {
-                    MessageBox.Show("El usuario ya existe o ocurrió un error.");
+                    MessageBox.Show("El alumno ya existe o ocurrió un error.");
                 }
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Seleccione un rol válido antes de guardar.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocurrió un error al crear el usuario:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ocurrió un error al crear el alumno:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -135,11 +131,6 @@ namespace Grupo4_Proyecto_final.Views.Admin
                 txtContrasenia.Text = fechaNacimiento.ToString("ddMMyyyy");
 
             }
-        }
-
-        private void txtUsuario_Leave(object sender, EventArgs e)
-        {
-
         }
 
         private void txtNombre_Leave(object sender, EventArgs e)

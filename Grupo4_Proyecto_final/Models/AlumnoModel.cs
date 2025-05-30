@@ -41,7 +41,7 @@ namespace Grupo4_Proyecto_final.Models
         public SeccionModel Seccion { get; set; }
 
         [Column("id_usuario")]
-        public int UsuarioId { get; set; }
+        public int? UsuarioId { get; set; }
 
         [ForeignKey("UsuarioId")]
         public  UsuarioModel Usuarios { get; set; }

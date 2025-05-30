@@ -1,5 +1,6 @@
 ﻿using Grupo4_Proyecto_final.Controllers.Auth;
 using Grupo4_Proyecto_final.Views.Admin;
+using Grupo4_Proyecto_final.Views.Docente;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,7 +26,6 @@ namespace Grupo4_Proyecto_final.Views.Login
         {
             var controller = new LoginController();
             var user = controller.Autenticar(txtUsuario.Text, txtContrasenia.Text);
-
             if (user != null)
             {
                 MessageBox.Show($"Bienvenido {user.Usuario}, rol: {user.Rol.nombre}");
@@ -36,11 +36,12 @@ namespace Grupo4_Proyecto_final.Views.Login
                 }
                 else if (user.Rol.nombre == "Docente")
                 {
-
+                    HomeDocenteForm formAdmin = new HomeDocenteForm(user.Id, user.Usuario, user.Rol.id);
+                    formAdmin.Show();
                 }
                 else if (user.Rol.nombre == "Alumno")
                 {
-
+                  
                 }
             }
             else

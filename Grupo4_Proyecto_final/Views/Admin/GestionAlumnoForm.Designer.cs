@@ -57,6 +57,7 @@
             label2 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             panel1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewAlumnos).BeginInit();
@@ -146,6 +147,7 @@
             btnEliminar.TabIndex = 41;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnEditar
             // 
@@ -156,6 +158,7 @@
             btnEditar.TabIndex = 40;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
             // lblFecha
             // 
@@ -348,6 +351,7 @@
         private GroupBox groupBox1;
         private TextBox txtDocenteBusq;
         private Label label2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 

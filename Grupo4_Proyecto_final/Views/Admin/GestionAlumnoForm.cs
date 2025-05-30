@@ -146,5 +146,84 @@ namespace Grupo4_Proyecto_final.Views.Admin
             txtDocenteBusq.Text = "";
             cmbGrado.SelectedIndex = 0;
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewAlumnos.SelectedRows.Count > 0)
+            {
+                DataGridViewRow fila = dataGridViewAlumnos.SelectedRows[0];
+
+                int id = Convert.ToInt32(fila.Cells["Id"].Value);
+                string usuario = fila.Cells["Usuario"].Value.ToString();
+                string nombre = fila.Cells["Nombre"].Value.ToString().Split(' ')[0];
+                string apellido = fila.Cells["Nombre"].Value.ToString().Split(' ').Length > 1
+                    ? fila.Cells["Nombre"].Value.ToString().Split(' ')[1] : "";
+                string telefono = fila.Cells["Telefono"].Value.ToString();
+                int edad = Convert.ToInt32(fila.Cells["Edad"].Value);
+                DateTime fechaNacimiento = Convert.ToDateTime(fila.Cells["FechaNacimiento"].Value);
+
+                string grado = fila.Cells["Grado"].Value.ToString();
+                int gradoId = Convert.ToInt32(fila.Cells["IdGrado"].Value);
+                string seccion = fila.Cells["Seccion"].Value.ToString();
+                int seccionId = Convert.ToInt32(fila.Cells["IdSeccion"].Value);
+
+                EditarAlumnoForm editarForm = new EditarAlumnoForm(
+                    id, usuario, nombre, apellido, telefono, edad,
+                    fechaNacimiento, gradoId, seccionId
+                );
+
+                DialogResult result = editarForm.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    CargarAlumnos();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un alumno de la lista para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewAlumnos.SelectedRows.Count > 0)
+            {
+                DataGridViewRow fila = dataGridViewAlumnos.SelectedRows[0];
+                int id = Convert.ToInt32(fila.Cells["Id"].Value);
+                string nombre = fila.Cells["Nombre"].Value.ToString();
+
+
+                DialogResult confirmacion = MessageBox.Show(
+                    $"¿Estás seguro que deseas eliminar este alumno '{nombre}'?",
+                    "Confirmar eliminación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                if (confirmacion == DialogResult.Yes)
+                {
+                    var controller = new AdminController();
+                    bool eliminado = controller.EliminarAlumno(id);
+
+                    if (eliminado)
+                    {
+                        MessageBox.Show("Alumno eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CargarAlumnos();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrió un error al eliminar el alumno.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un alumno de la lista para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+        }
     }
 }

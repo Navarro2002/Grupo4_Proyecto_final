@@ -46,10 +46,22 @@ namespace Grupo4_Proyecto_final.Views.Admin
             formAdminDocentes.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSeccion_Click(object sender, EventArgs e)
         {
-            GestionAlumnoForm formAdminAlumnos= new GestionAlumnoForm();
-            formAdminAlumnos.Show();
+            GestionSeccionForm formAdminSecciones = new GestionSeccionForm();
+            formAdminSecciones.Show();
+        }
+
+        private void btnAlumnos_Click(object sender, EventArgs e)
+        {
+            GestionAlumnoForm form = new GestionAlumnoForm();
+            form.Show();
+        }
+
+        private void btnMaterias_Click(object sender, EventArgs e)
+        {
+            GestionMateriasForm form = new GestionMateriasForm();
+            form.Show();
         }
     }
 }

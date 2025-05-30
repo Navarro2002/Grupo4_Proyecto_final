@@ -16,6 +16,7 @@ namespace Grupo4_Proyecto_final.Connection
         public DbSet<RolModel> Rol { get; set; }
         public DbSet<GradoModel> Grados { get; set; }
         public DbSet<SeccionModel> Secciones { get; set; }
+        public DbSet<MateriaModel> Materias { get; set; }
 
 
 
