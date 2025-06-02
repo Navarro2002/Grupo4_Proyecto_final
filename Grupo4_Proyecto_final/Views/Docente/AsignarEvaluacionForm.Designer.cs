@@ -31,17 +31,17 @@
             components = new System.ComponentModel.Container();
             toolTip = new ToolTip(components);
             panel1 = new Panel();
+            btnCancelar = new Button();
+            btnAsignar = new Button();
+            txtNota = new TextBox();
+            label6 = new Label();
+            cmbTrimestre = new ComboBox();
+            label5 = new Label();
             cmbMateria = new ComboBox();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            label5 = new Label();
-            cmbTrimestre = new ComboBox();
-            label6 = new Label();
-            txtNota = new TextBox();
-            btnAsignar = new Button();
-            btnCancelar = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -64,6 +64,62 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(383, 356);
             panel1.TabIndex = 4;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Location = new Point(209, 289);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(75, 23);
+            btnCancelar.TabIndex = 10;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.TextAlign = ContentAlignment.TopCenter;
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
+            // btnAsignar
+            // 
+            btnAsignar.Location = new Point(60, 289);
+            btnAsignar.Name = "btnAsignar";
+            btnAsignar.Size = new Size(75, 23);
+            btnAsignar.TabIndex = 9;
+            btnAsignar.Text = " Asignar";
+            btnAsignar.TextAlign = ContentAlignment.TopCenter;
+            btnAsignar.UseVisualStyleBackColor = true;
+            // 
+            // txtNota
+            // 
+            txtNota.Location = new Point(121, 187);
+            txtNota.Name = "txtNota";
+            txtNota.Size = new Size(121, 23);
+            txtNota.TabIndex = 8;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(37, 187);
+            label6.Name = "label6";
+            label6.RightToLeft = RightToLeft.No;
+            label6.Size = new Size(75, 15);
+            label6.TabIndex = 7;
+            label6.Text = "Calificación: ";
+            label6.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // cmbTrimestre
+            // 
+            cmbTrimestre.FormattingEnabled = true;
+            cmbTrimestre.Location = new Point(121, 142);
+            cmbTrimestre.Name = "cmbTrimestre";
+            cmbTrimestre.Size = new Size(121, 23);
+            cmbTrimestre.TabIndex = 6;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(34, 145);
+            label5.Name = "label5";
+            label5.Size = new Size(62, 15);
+            label5.TabIndex = 5;
+            label5.Text = "Trimestre: ";
             // 
             // cmbMateria
             // 
@@ -111,61 +167,6 @@
             label1.Size = new Size(156, 21);
             label1.TabIndex = 0;
             label1.Text = "Asignar Evaluación";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(34, 145);
-            label5.Name = "label5";
-            label5.Size = new Size(62, 15);
-            label5.TabIndex = 5;
-            label5.Text = "Trimestre: ";
-            // 
-            // cmbTrimestre
-            // 
-            cmbTrimestre.FormattingEnabled = true;
-            cmbTrimestre.Location = new Point(121, 142);
-            cmbTrimestre.Name = "cmbTrimestre";
-            cmbTrimestre.Size = new Size(121, 23);
-            cmbTrimestre.TabIndex = 6;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(37, 187);
-            label6.Name = "label6";
-            label6.RightToLeft = RightToLeft.No;
-            label6.Size = new Size(75, 15);
-            label6.TabIndex = 7;
-            label6.Text = "Calificación: ";
-            label6.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // txtNota
-            // 
-            txtNota.Location = new Point(121, 187);
-            txtNota.Name = "txtNota";
-            txtNota.Size = new Size(121, 23);
-            txtNota.TabIndex = 8;
-            // 
-            // btnAsignar
-            // 
-            btnAsignar.Location = new Point(60, 289);
-            btnAsignar.Name = "btnAsignar";
-            btnAsignar.Size = new Size(75, 23);
-            btnAsignar.TabIndex = 9;
-            btnAsignar.Text = " Asignar";
-            btnAsignar.TextAlign = ContentAlignment.TopCenter;
-            btnAsignar.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            btnCancelar.Location = new Point(209, 289);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(75, 23);
-            btnCancelar.TabIndex = 10;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.TextAlign = ContentAlignment.TopCenter;
-            btnCancelar.UseVisualStyleBackColor = true;
             // 
             // AsignarEvaluacionForm
             // 

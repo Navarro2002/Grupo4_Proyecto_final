@@ -36,7 +36,7 @@
             btnEliminar = new Button();
             btnEditar = new Button();
             btnNuevo = new Button();
-            dataGridSecciones = new DataGridView();
+            dataGridMaterias = new DataGridView();
             Id = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             btnLimpiar = new Button();
@@ -47,18 +47,19 @@
             label1 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridSecciones).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridMaterias).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.BackColor = Color.BurlyWood;
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(btnSalir);
             panel1.Controls.Add(btnEliminar);
             panel1.Controls.Add(btnEditar);
             panel1.Controls.Add(btnNuevo);
-            panel1.Controls.Add(dataGridSecciones);
+            panel1.Controls.Add(dataGridMaterias);
             panel1.Controls.Add(btnLimpiar);
             panel1.Controls.Add(lblFecha);
             panel1.Controls.Add(groupBox1);
@@ -100,6 +101,7 @@
             btnEliminar.TabIndex = 49;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnEditar
             // 
@@ -123,14 +125,14 @@
             btnNuevo.UseVisualStyleBackColor = false;
             btnNuevo.Click += btnNuevo_Click;
             // 
-            // dataGridSecciones
+            // dataGridMaterias
             // 
-            dataGridSecciones.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridSecciones.Columns.AddRange(new DataGridViewColumn[] { Id, Nombre });
-            dataGridSecciones.Location = new Point(108, 116);
-            dataGridSecciones.Name = "dataGridSecciones";
-            dataGridSecciones.Size = new Size(240, 150);
-            dataGridSecciones.TabIndex = 46;
+            dataGridMaterias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridMaterias.Columns.AddRange(new DataGridViewColumn[] { Id, Nombre });
+            dataGridMaterias.Location = new Point(108, 116);
+            dataGridMaterias.Name = "dataGridMaterias";
+            dataGridMaterias.Size = new Size(240, 150);
+            dataGridMaterias.TabIndex = 46;
             // 
             // Id
             // 
@@ -151,6 +153,7 @@
             btnLimpiar.TabIndex = 45;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // lblFecha
             // 
@@ -187,6 +190,7 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(100, 23);
             txtNombre.TabIndex = 2;
+            txtNombre.TextChanged += txtNombre_TextChanged;
             // 
             // label1
             // 
@@ -208,10 +212,11 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "GestionMateriasForm";
             Text = "GestionMateriasForm";
+            Load += GestionMateriasForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridSecciones).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridMaterias).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -226,7 +231,7 @@
         private Button btnEliminar;
         private Button btnEditar;
         private Button btnNuevo;
-        private DataGridView dataGridSecciones;
+        private DataGridView dataGridMaterias;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Nombre;
         private Button btnLimpiar;

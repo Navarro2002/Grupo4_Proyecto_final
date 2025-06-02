@@ -14,9 +14,10 @@ namespace Grupo4_Proyecto_final.Views.Docente
 {
     public partial class AsignarEvaluacionForm : Form
     {
-        private int childFormNumber = 0;
-
-        public AsignarEvaluacionForm()
+        public int idUser;
+        public string user;
+        public int idRol;
+        public AsignarEvaluacionForm(int idEstudiante, string nombreCompleto, int idUser, string user)
         {
             InitializeComponent();
         }
@@ -30,7 +31,18 @@ namespace Grupo4_Proyecto_final.Views.Docente
                 cmbMateria.DataSource = materias;
                 cmbMateria.DisplayMember = "nombre";
                 cmbMateria.ValueMember = "id";
+
+                var trimestres = context.Trimestres.ToList();
+                trimestres.Insert(0, new TrimestreModel { Id = 0, Trimestre = "Seleccione" });
+                cmbTrimestre.DataSource = trimestres;
+                cmbTrimestre.DisplayMember = "trimestre";
+                cmbTrimestre.ValueMember = "id";
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

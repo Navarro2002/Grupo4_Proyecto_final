@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Grupo4_Proyecto_final.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,15 @@ namespace Grupo4_Proyecto_final.Views.Admin
 {
     public partial class EditarMateriaForm : Form
     {
-        private int childFormNumber = 0;
+        private int idMateria;
 
-        public EditarMateriaForm()
+        public EditarMateriaForm(int id, string nombre)
         {
             InitializeComponent();
+            idMateria = id;
+            txtId.Text = id.ToString();
+            txtNombre.Text = nombre;
+
         }
         private void EditarMateriaForm_Load(object sender, EventArgs e)
         {
@@ -26,6 +31,36 @@ namespace Grupo4_Proyecto_final.Views.Admin
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = int.Parse(txtId.Text);
+                string nombre = txtNombre.Text.Trim();
+
+
+                AdminController controller = new AdminController();
+
+                bool resultado = controller.EditarMateria(id, nombre);
+
+                if (resultado)
+                {
+                    MessageBox.Show("Materia editada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo editar la materia. Verifique los datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

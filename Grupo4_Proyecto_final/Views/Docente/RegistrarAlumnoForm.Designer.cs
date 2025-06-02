@@ -94,6 +94,7 @@
             btnCrear.TabIndex = 13;
             btnCrear.Text = "Crear";
             btnCrear.UseVisualStyleBackColor = true;
+            btnCrear.Click += btnCrear_Click;
             // 
             // groupBox2
             // 
@@ -121,6 +122,7 @@
             // 
             // cmbSeccion
             // 
+            cmbSeccion.Enabled = false;
             cmbSeccion.FormattingEnabled = true;
             cmbSeccion.Location = new Point(269, 214);
             cmbSeccion.Name = "cmbSeccion";
@@ -129,6 +131,7 @@
             // 
             // cmbGrado
             // 
+            cmbGrado.Enabled = false;
             cmbGrado.FormattingEnabled = true;
             cmbGrado.Location = new Point(34, 214);
             cmbGrado.Name = "cmbGrado";
@@ -155,6 +158,8 @@
             dtFechaNacimiento.Name = "dtFechaNacimiento";
             dtFechaNacimiento.Size = new Size(200, 25);
             dtFechaNacimiento.TabIndex = 9;
+            dtFechaNacimiento.ValueChanged += dtFechaNacimiento_ValueChanged;
+            dtFechaNacimiento.Leave += dtFechaNacimiento_Leave;
             // 
             // txtApellido
             // 
@@ -169,6 +174,7 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(203, 25);
             txtNombre.TabIndex = 7;
+            txtNombre.Leave += txtNombre_Leave;
             // 
             // label10
             // 
@@ -306,7 +312,7 @@
             IsMdiContainer = true;
             Margin = new Padding(4, 3, 4, 3);
             Name = "RegistrarAlumnoForm";
-            Text = "RegistrarAlumnoForm";
+            Text = "Registrar Alumno";
             Load += RegistrarAlumnoForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

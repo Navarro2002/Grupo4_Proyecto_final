@@ -14,12 +14,12 @@ namespace Grupo4_Proyecto_final.Models
         public int Id { get; set; }
 
         [Column("trimestre")]
-        public float NumeroTrimestre { get; set; }
+        public string Trimestre { get; set; }
 
         [Column("promedio_final")]
-        public float PromedioFinal { get; set; }
+        public double? PromedioFinal { get; set; }
 
         [Column("nota_minima")]
-        public float NotaMinima { get; set; }
+        public double NotaMinima { get; set; }
     }
 }

@@ -40,7 +40,7 @@ namespace Grupo4_Proyecto_final.Views.Login
                     HomeDocenteForm formAdmin = new HomeDocenteForm(user.Id, user.Usuario, user.Rol.id);
                     formAdmin.Show();
                 }
-                else if (user.Rol.nombre == "Alumno")
+                else if (user.Rol.nombre == "Estudiante")
                 {
                   HomeAlumnoForm formAdmin = new HomeAlumnoForm(user.Id, user.Usuario, user.Rol.id);
                   formAdmin.Show();

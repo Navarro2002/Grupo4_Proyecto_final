@@ -49,7 +49,7 @@
             IdSeccion = new DataGridViewTextBoxColumn();
             Usuario = new DataGridViewTextBoxColumn();
             groupBox1 = new GroupBox();
-            txtDocenteBusq = new TextBox();
+            txtNombre = new TextBox();
             label2 = new Label();
             label1 = new Label();
             panel1.SuspendLayout();
@@ -196,7 +196,7 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(txtDocenteBusq);
+            groupBox1.Controls.Add(txtNombre);
             groupBox1.Controls.Add(label2);
             groupBox1.Location = new Point(53, 124);
             groupBox1.Name = "groupBox1";
@@ -205,12 +205,13 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Buscar por";
             // 
-            // txtDocenteBusq
+            // txtNombre
             // 
-            txtDocenteBusq.Location = new Point(75, 21);
-            txtDocenteBusq.Name = "txtDocenteBusq";
-            txtDocenteBusq.Size = new Size(154, 23);
-            txtDocenteBusq.TabIndex = 1;
+            txtNombre.Location = new Point(75, 21);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(154, 23);
+            txtNombre.TabIndex = 1;
+            txtNombre.TextChanged += txtDocenteBusq_TextChanged;
             // 
             // label2
             // 
@@ -242,6 +243,7 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "ListadoAlumnosForm";
             Text = "ListadoAlumnosForm";
+            Load += ListadoAlumnosForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewAlumnos).EndInit();
@@ -270,7 +272,7 @@
         private DataGridViewTextBoxColumn IdSeccion;
         private DataGridViewTextBoxColumn Usuario;
         private GroupBox groupBox1;
-        private TextBox txtDocenteBusq;
+        private TextBox txtNombre;
         private Label label2;
         private Button button3;
         private Button btnAsignarEvalucacion;

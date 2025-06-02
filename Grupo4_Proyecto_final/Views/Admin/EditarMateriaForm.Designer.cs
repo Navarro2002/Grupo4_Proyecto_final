@@ -31,6 +31,8 @@
             components = new System.ComponentModel.Container();
             toolTip = new ToolTip(components);
             panel1 = new Panel();
+            txtId = new TextBox();
+            label3 = new Label();
             btnCancelar = new Button();
             btnCrear = new Button();
             txtNombre = new TextBox();
@@ -41,6 +43,9 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.BurlyWood;
+            panel1.Controls.Add(txtId);
+            panel1.Controls.Add(label3);
             panel1.Controls.Add(btnCancelar);
             panel1.Controls.Add(btnCrear);
             panel1.Controls.Add(txtNombre);
@@ -52,10 +57,27 @@
             panel1.Size = new Size(251, 173);
             panel1.TabIndex = 4;
             // 
+            // txtId
+            // 
+            txtId.Enabled = false;
+            txtId.Location = new Point(91, 62);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(42, 23);
+            txtId.TabIndex = 23;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(24, 70);
+            label3.Name = "label3";
+            label3.Size = new Size(17, 15);
+            label3.TabIndex = 22;
+            label3.Text = "Id";
+            // 
             // btnCancelar
             // 
             btnCancelar.Font = new Font("Segoe UI Symbol", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCancelar.Location = new Point(158, 108);
+            btnCancelar.Location = new Point(143, 129);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(62, 32);
             btnCancelar.TabIndex = 21;
@@ -66,16 +88,17 @@
             // btnCrear
             // 
             btnCrear.Font = new Font("Segoe UI Symbol", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCrear.Location = new Point(50, 108);
+            btnCrear.Location = new Point(37, 129);
             btnCrear.Name = "btnCrear";
             btnCrear.Size = new Size(62, 32);
             btnCrear.TabIndex = 20;
             btnCrear.Text = "Editar";
             btnCrear.UseVisualStyleBackColor = true;
+            btnCrear.Click += btnCrear_Click;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(74, 70);
+            txtNombre.Location = new Point(91, 91);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(131, 23);
             txtNombre.TabIndex = 19;
@@ -83,7 +106,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(17, 78);
+            label2.Location = new Point(24, 94);
             label2.Name = "label2";
             label2.Size = new Size(51, 15);
             label2.TabIndex = 18;
@@ -123,6 +146,8 @@
         private TextBox txtNombre;
         private Label label2;
         private Label label1;
+        private TextBox txtId;
+        private Label label3;
     }
 }
 
