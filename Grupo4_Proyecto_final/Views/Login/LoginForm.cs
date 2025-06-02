@@ -1,5 +1,7 @@
 ﻿using Grupo4_Proyecto_final.Controllers.Auth;
 using Grupo4_Proyecto_final.Views.Admin;
+using Grupo4_Proyecto_final.Views.Alumno;
+using Grupo4_Proyecto_final.Views.Docente;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,7 +27,6 @@ namespace Grupo4_Proyecto_final.Views.Login
         {
             var controller = new LoginController();
             var user = controller.Autenticar(txtUsuario.Text, txtContrasenia.Text);
-
             if (user != null)
             {
                 MessageBox.Show($"Bienvenido {user.Usuario}, rol: {user.Rol.nombre}");
@@ -36,12 +37,15 @@ namespace Grupo4_Proyecto_final.Views.Login
                 }
                 else if (user.Rol.nombre == "Docente")
                 {
-
-                } else if (user.Rol.nombre == "Alumno")
-                {
-
+                    HomeDocenteForm formAdmin = new HomeDocenteForm(user.Id, user.Usuario, user.Rol.id);
+                    formAdmin.Show();
                 }
-            } 
+                else if (user.Rol.nombre == "Alumno")
+                {
+                  HomeAlumnoForm formAdmin = new HomeAlumnoForm(user.Id, user.Usuario, user.Rol.id);
+                  formAdmin.Show();
+                }
+            }
             else
             {
                 MessageBox.Show("Credenciales inválidas");
@@ -53,6 +57,11 @@ namespace Grupo4_Proyecto_final.Views.Login
             txtUsuario.Text = "";
             txtContrasenia.Text = "";
             txtUsuario.Focus();
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

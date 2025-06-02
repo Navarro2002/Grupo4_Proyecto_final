@@ -89,7 +89,7 @@ namespace Grupo4_Proyecto_final.Views.Admin
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void AplicarFiltros()
@@ -137,7 +137,7 @@ namespace Grupo4_Proyecto_final.Views.Admin
                 string usuario = fila.Cells["Usuario"].Value.ToString();
                 string contrasenia = fila.Cells["Contraseña"].Value.ToString();
                 string rol = fila.Cells["Rol"].Value.ToString();
-                int rolId = Convert.ToInt32(fila.Cells["RolId"].Value);
+                int rolId = Convert.ToInt32(fila.Cells["IdRol"].Value);
 
 
                 EditarUsuarioForm editarForm = new EditarUsuarioForm(id, usuario, contrasenia, rol, rolId);

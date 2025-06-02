@@ -1,0 +1,281 @@
+﻿namespace Grupo4_Proyecto_final.Views.Docente
+{
+    partial class ListadoAlumnosForm
+    {
+        /// <summary>
+        /// Variable del diseñador necesaria.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Limpiar los recursos que se estén usando.
+        /// </summary>
+        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Código generado por el Diseñador de Windows Forms
+
+        /// <summary>
+        /// Método necesario para admitir el Diseñador. No se puede modificar
+        /// el contenido de este método con el editor de código.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            components = new System.ComponentModel.Container();
+            toolTip = new ToolTip(components);
+            panel1 = new Panel();
+            button3 = new Button();
+            btnAsignarEvalucacion = new Button();
+            btnSalir = new Button();
+            btnLimpiar = new Button();
+            lblFecha = new Label();
+            label4 = new Label();
+            dataGridViewAlumnos = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
+            Edad = new DataGridViewTextBoxColumn();
+            Telefono = new DataGridViewTextBoxColumn();
+            FechaNacimiento = new DataGridViewTextBoxColumn();
+            Grado = new DataGridViewTextBoxColumn();
+            IdGrado = new DataGridViewTextBoxColumn();
+            Seccion = new DataGridViewTextBoxColumn();
+            IdSeccion = new DataGridViewTextBoxColumn();
+            Usuario = new DataGridViewTextBoxColumn();
+            groupBox1 = new GroupBox();
+            txtDocenteBusq = new TextBox();
+            label2 = new Label();
+            label1 = new Label();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewAlumnos).BeginInit();
+            groupBox1.SuspendLayout();
+            SuspendLayout();
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.BurlyWood;
+            panel1.Controls.Add(button3);
+            panel1.Controls.Add(btnAsignarEvalucacion);
+            panel1.Controls.Add(btnSalir);
+            panel1.Controls.Add(btnLimpiar);
+            panel1.Controls.Add(lblFecha);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(dataGridViewAlumnos);
+            panel1.Controls.Add(groupBox1);
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(931, 539);
+            panel1.TabIndex = 4;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(345, 443);
+            button3.Name = "button3";
+            button3.Size = new Size(117, 40);
+            button3.TabIndex = 53;
+            button3.Text = "Generar Reporte";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // btnAsignarEvalucacion
+            // 
+            btnAsignarEvalucacion.Location = new Point(53, 443);
+            btnAsignarEvalucacion.Name = "btnAsignarEvalucacion";
+            btnAsignarEvalucacion.Size = new Size(117, 40);
+            btnAsignarEvalucacion.TabIndex = 52;
+            btnAsignarEvalucacion.Text = "Asignar Evaluación";
+            btnAsignarEvalucacion.UseVisualStyleBackColor = true;
+            btnAsignarEvalucacion.Click += btnAsignarEvalucacion_Click;
+            // 
+            // btnSalir
+            // 
+            btnSalir.Location = new Point(850, 487);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(60, 40);
+            btnSalir.TabIndex = 50;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.BackColor = SystemColors.ScrollBar;
+            btnLimpiar.Location = new Point(587, 138);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(66, 35);
+            btnLimpiar.TabIndex = 48;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = false;
+            // 
+            // lblFecha
+            // 
+            lblFecha.AutoSize = true;
+            lblFecha.Location = new Point(807, 148);
+            lblFecha.Name = "lblFecha";
+            lblFecha.RightToLeft = RightToLeft.No;
+            lblFecha.Size = new Size(0, 15);
+            lblFecha.TabIndex = 47;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(757, 148);
+            label4.Name = "label4";
+            label4.Size = new Size(44, 15);
+            label4.TabIndex = 46;
+            label4.Text = "Fecha: ";
+            // 
+            // dataGridViewAlumnos
+            // 
+            dataGridViewAlumnos.AllowUserToOrderColumns = true;
+            dataGridViewAlumnos.Columns.AddRange(new DataGridViewColumn[] { Id, Nombre, Edad, Telefono, FechaNacimiento, Grado, IdGrado, Seccion, IdSeccion, Usuario });
+            dataGridViewAlumnos.Location = new Point(53, 189);
+            dataGridViewAlumnos.Name = "dataGridViewAlumnos";
+            dataGridViewAlumnos.RightToLeft = RightToLeft.No;
+            dataGridViewAlumnos.Size = new Size(824, 226);
+            dataGridViewAlumnos.TabIndex = 45;
+            // 
+            // Id
+            // 
+            Id.HeaderText = "Id";
+            Id.Name = "Id";
+            // 
+            // Nombre
+            // 
+            Nombre.HeaderText = "Nombre";
+            Nombre.Name = "Nombre";
+            // 
+            // Edad
+            // 
+            Edad.HeaderText = "Edad";
+            Edad.Name = "Edad";
+            // 
+            // Telefono
+            // 
+            Telefono.HeaderText = "Telefono";
+            Telefono.Name = "Telefono";
+            // 
+            // FechaNacimiento
+            // 
+            FechaNacimiento.HeaderText = "FechaNacimiento";
+            FechaNacimiento.Name = "FechaNacimiento";
+            // 
+            // Grado
+            // 
+            Grado.HeaderText = "Grado";
+            Grado.Name = "Grado";
+            // 
+            // IdGrado
+            // 
+            IdGrado.HeaderText = "IdGrado";
+            IdGrado.Name = "IdGrado";
+            IdGrado.Visible = false;
+            // 
+            // Seccion
+            // 
+            Seccion.HeaderText = "Seccion";
+            Seccion.Name = "Seccion";
+            // 
+            // IdSeccion
+            // 
+            IdSeccion.HeaderText = "IdSeccion";
+            IdSeccion.Name = "IdSeccion";
+            IdSeccion.Visible = false;
+            // 
+            // Usuario
+            // 
+            Usuario.HeaderText = "Usuario";
+            Usuario.Name = "Usuario";
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(txtDocenteBusq);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Location = new Point(53, 124);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(235, 53);
+            groupBox1.TabIndex = 43;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Buscar por";
+            // 
+            // txtDocenteBusq
+            // 
+            txtDocenteBusq.Location = new Point(75, 21);
+            txtDocenteBusq.Name = "txtDocenteBusq";
+            txtDocenteBusq.Size = new Size(154, 23);
+            txtDocenteBusq.TabIndex = 1;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(8, 24);
+            label2.Name = "label2";
+            label2.Size = new Size(51, 15);
+            label2.TabIndex = 0;
+            label2.Text = "Nombre";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(227, 33);
+            label1.Name = "label1";
+            label1.RightToLeft = RightToLeft.Yes;
+            label1.Size = new Size(78, 21);
+            label1.TabIndex = 0;
+            label1.Text = "Alumnos";
+            // 
+            // ListadoAlumnosForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(931, 539);
+            Controls.Add(panel1);
+            IsMdiContainer = true;
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "ListadoAlumnosForm";
+            Text = "ListadoAlumnosForm";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewAlumnos).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            ResumeLayout(false);
+        }
+
+        #endregion
+        private System.Windows.Forms.ToolTip toolTip;
+        private Panel panel1;
+        private Label label1;
+        private Button btnSalir;
+        private Button btnLimpiar;
+        private Label lblFecha;
+        private Label label4;
+        private DataGridView dataGridViewAlumnos;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Edad;
+        private DataGridViewTextBoxColumn Telefono;
+        private DataGridViewTextBoxColumn FechaNacimiento;
+        private DataGridViewTextBoxColumn Grado;
+        private DataGridViewTextBoxColumn IdGrado;
+        private DataGridViewTextBoxColumn Seccion;
+        private DataGridViewTextBoxColumn IdSeccion;
+        private DataGridViewTextBoxColumn Usuario;
+        private GroupBox groupBox1;
+        private TextBox txtDocenteBusq;
+        private Label label2;
+        private Button button3;
+        private Button btnAsignarEvalucacion;
+    }
+}
+
+
+
