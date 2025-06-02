@@ -1,5 +1,6 @@
 ﻿using Grupo4_Proyecto_final.Controllers.Auth;
 using Grupo4_Proyecto_final.Views.Admin;
+using Grupo4_Proyecto_final.Views.Alumno;
 using Grupo4_Proyecto_final.Views.Docente;
 using System;
 using System.Collections.Generic;
@@ -41,7 +42,8 @@ namespace Grupo4_Proyecto_final.Views.Login
                 }
                 else if (user.Rol.nombre == "Alumno")
                 {
-                  
+                  HomeAlumnoForm formAdmin = new HomeAlumnoForm(user.Id, user.Usuario, user.Rol.id);
+                  formAdmin.Show();
                 }
             }
             else
