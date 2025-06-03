@@ -1,5 +1,6 @@
 ﻿using Grupo4_Proyecto_final.Controllers;
 using Grupo4_Proyecto_final.Models.DTOs;
+using Grupo4_Proyecto_final.Views.Admin;
 using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
@@ -39,7 +40,27 @@ namespace Grupo4_Proyecto_final.Views.Docente
             var docente = controller.ObtenerDocente(idUser);
 
             //AsignarEvaluacionForm form = new AsignarEvaluacionForm();
-            form.ShowDialog();
+            //form.ShowDialog();
+            if (dataGridViewAlumnos.SelectedRows.Count > 0)
+            {
+                DataGridViewRow fila = dataGridViewAlumnos.SelectedRows[0];
+                int idAlumno = Convert.ToInt32(fila.Cells["Id"].Value);
+                string nombreAlumno = fila.Cells["Nombre"].Value.ToString();
+
+
+                AsignarEvaluacionForm editarForm = new AsignarEvaluacionForm(idAlumno, nombreAlumno, idUser, user);
+
+                DialogResult result = editarForm.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    CargarAlumnos();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione el alumno al que le asignara la calificación.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void ListadoAlumnosForm_Load(object sender, EventArgs e)

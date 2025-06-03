@@ -17,9 +17,13 @@ namespace Grupo4_Proyecto_final.Views.Docente
         public int idUser;
         public string user;
         public int idRol;
-        public AsignarEvaluacionForm(int idEstudiante, string nombreCompleto, int idUser, string user)
+        public int idEstudiante;
+        public AsignarEvaluacionForm(int idEstudiant, string nombreCompleto, int idUser, string user)
         {
             InitializeComponent();
+            idEstudiante = idEstudiant;
+            lblNombreAlumno.Text = nombreCompleto;
+
         }
 
         private void AsignarEvaluaciónForm_Load(object sender, EventArgs e)
@@ -43,6 +47,11 @@ namespace Grupo4_Proyecto_final.Views.Docente
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAsignar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -132,5 +132,34 @@ namespace Grupo4_Proyecto_final.Controllers
             }
         }
 
+        // Asignar calificación
+        public bool AsignarCalificacion(int idAlumno, int idMateria, int idTrimestre, double calificacion, string evaluacion)
+        {
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+
+                    var nuevaEvaluacion = new EvaluacionModel
+                    {
+                        AlumnoId = idAlumno,
+                        MateriaId = idMateria,
+                        TrimestreId = idTrimestre,
+                        Evaluacion = evaluacion,
+                        Nota = (float)calificacion 
+                    };
+
+                    context.Evaluaciones.Add(nuevaEvaluacion);
+                    context.SaveChanges();
+
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
     }
 }

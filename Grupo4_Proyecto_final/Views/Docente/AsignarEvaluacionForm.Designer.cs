@@ -39,7 +39,7 @@
             label5 = new Label();
             cmbMateria = new ComboBox();
             label4 = new Label();
-            label3 = new Label();
+            lblNombreAlumno = new Label();
             label2 = new Label();
             label1 = new Label();
             panel1.SuspendLayout();
@@ -56,7 +56,7 @@
             panel1.Controls.Add(label5);
             panel1.Controls.Add(cmbMateria);
             panel1.Controls.Add(label4);
-            panel1.Controls.Add(label3);
+            panel1.Controls.Add(lblNombreAlumno);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Fill;
@@ -85,6 +85,7 @@
             btnAsignar.Text = " Asignar";
             btnAsignar.TextAlign = ContentAlignment.TopCenter;
             btnAsignar.UseVisualStyleBackColor = true;
+            btnAsignar.Click += btnAsignar_Click;
             // 
             // txtNota
             // 
@@ -117,7 +118,7 @@
             label5.AutoSize = true;
             label5.Location = new Point(34, 145);
             label5.Name = "label5";
-            label5.Size = new Size(62, 15);
+            label5.Size = new Size(61, 15);
             label5.TabIndex = 5;
             label5.Text = "Trimestre: ";
             // 
@@ -138,15 +139,15 @@
             label4.TabIndex = 3;
             label4.Text = "Materia: ";
             // 
-            // label3
+            // lblNombreAlumno
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            label3.Location = new Point(92, 61);
-            label3.Name = "label3";
-            label3.Size = new Size(201, 17);
-            label3.TabIndex = 2;
-            label3.Text = "Jose Ernesto Navarro Guardado";
+            lblNombreAlumno.AutoSize = true;
+            lblNombreAlumno.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            lblNombreAlumno.Location = new Point(92, 61);
+            lblNombreAlumno.Name = "lblNombreAlumno";
+            lblNombreAlumno.Size = new Size(201, 17);
+            lblNombreAlumno.TabIndex = 2;
+            lblNombreAlumno.Text = "Jose Ernesto Navarro Guardado";
             // 
             // label2
             // 
@@ -164,9 +165,9 @@
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(110, 19);
             label1.Name = "label1";
-            label1.Size = new Size(156, 21);
+            label1.Size = new Size(162, 21);
             label1.TabIndex = 0;
-            label1.Text = "Asignar Evaluación";
+            label1.Text = "Asignar Calificación";
             // 
             // AsignarEvaluacionForm
             // 
@@ -187,7 +188,7 @@
         #endregion
         private System.Windows.Forms.ToolTip toolTip;
         private Panel panel1;
-        private Label label3;
+        private Label lblNombreAlumno;
         private Label label2;
         private Label label1;
         private ComboBox cmbMateria;
