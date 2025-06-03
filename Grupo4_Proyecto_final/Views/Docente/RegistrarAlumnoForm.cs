@@ -17,7 +17,7 @@ namespace Grupo4_Proyecto_final.Views.Docente
     {
         private int usuarioId;
 
-        public RegistrarAlumnoForm(int IdUser)
+        public RegistrarAlumnoForm(int IdUser, string user)
         {
             InitializeComponent();
             usuarioId = IdUser;

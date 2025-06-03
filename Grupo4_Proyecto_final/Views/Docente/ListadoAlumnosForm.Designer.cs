@@ -38,6 +38,10 @@
             lblFecha = new Label();
             label4 = new Label();
             dataGridViewAlumnos = new DataGridView();
+            groupBox1 = new GroupBox();
+            txtNombre = new TextBox();
+            label2 = new Label();
+            label1 = new Label();
             Id = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             Edad = new DataGridViewTextBoxColumn();
@@ -47,11 +51,7 @@
             IdGrado = new DataGridViewTextBoxColumn();
             Seccion = new DataGridViewTextBoxColumn();
             IdSeccion = new DataGridViewTextBoxColumn();
-            Usuario = new DataGridViewTextBoxColumn();
-            groupBox1 = new GroupBox();
-            txtNombre = new TextBox();
-            label2 = new Label();
-            label1 = new Label();
+            Promedio = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewAlumnos).BeginInit();
             groupBox1.SuspendLayout();
@@ -77,7 +77,8 @@
             // 
             // button3
             // 
-            button3.Location = new Point(345, 443);
+            button3.ForeColor = SystemColors.ActiveCaptionText;
+            button3.Location = new Point(368, 443);
             button3.Name = "button3";
             button3.Size = new Size(117, 40);
             button3.TabIndex = 53;
@@ -86,6 +87,7 @@
             // 
             // btnAsignarEvalucacion
             // 
+            btnAsignarEvalucacion.ForeColor = SystemColors.ActiveCaptionText;
             btnAsignarEvalucacion.Location = new Point(53, 443);
             btnAsignarEvalucacion.Name = "btnAsignarEvalucacion";
             btnAsignarEvalucacion.Size = new Size(117, 40);
@@ -135,12 +137,51 @@
             // dataGridViewAlumnos
             // 
             dataGridViewAlumnos.AllowUserToOrderColumns = true;
-            dataGridViewAlumnos.Columns.AddRange(new DataGridViewColumn[] { Id, Nombre, Edad, Telefono, FechaNacimiento, Grado, IdGrado, Seccion, IdSeccion, Usuario });
+            dataGridViewAlumnos.Columns.AddRange(new DataGridViewColumn[] { Id, Nombre, Edad, Telefono, FechaNacimiento, Grado, IdGrado, Seccion, IdSeccion, Promedio });
             dataGridViewAlumnos.Location = new Point(53, 189);
             dataGridViewAlumnos.Name = "dataGridViewAlumnos";
             dataGridViewAlumnos.RightToLeft = RightToLeft.No;
-            dataGridViewAlumnos.Size = new Size(824, 226);
+            dataGridViewAlumnos.Size = new Size(840, 226);
             dataGridViewAlumnos.TabIndex = 45;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(txtNombre);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Location = new Point(53, 124);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(235, 53);
+            groupBox1.TabIndex = 43;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Buscar por";
+            // 
+            // txtNombre
+            // 
+            txtNombre.Location = new Point(75, 21);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(154, 23);
+            txtNombre.TabIndex = 1;
+            txtNombre.TextChanged += txtDocenteBusq_TextChanged;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(8, 24);
+            label2.Name = "label2";
+            label2.Size = new Size(51, 15);
+            label2.TabIndex = 0;
+            label2.Text = "Nombre";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(384, 32);
+            label1.Name = "label1";
+            label1.RightToLeft = RightToLeft.Yes;
+            label1.Size = new Size(91, 25);
+            label1.TabIndex = 0;
+            label1.Text = "Alumnos";
             // 
             // Id
             // 
@@ -189,49 +230,10 @@
             IdSeccion.Name = "IdSeccion";
             IdSeccion.Visible = false;
             // 
-            // Usuario
+            // Promedio
             // 
-            Usuario.HeaderText = "Usuario";
-            Usuario.Name = "Usuario";
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(txtNombre);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(53, 124);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(235, 53);
-            groupBox1.TabIndex = 43;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Buscar por";
-            // 
-            // txtNombre
-            // 
-            txtNombre.Location = new Point(75, 21);
-            txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(154, 23);
-            txtNombre.TabIndex = 1;
-            txtNombre.TextChanged += txtDocenteBusq_TextChanged;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(8, 24);
-            label2.Name = "label2";
-            label2.Size = new Size(51, 15);
-            label2.TabIndex = 0;
-            label2.Text = "Nombre";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(227, 33);
-            label1.Name = "label1";
-            label1.RightToLeft = RightToLeft.Yes;
-            label1.Size = new Size(78, 21);
-            label1.TabIndex = 0;
-            label1.Text = "Alumnos";
+            Promedio.HeaderText = "Promedio";
+            Promedio.Name = "Promedio";
             // 
             // ListadoAlumnosForm
             // 
@@ -261,6 +263,11 @@
         private Label lblFecha;
         private Label label4;
         private DataGridView dataGridViewAlumnos;
+        private GroupBox groupBox1;
+        private TextBox txtNombre;
+        private Label label2;
+        private Button button3;
+        private Button btnAsignarEvalucacion;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Edad;
@@ -270,12 +277,7 @@
         private DataGridViewTextBoxColumn IdGrado;
         private DataGridViewTextBoxColumn Seccion;
         private DataGridViewTextBoxColumn IdSeccion;
-        private DataGridViewTextBoxColumn Usuario;
-        private GroupBox groupBox1;
-        private TextBox txtNombre;
-        private Label label2;
-        private Button button3;
-        private Button btnAsignarEvalucacion;
+        private DataGridViewTextBoxColumn Promedio;
     }
 }
 

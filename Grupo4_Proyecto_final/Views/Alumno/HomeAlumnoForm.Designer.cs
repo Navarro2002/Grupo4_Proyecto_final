@@ -32,15 +32,19 @@
             Label lblNombreAlumno;
             toolTip = new ToolTip(components);
             panel1 = new Panel();
+            lblSeccion = new Label();
+            label6 = new Label();
+            lblGrado = new Label();
+            label4 = new Label();
+            lblAlumno = new Label();
             btnSalir = new Button();
             btnActualizarContraseña = new Button();
             lblUser = new Label();
             pictureBox1 = new PictureBox();
-            label3 = new Label();
             label1 = new Label();
-            label5 = new Label();
             label2 = new Label();
             groupBox1 = new GroupBox();
+            btnVerPromedios = new Button();
             btnRegistrarAlumno = new Button();
             lblNombreAlumno = new Label();
             panel1.SuspendLayout();
@@ -54,33 +58,88 @@
             lblNombreAlumno.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNombreAlumno.Location = new Point(36, 223);
             lblNombreAlumno.Name = "lblNombreAlumno";
-            lblNombreAlumno.Size = new Size(159, 21);
+            lblNombreAlumno.Size = new Size(163, 21);
             lblNombreAlumno.TabIndex = 37;
-            lblNombreAlumno.Text = "Nombre del Alumno";
+            lblNombreAlumno.Text = "Nombre del Alumno:";
             // 
             // panel1
             // 
             panel1.BackColor = Color.BurlyWood;
+            panel1.Controls.Add(lblSeccion);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(lblGrado);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(lblAlumno);
             panel1.Controls.Add(btnSalir);
             panel1.Controls.Add(btnActualizarContraseña);
             panel1.Controls.Add(lblNombreAlumno);
             panel1.Controls.Add(lblUser);
             panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(label3);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(label5);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(groupBox1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(555, 475);
+            panel1.Size = new Size(555, 579);
             panel1.TabIndex = 4;
+            // 
+            // lblSeccion
+            // 
+            lblSeccion.AutoSize = true;
+            lblSeccion.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSeccion.Location = new Point(448, 331);
+            lblSeccion.Name = "lblSeccion";
+            lblSeccion.Size = new Size(16, 21);
+            lblSeccion.TabIndex = 44;
+            lblSeccion.Text = "-";
+            lblSeccion.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(379, 331);
+            label6.Name = "label6";
+            label6.Size = new Size(71, 21);
+            label6.TabIndex = 43;
+            label6.Text = "Sección:";
+            // 
+            // lblGrado
+            // 
+            lblGrado.AutoSize = true;
+            lblGrado.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblGrado.Location = new Point(132, 331);
+            lblGrado.Name = "lblGrado";
+            lblGrado.Size = new Size(16, 21);
+            lblGrado.TabIndex = 42;
+            lblGrado.Text = "-";
+            lblGrado.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(74, 331);
+            label4.Name = "label4";
+            label4.Size = new Size(63, 21);
+            label4.TabIndex = 41;
+            label4.Text = "Grado: ";
+            // 
+            // lblAlumno
+            // 
+            lblAlumno.AutoSize = true;
+            lblAlumno.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAlumno.Location = new Point(205, 223);
+            lblAlumno.Name = "lblAlumno";
+            lblAlumno.Size = new Size(79, 21);
+            lblAlumno.TabIndex = 40;
+            lblAlumno.Text = "ALUMNO";
             // 
             // btnSalir
             // 
             btnSalir.BackColor = Color.FromArgb(255, 192, 192);
-            btnSalir.Location = new Point(443, 414);
+            btnSalir.Location = new Point(443, 502);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(75, 23);
             btnSalir.TabIndex = 39;
@@ -91,7 +150,7 @@
             // btnActualizarContraseña
             // 
             btnActualizarContraseña.BackColor = SystemColors.ActiveCaption;
-            btnActualizarContraseña.Location = new Point(366, 322);
+            btnActualizarContraseña.Location = new Point(366, 410);
             btnActualizarContraseña.Name = "btnActualizarContraseña";
             btnActualizarContraseña.Size = new Size(177, 23);
             btnActualizarContraseña.TabIndex = 38;
@@ -118,17 +177,6 @@
             pictureBox1.TabIndex = 29;
             pictureBox1.TabStop = false;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(185, 275);
-            label3.Name = "label3";
-            label3.Size = new Size(16, 21);
-            label3.TabIndex = 35;
-            label3.Text = "-";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -138,16 +186,6 @@
             label1.Size = new Size(262, 30);
             label1.TabIndex = 28;
             label1.Text = "Colegio Anders Hejlsberg";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(37, 275);
-            label5.Name = "label5";
-            label5.Size = new Size(142, 21);
-            label5.TabIndex = 34;
-            label5.Text = "Cantidad Materias";
             // 
             // label2
             // 
@@ -160,32 +198,44 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btnVerPromedios);
             groupBox1.Controls.Add(btnRegistrarAlumno);
             groupBox1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(30, 374);
+            groupBox1.Location = new Point(30, 462);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(188, 89);
+            groupBox1.Size = new Size(382, 89);
             groupBox1.TabIndex = 32;
             groupBox1.TabStop = false;
             groupBox1.Text = "Calificaciones";
             // 
+            // btnVerPromedios
+            // 
+            btnVerPromedios.BackColor = Color.FromArgb(192, 255, 192);
+            btnVerPromedios.Location = new Point(201, 24);
+            btnVerPromedios.Name = "btnVerPromedios";
+            btnVerPromedios.RightToLeft = RightToLeft.Yes;
+            btnVerPromedios.Size = new Size(146, 37);
+            btnVerPromedios.TabIndex = 14;
+            btnVerPromedios.Text = "Ver Promedios";
+            btnVerPromedios.UseVisualStyleBackColor = false;
+            btnVerPromedios.Click += btnVerPromedios_Click;
+            // 
             // btnRegistrarAlumno
             // 
             btnRegistrarAlumno.BackColor = Color.FromArgb(192, 255, 192);
-            btnRegistrarAlumno.Location = new Point(19, 24);
+            btnRegistrarAlumno.Location = new Point(25, 24);
             btnRegistrarAlumno.Name = "btnRegistrarAlumno";
             btnRegistrarAlumno.RightToLeft = RightToLeft.Yes;
             btnRegistrarAlumno.Size = new Size(146, 37);
             btnRegistrarAlumno.TabIndex = 13;
             btnRegistrarAlumno.Text = "Ver Calificaciones";
             btnRegistrarAlumno.UseVisualStyleBackColor = false;
-            btnRegistrarAlumno.Click += btnRegistrarAlumno_Click;
             // 
             // HomeAlumnoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(555, 475);
+            ClientSize = new Size(555, 579);
             Controls.Add(panel1);
             IsMdiContainer = true;
             Margin = new Padding(4, 3, 4, 3);
@@ -197,7 +247,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             groupBox1.ResumeLayout(false);
             ResumeLayout(false);
-
         }
 
         #endregion
@@ -205,14 +254,18 @@
         private Panel panel1;
         private Label lblUser;
         private PictureBox pictureBox1;
-        private Label label3;
         private Label label1;
-        private Label label5;
         private Label label2;
         private GroupBox groupBox1;
         private Button btnRegistrarAlumno;
         private Button btnActualizarContraseña;
         private Button btnSalir;
+        private Button btnVerPromedios;
+        private Label lblAlumno;
+        private Label lblSeccion;
+        private Label label6;
+        private Label lblGrado;
+        private Label label4;
     }
 }
 

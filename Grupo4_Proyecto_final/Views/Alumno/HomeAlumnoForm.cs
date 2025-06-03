@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
+﻿using Grupo4_Proyecto_final.Controllers;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,8 @@ namespace Grupo4_Proyecto_final.Views.Alumno
         public int idUser;
         public string user;
         public int idRol;
+        public int idAlumno;
+        public string nombreCompleto;
 
         public HomeAlumnoForm(int idUsuario, string usuario, int idRol)
         {
@@ -28,6 +31,16 @@ namespace Grupo4_Proyecto_final.Views.Alumno
         private void HomeAlumnoForm_Load(object sender, EventArgs e)
         {
             lblUser.Text = user;
+            var controller = new AlumnoController();
+            var alumno = controller.ObtenerAlumno(idUser); 
+            this.idAlumno = alumno.Id;
+            this.nombreCompleto = alumno.NombreCompleto ?? "No disponible";
+            if (alumno != null)
+            {
+                lblAlumno.Text = alumno.NombreCompleto ?? "-";
+                lblGrado.Text = alumno.GradoNombre ?? "-";
+                lblSeccion.Text = alumno.SeccionNombre ?? "-";
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -35,10 +48,14 @@ namespace Grupo4_Proyecto_final.Views.Alumno
             Application.Exit();
         }
 
-        private void btnRegistrarAlumno_Click(object sender, EventArgs e)
+ 
+
+        private void btnVerPromedios_Click(object sender, EventArgs e)
         {
-            CalificacionesAlumnoForm calificacionesForm = new CalificacionesAlumnoForm();
-            calificacionesForm.ShowDialog();
+            PromediosAlumnosForm Form = new PromediosAlumnosForm(idAlumno, nombreCompleto);
+            Form.ShowDialog();
         }
+
+   
     }
 }

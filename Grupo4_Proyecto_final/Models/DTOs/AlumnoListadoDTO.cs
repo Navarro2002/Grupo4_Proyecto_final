@@ -18,5 +18,7 @@ namespace Grupo4_Proyecto_final.Models.DTOs
         public string SeccionNombre { get; set; }
         public int IdSeccion { get; set; }
         public string Usuario { get; set; }
+        public double Promedio { get; set; }
+
     }
 }

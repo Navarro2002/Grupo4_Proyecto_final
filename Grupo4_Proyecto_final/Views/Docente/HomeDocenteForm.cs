@@ -38,7 +38,7 @@ namespace Grupo4_Proyecto_final.Views.Docente
             var docente = controller.ObtenerDocente(idUser); // Realizar un casteo explícito a la clase esperada  
             var cantidadAlumnos = controller.cantidadAlumnos(idUser);
             lblCantAlumnos.Text = cantidadAlumnos.ToString();
-            
+
             if (docente != null)
             {
                 lblNombreDocente.Text = docente.NombreCompleto ?? "-";
@@ -49,8 +49,13 @@ namespace Grupo4_Proyecto_final.Views.Docente
 
         private void btnRegistrarAlumno_Click(object sender, EventArgs e)
         {
-            RegistrarAlumnoForm registrarAlumnosForm = new RegistrarAlumnoForm(idUser);
+            RegistrarAlumnoForm registrarAlumnosForm = new RegistrarAlumnoForm(idUser, user);
             registrarAlumnosForm.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

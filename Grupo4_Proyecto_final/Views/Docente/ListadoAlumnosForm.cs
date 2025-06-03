@@ -39,8 +39,6 @@ namespace Grupo4_Proyecto_final.Views.Docente
             var controller = new DocenteController();
             var docente = controller.ObtenerDocente(idUser);
 
-            //AsignarEvaluacionForm form = new AsignarEvaluacionForm();
-            //form.ShowDialog();
             if (dataGridViewAlumnos.SelectedRows.Count > 0)
             {
                 DataGridViewRow fila = dataGridViewAlumnos.SelectedRows[0];
@@ -92,7 +90,7 @@ namespace Grupo4_Proyecto_final.Views.Docente
                 dataGridViewAlumnos.Columns.Add("IdGrado", "IdGrado");
                 dataGridViewAlumnos.Columns.Add("SeccionNombre", "SeccionNombre");
                 dataGridViewAlumnos.Columns.Add("IdSeccion", "IdSeccion");
-                dataGridViewAlumnos.Columns.Add("Usuario", "Usuario");
+                dataGridViewAlumnos.Columns.Add("Promedio", "Promedio");
 
             }
 
@@ -115,7 +113,7 @@ namespace Grupo4_Proyecto_final.Views.Docente
                     alumno.IdGrado,
                     alumno.SeccionNombre,
                     alumno.IdSeccion,
-                    alumno.Usuario
+                    alumno.Promedio
                 );
             }
         }

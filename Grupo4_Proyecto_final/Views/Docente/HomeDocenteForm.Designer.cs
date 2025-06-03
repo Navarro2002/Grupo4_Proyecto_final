@@ -31,6 +31,10 @@
             components = new System.ComponentModel.Container();
             toolTip = new ToolTip(components);
             panel1 = new Panel();
+            lblSeccion = new Label();
+            label6 = new Label();
+            lblGrado = new Label();
+            label5 = new Label();
             lbl = new Label();
             lblNombreDocente = new Label();
             lblUser = new Label();
@@ -42,10 +46,6 @@
             label4 = new Label();
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            lblGrado = new Label();
-            label5 = new Label();
-            lblSeccion = new Label();
-            label6 = new Label();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -72,6 +72,49 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(536, 442);
             panel1.TabIndex = 4;
+            panel1.Paint += panel1_Paint;
+            // 
+            // lblSeccion
+            // 
+            lblSeccion.AutoSize = true;
+            lblSeccion.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSeccion.Location = new Point(420, 279);
+            lblSeccion.Name = "lblSeccion";
+            lblSeccion.Size = new Size(16, 21);
+            lblSeccion.TabIndex = 33;
+            lblSeccion.Text = "-";
+            lblSeccion.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(351, 279);
+            label6.Name = "label6";
+            label6.Size = new Size(71, 21);
+            label6.TabIndex = 32;
+            label6.Text = "Sección:";
+            // 
+            // lblGrado
+            // 
+            lblGrado.AutoSize = true;
+            lblGrado.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblGrado.Location = new Point(104, 279);
+            lblGrado.Name = "lblGrado";
+            lblGrado.Size = new Size(16, 21);
+            lblGrado.TabIndex = 31;
+            lblGrado.Text = "-";
+            lblGrado.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(46, 279);
+            label5.Name = "label5";
+            label5.Size = new Size(63, 21);
+            label5.TabIndex = 30;
+            label5.Text = "Grado: ";
             // 
             // lbl
             // 
@@ -186,48 +229,6 @@
             label1.Size = new Size(262, 30);
             label1.TabIndex = 16;
             label1.Text = "Colegio Anders Hejlsberg";
-            // 
-            // lblGrado
-            // 
-            lblGrado.AutoSize = true;
-            lblGrado.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblGrado.Location = new Point(104, 279);
-            lblGrado.Name = "lblGrado";
-            lblGrado.Size = new Size(16, 21);
-            lblGrado.TabIndex = 31;
-            lblGrado.Text = "-";
-            lblGrado.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(46, 279);
-            label5.Name = "label5";
-            label5.Size = new Size(63, 21);
-            label5.TabIndex = 30;
-            label5.Text = "Grado: ";
-            // 
-            // lblSeccion
-            // 
-            lblSeccion.AutoSize = true;
-            lblSeccion.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSeccion.Location = new Point(420, 279);
-            lblSeccion.Name = "lblSeccion";
-            lblSeccion.Size = new Size(16, 21);
-            lblSeccion.TabIndex = 33;
-            lblSeccion.Text = "-";
-            lblSeccion.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(351, 279);
-            label6.Name = "label6";
-            label6.Size = new Size(71, 21);
-            label6.TabIndex = 32;
-            label6.Text = "Sección:";
             // 
             // HomeDocenteForm
             // 

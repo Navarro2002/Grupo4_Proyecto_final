@@ -127,7 +127,11 @@ namespace Grupo4_Proyecto_final.Controllers
                             SeccionNombre = s != null ? s.Nombre : "",
                             IdSeccion = a.SeccionId,
                             Telefono = a.Telefono,
-                            Usuario = u != null ? u.Usuario : ""
+                            Usuario = u != null ? u.Usuario : "",
+                            Promedio = context.Evaluaciones
+                                .Where(e => e.AlumnoId == a.Id)
+                                .Select(e => (double?)e.Nota)
+                                .Average() ?? 0.0
                         }).ToList();
             }
         }
@@ -146,7 +150,7 @@ namespace Grupo4_Proyecto_final.Controllers
                         MateriaId = idMateria,
                         TrimestreId = idTrimestre,
                         Evaluacion = evaluacion,
-                        Nota = (float)calificacion 
+                        Nota = (float)calificacion
                     };
 
                     context.Evaluaciones.Add(nuevaEvaluacion);
@@ -161,5 +165,41 @@ namespace Grupo4_Proyecto_final.Controllers
             }
         }
 
+        public List<EvaluacionlistadoDTO> ObtenerEvaluacionesPorAlumnoYMateria(int idAlumno, int idMateria, int idTrimestre)
+        {
+            using (var db = new AppDbContext())
+            {
+                if (idMateria != 0 && idTrimestre != 0)
+                {
+                    return db.Evaluaciones
+                   .Include(e => e.Trimestre)
+                   .Include(e => e.Materia)
+                   .Where(e => e.AlumnoId == idAlumno && e.MateriaId == idMateria && e.TrimestreId == idTrimestre)
+                   .Select(e => new EvaluacionlistadoDTO
+                   {
+                       Evaluacion = e.Evaluacion,
+                       Trimestre = e.Trimestre.Trimestre,
+                       Materia = e.Materia.Nombre,
+                       Nota = e.Nota
+                   })
+                   .ToList();
+                } else
+                {
+                    return db.Evaluaciones
+                   .Include(e => e.Trimestre)
+                   .Include(e => e.Materia)
+                   .Where(e => e.AlumnoId == idAlumno)
+                   .Select(e => new EvaluacionlistadoDTO
+                   {
+                       Evaluacion = e.Evaluacion,
+                       Trimestre = e.Trimestre.Trimestre,
+                       Materia = e.Materia.Nombre,
+                       Nota = e.Nota
+                   })
+                   .ToList();
+                }
+               
+            }
+        }
     }
 }

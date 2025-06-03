@@ -18,6 +18,7 @@ namespace Grupo4_Proyecto_final.Connection
         public DbSet<SeccionModel> Secciones { get; set; }
         public DbSet<MateriaModel> Materias { get; set; }
         public DbSet<TrimestreModel> Trimestres { get; set; }
+        public DbSet<EvaluacionModel> Evaluaciones { get; set; }
 
 
 
