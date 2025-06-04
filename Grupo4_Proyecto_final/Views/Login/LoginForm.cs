@@ -42,8 +42,8 @@ namespace Grupo4_Proyecto_final.Views.Login
                 }
                 else if (user.Rol.nombre == "Estudiante")
                 {
-                  HomeAlumnoForm formAdmin = new HomeAlumnoForm(user.Id, user.Usuario, user.Rol.id);
-                  formAdmin.Show();
+                    HomeAlumnoForm formAdmin = new HomeAlumnoForm(user.Id, user.Usuario, user.Rol.id);
+                    formAdmin.Show();
                 }
             }
             else
@@ -61,7 +61,7 @@ namespace Grupo4_Proyecto_final.Views.Login
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-
+            //
         }
     }
 }
