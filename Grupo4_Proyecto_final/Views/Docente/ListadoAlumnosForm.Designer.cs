@@ -31,6 +31,12 @@
             components = new System.ComponentModel.Container();
             toolTip = new ToolTip(components);
             panel1 = new Panel();
+            fechalbl = new Label();
+            groupBox2 = new GroupBox();
+            lbReprobados = new Label();
+            lbAprobados = new Label();
+            lblReprobados = new Label();
+            lblAprobados = new Label();
             button3 = new Button();
             btnAsignarEvalucacion = new Button();
             btnSalir = new Button();
@@ -38,10 +44,6 @@
             lblFecha = new Label();
             label4 = new Label();
             dataGridViewAlumnos = new DataGridView();
-            groupBox1 = new GroupBox();
-            txtNombre = new TextBox();
-            label2 = new Label();
-            label1 = new Label();
             Id = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             Edad = new DataGridViewTextBoxColumn();
@@ -52,7 +54,12 @@
             Seccion = new DataGridViewTextBoxColumn();
             IdSeccion = new DataGridViewTextBoxColumn();
             Promedio = new DataGridViewTextBoxColumn();
+            groupBox1 = new GroupBox();
+            txtNombre = new TextBox();
+            label2 = new Label();
+            label1 = new Label();
             panel1.SuspendLayout();
+            groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewAlumnos).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -60,6 +67,8 @@
             // panel1
             // 
             panel1.BackColor = Color.BurlyWood;
+            panel1.Controls.Add(fechalbl);
+            panel1.Controls.Add(groupBox2);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(btnAsignarEvalucacion);
             panel1.Controls.Add(btnSalir);
@@ -72,13 +81,74 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(931, 539);
+            panel1.Size = new Size(931, 614);
             panel1.TabIndex = 4;
+            panel1.Paint += panel1_Paint;
+            // 
+            // fechalbl
+            // 
+            fechalbl.AutoSize = true;
+            fechalbl.Location = new Point(807, 148);
+            fechalbl.Name = "fechalbl";
+            fechalbl.Size = new Size(38, 15);
+            fechalbl.TabIndex = 55;
+            fechalbl.Text = "label3";
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(lbReprobados);
+            groupBox2.Controls.Add(lbAprobados);
+            groupBox2.Controls.Add(lblReprobados);
+            groupBox2.Controls.Add(lblAprobados);
+            groupBox2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox2.Location = new Point(557, 462);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(250, 106);
+            groupBox2.TabIndex = 54;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Estadisticas";
+            groupBox2.Enter += groupBox2_Enter;
+            // 
+            // lbReprobados
+            // 
+            lbReprobados.AutoSize = true;
+            lbReprobados.Location = new Point(169, 63);
+            lbReprobados.Name = "lbReprobados";
+            lbReprobados.Size = new Size(43, 17);
+            lbReprobados.TabIndex = 3;
+            lbReprobados.Text = "label4";
+            // 
+            // lbAprobados
+            // 
+            lbAprobados.AutoSize = true;
+            lbAprobados.Location = new Point(168, 28);
+            lbAprobados.Name = "lbAprobados";
+            lbAprobados.Size = new Size(43, 17);
+            lbAprobados.TabIndex = 2;
+            lbAprobados.Text = "label3";
+            // 
+            // lblReprobados
+            // 
+            lblReprobados.AutoSize = true;
+            lblReprobados.Location = new Point(14, 65);
+            lblReprobados.Name = "lblReprobados";
+            lblReprobados.Size = new Size(149, 17);
+            lblReprobados.TabIndex = 1;
+            lblReprobados.Text = "Porcentaje reprobados:";
+            // 
+            // lblAprobados
+            // 
+            lblAprobados.AutoSize = true;
+            lblAprobados.Location = new Point(14, 27);
+            lblAprobados.Name = "lblAprobados";
+            lblAprobados.Size = new Size(144, 17);
+            lblAprobados.TabIndex = 0;
+            lblAprobados.Text = "Porcentaje aprobados:";
             // 
             // button3
             // 
             button3.ForeColor = SystemColors.ActiveCaptionText;
-            button3.Location = new Point(368, 443);
+            button3.Location = new Point(368, 514);
             button3.Name = "button3";
             button3.Size = new Size(117, 40);
             button3.TabIndex = 53;
@@ -88,7 +158,7 @@
             // btnAsignarEvalucacion
             // 
             btnAsignarEvalucacion.ForeColor = SystemColors.ActiveCaptionText;
-            btnAsignarEvalucacion.Location = new Point(53, 443);
+            btnAsignarEvalucacion.Location = new Point(53, 514);
             btnAsignarEvalucacion.Name = "btnAsignarEvalucacion";
             btnAsignarEvalucacion.Size = new Size(117, 40);
             btnAsignarEvalucacion.TabIndex = 52;
@@ -98,7 +168,7 @@
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(850, 487);
+            btnSalir.Location = new Point(850, 558);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(60, 40);
             btnSalir.TabIndex = 50;
@@ -141,47 +211,8 @@
             dataGridViewAlumnos.Location = new Point(53, 189);
             dataGridViewAlumnos.Name = "dataGridViewAlumnos";
             dataGridViewAlumnos.RightToLeft = RightToLeft.No;
-            dataGridViewAlumnos.Size = new Size(840, 226);
+            dataGridViewAlumnos.Size = new Size(843, 226);
             dataGridViewAlumnos.TabIndex = 45;
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(txtNombre);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Location = new Point(53, 124);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(235, 53);
-            groupBox1.TabIndex = 43;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Buscar por";
-            // 
-            // txtNombre
-            // 
-            txtNombre.Location = new Point(75, 21);
-            txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(154, 23);
-            txtNombre.TabIndex = 1;
-            txtNombre.TextChanged += txtDocenteBusq_TextChanged;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(8, 24);
-            label2.Name = "label2";
-            label2.Size = new Size(51, 15);
-            label2.TabIndex = 0;
-            label2.Text = "Nombre";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(384, 32);
-            label1.Name = "label1";
-            label1.RightToLeft = RightToLeft.Yes;
-            label1.Size = new Size(91, 25);
-            label1.TabIndex = 0;
-            label1.Text = "Alumnos";
             // 
             // Id
             // 
@@ -235,19 +266,61 @@
             Promedio.HeaderText = "Promedio";
             Promedio.Name = "Promedio";
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(txtNombre);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox1.Location = new Point(53, 124);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(235, 53);
+            groupBox1.TabIndex = 43;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Buscar por";
+            // 
+            // txtNombre
+            // 
+            txtNombre.Location = new Point(75, 21);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(154, 25);
+            txtNombre.TabIndex = 1;
+            txtNombre.TextChanged += txtDocenteBusq_TextChanged;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(8, 24);
+            label2.Name = "label2";
+            label2.Size = new Size(58, 17);
+            label2.TabIndex = 0;
+            label2.Text = "Nombre";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(384, 32);
+            label1.Name = "label1";
+            label1.RightToLeft = RightToLeft.Yes;
+            label1.Size = new Size(91, 25);
+            label1.TabIndex = 0;
+            label1.Text = "Alumnos";
+            // 
             // ListadoAlumnosForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(931, 539);
+            ClientSize = new Size(931, 614);
             Controls.Add(panel1);
             IsMdiContainer = true;
             Margin = new Padding(4, 3, 4, 3);
             Name = "ListadoAlumnosForm";
-            Text = "ListadoAlumnosForm";
+            Text = "Listado Alumnos";
             Load += ListadoAlumnosForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewAlumnos).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -278,6 +351,12 @@
         private DataGridViewTextBoxColumn Seccion;
         private DataGridViewTextBoxColumn IdSeccion;
         private DataGridViewTextBoxColumn Promedio;
+        private GroupBox groupBox2;
+        private Label lblAprobados;
+        private Label lblReprobados;
+        private Label fechalbl;
+        private Label lbReprobados;
+        private Label lbAprobados;
     }
 }
 

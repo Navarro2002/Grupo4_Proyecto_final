@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             toolTip = new ToolTip(components);
             panel1 = new Panel();
+            btnActualizarContraseña = new Button();
             lblSeccion = new Label();
             label6 = new Label();
             lblGrado = new Label();
@@ -54,6 +55,7 @@
             // panel1
             // 
             panel1.BackColor = Color.BurlyWood;
+            panel1.Controls.Add(btnActualizarContraseña);
             panel1.Controls.Add(lblSeccion);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(lblGrado);
@@ -70,9 +72,21 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(536, 442);
+            panel1.Size = new Size(534, 460);
             panel1.TabIndex = 4;
             panel1.Paint += panel1_Paint;
+            // 
+            // btnActualizarContraseña
+            // 
+            btnActualizarContraseña.BackColor = SystemColors.ActiveCaption;
+            btnActualizarContraseña.Location = new Point(347, 103);
+            btnActualizarContraseña.Name = "btnActualizarContraseña";
+            btnActualizarContraseña.Size = new Size(177, 23);
+            btnActualizarContraseña.TabIndex = 39;
+            btnActualizarContraseña.Text = "Actualizar contraseña";
+            btnActualizarContraseña.TextAlign = ContentAlignment.TopCenter;
+            btnActualizarContraseña.UseVisualStyleBackColor = false;
+            btnActualizarContraseña.Click += btnActualizarContraseña_Click;
             // 
             // lblSeccion
             // 
@@ -161,7 +175,7 @@
             groupBox1.Controls.Add(btnRegistrarAlumno);
             groupBox1.Controls.Add(btnAlumnos);
             groupBox1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(46, 341);
+            groupBox1.Location = new Point(46, 335);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(451, 89);
             groupBox1.TabIndex = 23;
@@ -234,7 +248,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(536, 442);
+            ClientSize = new Size(534, 460);
             Controls.Add(panel1);
             IsMdiContainer = true;
             Margin = new Padding(4, 3, 4, 3);
@@ -266,6 +280,7 @@
         private Label label6;
         private Label lblGrado;
         private Label label5;
+        private Button btnActualizarContraseña;
     }
 }
 

@@ -23,5 +23,10 @@ namespace Grupo4_Proyecto_final.Views.Admin
         {
             this.Close();
         }
+
+        private void EditarSeccionForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
