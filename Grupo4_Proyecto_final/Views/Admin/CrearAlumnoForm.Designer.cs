@@ -62,6 +62,7 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.BurlyWood;
             panel1.Controls.Add(btnCancelar);
             panel1.Controls.Add(btnCrear);
             panel1.Controls.Add(groupBox2);

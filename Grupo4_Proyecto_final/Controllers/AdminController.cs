@@ -479,6 +479,7 @@ namespace Grupo4_Proyecto_final.Controllers
             }
         }
 
+        // Materias
         public List<MateriasListadoDTO> ListarMaterias()
         {
             using (var context = new AppDbContext())
@@ -492,6 +493,69 @@ namespace Grupo4_Proyecto_final.Controllers
             }
         }
 
+        public bool CrearMateria(string nombre)
+        {
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+                    var nuevaMateria = new MateriaModel
+                    {
+                        Nombre = nombre
+                    };
+                    context.Materias.Add(nuevaMateria);
+                    context.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al crear la materia: {ex.Message}");
+                return false;
+            }
+        }
 
-    }
+        public bool EditarMateria(int id, string nuevoNombre)
+        {
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+                    var materia = context.Materias.FirstOrDefault(m => m.Id == id);
+                    if (materia == null)
+                        return false;
+                    materia.Nombre = nuevoNombre;
+                    context.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al editar la materia: {ex.Message}");
+                return false;
+            }
+        }
+
+        public bool EliminarMateria(int id)
+        {
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+                    var materia = context.Materias.FirstOrDefault(m => m.Id == id);
+                    if (materia == null)
+                        return false;
+                    context.Materias.Remove(materia);
+                    context.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al eliminar la materia: {ex.Message}");
+                return false;
+            }
+        }
+
+        }
 }

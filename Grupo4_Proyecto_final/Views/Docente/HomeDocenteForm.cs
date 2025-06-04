@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Grupo4_Proyecto_final.Connection;
+using Grupo4_Proyecto_final.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,19 +27,35 @@ namespace Grupo4_Proyecto_final.Views.Docente
         }
         private void btnAlumnos_Click(object sender, EventArgs e)
         {
-            ListadoAlumnosForm listadoAlumnosForm = new ListadoAlumnosForm();
+            ListadoAlumnosForm listadoAlumnosForm = new ListadoAlumnosForm(idUser, user, idRol);
             listadoAlumnosForm.Show();
         }
 
         private void HomeDocenteForm_Load(object sender, EventArgs e)
         {
             lblUser.Text = user;
+            var controller = new DocenteController();
+            var docente = controller.ObtenerDocente(idUser); // Realizar un casteo explícito a la clase esperada  
+            var cantidadAlumnos = controller.cantidadAlumnos(idUser);
+            lblCantAlumnos.Text = cantidadAlumnos.ToString();
+
+            if (docente != null)
+            {
+                lblNombreDocente.Text = docente.NombreCompleto ?? "-";
+                lblGrado.Text = docente.GradoNombre ?? "-";
+                lblSeccion.Text = docente.SeccionNombre ?? "-";
+            }
         }
 
         private void btnRegistrarAlumno_Click(object sender, EventArgs e)
         {
-            RegistrarAlumnoForm registrarAlumnosForm = new RegistrarAlumnoForm();
+            RegistrarAlumnoForm registrarAlumnosForm = new RegistrarAlumnoForm(idUser, user);
             registrarAlumnosForm.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

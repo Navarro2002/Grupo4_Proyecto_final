@@ -41,6 +41,7 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.BurlyWood;
             panel1.Controls.Add(btnCancelar);
             panel1.Controls.Add(btnCrear);
             panel1.Controls.Add(txtNombre);
@@ -72,6 +73,7 @@
             btnCrear.TabIndex = 15;
             btnCrear.Text = "Crear";
             btnCrear.UseVisualStyleBackColor = true;
+            btnCrear.Click += btnCrear_Click;
             // 
             // txtNombre
             // 
