@@ -63,7 +63,14 @@ namespace Grupo4_Proyecto_final.Views.Docente
 
         private void ListadoAlumnosForm_Load(object sender, EventArgs e)
         {
-         
+            AlumnoController controller = new AlumnoController();
+            List<PorcentajeAlumnosDTO> porcentaje = controller.ObtenerPorcentajeAlumnos();
+            if (porcentaje.Any())
+            {
+                lbAprobados.Text = $"{porcentaje[0].porcentaje_aprobados.ToString("F2")} %";
+                lbReprobados.Text = $"{porcentaje[0].porcentaje_reprobados.ToString("F2")} %";
+            }
+
         }
 
         private void CargarAlumnos()
@@ -127,6 +134,16 @@ namespace Grupo4_Proyecto_final.Views.Docente
                 .ToList();
 
             MostrarAlumnos(materiasFiltradas);
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

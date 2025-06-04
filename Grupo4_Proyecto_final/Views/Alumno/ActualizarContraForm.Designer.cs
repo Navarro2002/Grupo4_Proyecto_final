@@ -31,81 +31,93 @@
             components = new System.ComponentModel.Container();
             toolTip = new ToolTip(components);
             panel1 = new Panel();
-            btnCancelar = new Button();
+            lblUsuario = new Label();
+            txtCancelar = new Button();
             btnActualizar = new Button();
+            txtContrasenia = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            txtNuevaContraseña = new TextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.BurlyWood;
-            panel1.Controls.Add(txtNuevaContraseña);
-            panel1.Controls.Add(btnCancelar);
+            panel1.Controls.Add(lblUsuario);
+            panel1.Controls.Add(txtCancelar);
             panel1.Controls.Add(btnActualizar);
+            panel1.Controls.Add(txtContrasenia);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(300, 221);
+            panel1.Size = new Size(322, 249);
             panel1.TabIndex = 4;
             // 
-            // btnCancelar
+            // lblUsuario
             // 
-            btnCancelar.BackColor = Color.Silver;
-            btnCancelar.Location = new Point(168, 141);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(74, 32);
-            btnCancelar.TabIndex = 3;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = false;
-            btnCancelar.Click += btnCancelar_Click;
+            lblUsuario.AutoSize = true;
+            lblUsuario.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUsuario.Location = new Point(42, 76);
+            lblUsuario.Name = "lblUsuario";
+            lblUsuario.Size = new Size(54, 17);
+            lblUsuario.TabIndex = 5;
+            lblUsuario.Text = "Usuario";
+            lblUsuario.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // txtCancelar
+            // 
+            txtCancelar.Location = new Point(172, 187);
+            txtCancelar.Name = "txtCancelar";
+            txtCancelar.Size = new Size(75, 26);
+            txtCancelar.TabIndex = 4;
+            txtCancelar.Text = "Cancelar";
+            txtCancelar.UseVisualStyleBackColor = true;
+            txtCancelar.Click += txtCancelar_Click;
             // 
             // btnActualizar
             // 
-            btnActualizar.BackColor = Color.Silver;
-            btnActualizar.Location = new Point(47, 141);
+            btnActualizar.Location = new Point(48, 187);
             btnActualizar.Name = "btnActualizar";
-            btnActualizar.Size = new Size(74, 32);
-            btnActualizar.TabIndex = 2;
+            btnActualizar.Size = new Size(75, 26);
+            btnActualizar.TabIndex = 3;
             btnActualizar.Text = "Actualizar";
-            btnActualizar.UseVisualStyleBackColor = false;
+            btnActualizar.UseVisualStyleBackColor = true;
             btnActualizar.Click += btnActualizar_Click;
+            // 
+            // txtContrasenia
+            // 
+            txtContrasenia.Location = new Point(148, 136);
+            txtContrasenia.Name = "txtContrasenia";
+            txtContrasenia.Size = new Size(100, 23);
+            txtContrasenia.TabIndex = 2;
+            txtContrasenia.UseSystemPasswordChar = true;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(28, 97);
+            label2.Location = new Point(34, 139);
             label2.Name = "label2";
-            label2.Size = new Size(107, 15);
+            label2.Size = new Size(108, 15);
             label2.TabIndex = 1;
-            label2.Text = "Nueva Contraseña:";
+            label2.Text = "Nueva contraseña: ";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(64, 26);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(70, 22);
             label1.Name = "label1";
-            label1.Size = new Size(178, 21);
+            label1.Size = new Size(177, 21);
             label1.TabIndex = 0;
-            label1.Text = "Actualiza tu contraseña";
-            // 
-            // txtNuevaContraseña
-            // 
-            txtNuevaContraseña.Location = new Point(140, 93);
-            txtNuevaContraseña.Name = "txtNuevaContraseña";
-            txtNuevaContraseña.Size = new Size(100, 23);
-            txtNuevaContraseña.TabIndex = 4;
+            label1.Text = "Actualizar Contraseña";
             // 
             // ActualizarContraForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(300, 221);
+            ClientSize = new Size(322, 249);
             Controls.Add(panel1);
             IsMdiContainer = true;
             Margin = new Padding(4, 3, 4, 3);
@@ -115,17 +127,17 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
-
         }
 
         #endregion
         private System.Windows.Forms.ToolTip toolTip;
         private Panel panel1;
-        private Button btnCancelar;
+        private Button txtCancelar;
         private Button btnActualizar;
+        private TextBox txtContrasenia;
         private Label label2;
         private Label label1;
-        private TextBox txtNuevaContraseña;
+        private Label lblUsuario;
     }
 }
 

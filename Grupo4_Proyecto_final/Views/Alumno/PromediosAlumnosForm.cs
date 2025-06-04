@@ -1,4 +1,6 @@
-﻿using Grupo4_Proyecto_final.Controllers;
+﻿using Grupo4_Proyecto_final.Connection;
+using Grupo4_Proyecto_final.Controllers;
+using Grupo4_Proyecto_final.Models;
 using Grupo4_Proyecto_final.Models.DTOs;
 using System;
 using System.Collections.Generic;
@@ -27,7 +29,19 @@ namespace Grupo4_Proyecto_final.Views.Alumno
         private void PromediosAlumnosForm_Load(object sender, EventArgs e)
         {
             lblAlumno.Text = nombreCompleto;
-            CargarPromedios(idAlumno) ; // llama con el ID real
+            CargarPromedios(idAlumno);
+            CargarPromediosMaterias(idAlumno);
+            using (var context = new AppDbContext())
+            {
+                var trimestre = context.Trimestres.ToList();
+
+                trimestre.Insert(0, new TrimestreModel { Id = 0, Trimestre = "Seleccione" });
+
+                // Asignar al ComboBox
+                cmbTrimestre.DataSource = trimestre;
+                cmbTrimestre.DisplayMember = "trimestre";
+                cmbTrimestre.ValueMember = "id";
+            }
 
         }
 
@@ -54,9 +68,51 @@ namespace Grupo4_Proyecto_final.Views.Alumno
             // Cargamos los datos
             foreach (var promedio in promedios)
             {
-                dataGridPromediosTrimestres.Rows.Add(promedio.Trimestre, promedio.Promedio);
+                dataGridPromediosTrimestres.Rows.Add(promedio.Trimestre, promedio.Promedio.ToString("F2"));
             }
         }
 
+        private void CargarPromediosMaterias(int idAlumno)
+        {
+            AlumnoController controller = new AlumnoController();
+
+            int? trimestreId = null;
+            if (cmbTrimestre.SelectedValue != null && int.TryParse(cmbTrimestre.SelectedValue.ToString(), out int idTrimestre) && idTrimestre != 0)
+            {
+                trimestreId = idTrimestre;
+            }
+
+
+            List<PromediosMateriasDTO> promedios = controller.ObtenerMateriasAprobadasReprobadas(idAlumno, trimestreId);
+
+            if (dataGridProMaterias.Columns.Count == 0)
+            {
+                dataGridProMaterias.Columns.Add("Materia", "Materia");
+                dataGridProMaterias.Columns.Add("Trimestre", "Trimestre");
+                dataGridProMaterias.Columns.Add("Promedio", "Promedio");
+                dataGridProMaterias.Columns.Add("Estado", "Estado");
+            }
+
+            // Limpiamos filas
+            dataGridProMaterias.Rows.Clear();
+
+            // Cargamos los datos
+            foreach (var promedio in promedios)
+            {
+                dataGridProMaterias.Rows.Add(promedio.Materia, promedio.Trimestre, promedio.Promedio.ToString("F2"), promedio.Estado.ToString());
+            }
+        }
+
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cmbTrimestre_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarPromediosMaterias(idAlumno);
+
+        }
     }
 }

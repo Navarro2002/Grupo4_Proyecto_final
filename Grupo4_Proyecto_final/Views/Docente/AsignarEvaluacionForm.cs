@@ -97,8 +97,6 @@ namespace Grupo4_Proyecto_final.Views.Docente
                 if (creado)
                 {
                     string resumen = "Calificación registrada con éxito:\n" +
-                                     $"Materia: {materia}\n" +
-                                     $"Trimestre: {trimestre}\n" +
                                      $"Calificación: {calificacion}\n" +
                                      $"Evaluación: {nombreEvaluacion}";
 

@@ -32,7 +32,7 @@ namespace Grupo4_Proyecto_final.Views.Alumno
         {
             lblUser.Text = user;
             var controller = new AlumnoController();
-            var alumno = controller.ObtenerAlumno(idUser); 
+            var alumno = controller.ObtenerAlumno(idUser);
             this.idAlumno = alumno.Id;
             this.nombreCompleto = alumno.NombreCompleto ?? "No disponible";
             if (alumno != null)
@@ -48,7 +48,7 @@ namespace Grupo4_Proyecto_final.Views.Alumno
             Application.Exit();
         }
 
- 
+
 
         private void btnVerPromedios_Click(object sender, EventArgs e)
         {
@@ -56,6 +56,21 @@ namespace Grupo4_Proyecto_final.Views.Alumno
             Form.ShowDialog();
         }
 
-   
+        private void btnRegistrarAlumno_Click(object sender, EventArgs e)
+        {
+            CalificacionesAlumnoForm Form = new CalificacionesAlumnoForm(idAlumno, nombreCompleto);
+            Form.ShowDialog();
+        }
+
+        private void btnActualizarContraseña_Click(object sender, EventArgs e)
+        {
+            ActualizarContraForm Form = new ActualizarContraForm(idUser, user);
+            Form.ShowDialog();
+        }
+
+        private void btnPromediosTrimestrales_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

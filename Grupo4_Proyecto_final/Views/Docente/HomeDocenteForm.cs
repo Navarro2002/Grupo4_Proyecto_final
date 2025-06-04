@@ -1,5 +1,6 @@
 ﻿using Grupo4_Proyecto_final.Connection;
 using Grupo4_Proyecto_final.Controllers;
+using Grupo4_Proyecto_final.Views.Alumno;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,6 +57,12 @@ namespace Grupo4_Proyecto_final.Views.Docente
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnActualizarContraseña_Click(object sender, EventArgs e)
+        {
+            ActualizarContraForm actualizarContraForm = new ActualizarContraForm(idUser, user);
+            actualizarContraForm.ShowDialog();
         }
     }
 }

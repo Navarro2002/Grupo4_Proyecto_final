@@ -81,7 +81,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(555, 579);
+            panel1.Size = new Size(569, 559);
             panel1.TabIndex = 4;
             // 
             // lblSeccion
@@ -150,13 +150,14 @@
             // btnActualizarContraseña
             // 
             btnActualizarContraseña.BackColor = SystemColors.ActiveCaption;
-            btnActualizarContraseña.Location = new Point(366, 410);
+            btnActualizarContraseña.Location = new Point(346, 410);
             btnActualizarContraseña.Name = "btnActualizarContraseña";
             btnActualizarContraseña.Size = new Size(177, 23);
             btnActualizarContraseña.TabIndex = 38;
             btnActualizarContraseña.Text = "Actualizar contraseña";
             btnActualizarContraseña.TextAlign = ContentAlignment.TopCenter;
             btnActualizarContraseña.UseVisualStyleBackColor = false;
+            btnActualizarContraseña.Click += btnActualizarContraseña_Click;
             // 
             // lblUser
             // 
@@ -203,7 +204,7 @@
             groupBox1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             groupBox1.Location = new Point(30, 462);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(382, 89);
+            groupBox1.Size = new Size(382, 85);
             groupBox1.TabIndex = 32;
             groupBox1.TabStop = false;
             groupBox1.Text = "Calificaciones";
@@ -230,17 +231,18 @@
             btnRegistrarAlumno.TabIndex = 13;
             btnRegistrarAlumno.Text = "Ver Calificaciones";
             btnRegistrarAlumno.UseVisualStyleBackColor = false;
+            btnRegistrarAlumno.Click += btnRegistrarAlumno_Click;
             // 
             // HomeAlumnoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(555, 579);
+            ClientSize = new Size(569, 559);
             Controls.Add(panel1);
             IsMdiContainer = true;
             Margin = new Padding(4, 3, 4, 3);
             Name = "HomeAlumnoForm";
-            Text = "HomeAlumnoForm";
+            Text = "Home Alumno ";
             Load += HomeAlumnoForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

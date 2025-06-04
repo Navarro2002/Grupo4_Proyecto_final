@@ -201,5 +201,26 @@ namespace Grupo4_Proyecto_final.Controllers
                
             }
         }
+
+        public bool ActualizarContresenia(int id, string contrasenia)
+        {
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+                    var usuarioExistente = context.Usuarios.Find(id);
+                    if (usuarioExistente == null)
+                        return false;
+                    usuarioExistente.Usuario = contrasenia;
+                    context.SaveChanges();
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
     }
 }

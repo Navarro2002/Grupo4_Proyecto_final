@@ -31,11 +31,11 @@
             components = new System.ComponentModel.Container();
             toolTip = new ToolTip(components);
             panel1 = new Panel();
-            label1 = new Label();
             btnCancelar = new Button();
             btnEditar = new Button();
             txtNombre = new TextBox();
             label2 = new Label();
+            label1 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -51,16 +51,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(279, 167);
             panel1.TabIndex = 4;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(91, 19);
-            label1.Name = "label1";
-            label1.Size = new Size(94, 17);
-            label1.TabIndex = 0;
-            label1.Text = "Editar Sección";
             // 
             // btnCancelar
             // 
@@ -99,6 +89,16 @@
             label2.TabIndex = 12;
             label2.Text = "Nombre:";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(91, 19);
+            label1.Name = "label1";
+            label1.Size = new Size(94, 17);
+            label1.TabIndex = 0;
+            label1.Text = "Editar Sección";
+            // 
             // EditarSeccionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -109,6 +109,7 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "EditarSeccionForm";
             Text = "EditarSeccionForm";
+            Load += EditarSeccionForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Grupo4_Proyecto_final.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,27 +13,53 @@ namespace Grupo4_Proyecto_final.Views.Alumno
 {
     public partial class ActualizarContraForm : Form
     {
-        private int childFormNumber = 0;
+        public int idUser;
+        public string user;
 
-        public ActualizarContraForm()
+        public ActualizarContraForm(int idUser, string user)
         {
             InitializeComponent();
+            this.idUser = idUser;
+            this.user = user;
         }
-
-
-        private void btnActualizar_Click(object sender, EventArgs e)
+        private void ActualizarContraForm_Load(object sender, EventArgs e)
         {
-
+            lblUsuario.Text = user;
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void txtCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void ActualizarContraForm_Load(object sender, EventArgs e)
+        private void btnActualizar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if ( string.IsNullOrWhiteSpace(txtContrasenia.Text))
+                {
+                    MessageBox.Show("Ingrese la nueva contraseña por favor", "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
+                string contrasenia = txtContrasenia.Text;
+
+                var controller = new AlumnoController();
+                bool creado = controller.ActualizarContresenia(idUser,contrasenia);
+
+                if (creado)
+                {
+                    MessageBox.Show($"Contraseña actualizada correctamente.\nContraseña nueva: {contrasenia}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtContrasenia.Text = "";
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al actualizar .a contraseña:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
