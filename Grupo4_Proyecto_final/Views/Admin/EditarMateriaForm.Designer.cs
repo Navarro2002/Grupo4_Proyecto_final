@@ -76,24 +76,26 @@
             // 
             // btnCancelar
             // 
+            btnCancelar.BackColor = Color.FromArgb(224, 224, 224);
             btnCancelar.Font = new Font("Segoe UI Symbol", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCancelar.Location = new Point(143, 129);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(62, 32);
             btnCancelar.TabIndex = 21;
             btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
             // btnCrear
             // 
+            btnCrear.BackColor = Color.FromArgb(224, 224, 224);
             btnCrear.Font = new Font("Segoe UI Symbol", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCrear.Location = new Point(37, 129);
             btnCrear.Name = "btnCrear";
             btnCrear.Size = new Size(62, 32);
             btnCrear.TabIndex = 20;
             btnCrear.Text = "Editar";
-            btnCrear.UseVisualStyleBackColor = true;
+            btnCrear.UseVisualStyleBackColor = false;
             btnCrear.Click += btnCrear_Click;
             // 
             // txtNombre

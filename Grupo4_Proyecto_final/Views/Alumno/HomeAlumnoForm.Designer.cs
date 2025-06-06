@@ -56,7 +56,7 @@
             // 
             lblNombreAlumno.AutoSize = true;
             lblNombreAlumno.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNombreAlumno.Location = new Point(36, 223);
+            lblNombreAlumno.Location = new Point(36, 191);
             lblNombreAlumno.Name = "lblNombreAlumno";
             lblNombreAlumno.Size = new Size(163, 21);
             lblNombreAlumno.TabIndex = 37;
@@ -81,14 +81,14 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(569, 559);
+            panel1.Size = new Size(569, 500);
             panel1.TabIndex = 4;
             // 
             // lblSeccion
             // 
             lblSeccion.AutoSize = true;
             lblSeccion.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSeccion.Location = new Point(448, 331);
+            lblSeccion.Location = new Point(447, 260);
             lblSeccion.Name = "lblSeccion";
             lblSeccion.Size = new Size(16, 21);
             lblSeccion.TabIndex = 44;
@@ -99,7 +99,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(379, 331);
+            label6.Location = new Point(378, 260);
             label6.Name = "label6";
             label6.Size = new Size(71, 21);
             label6.TabIndex = 43;
@@ -109,7 +109,7 @@
             // 
             lblGrado.AutoSize = true;
             lblGrado.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblGrado.Location = new Point(132, 331);
+            lblGrado.Location = new Point(131, 260);
             lblGrado.Name = "lblGrado";
             lblGrado.Size = new Size(16, 21);
             lblGrado.TabIndex = 42;
@@ -120,7 +120,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(74, 331);
+            label4.Location = new Point(73, 260);
             label4.Name = "label4";
             label4.Size = new Size(63, 21);
             label4.TabIndex = 41;
@@ -130,7 +130,7 @@
             // 
             lblAlumno.AutoSize = true;
             lblAlumno.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAlumno.Location = new Point(205, 223);
+            lblAlumno.Location = new Point(205, 191);
             lblAlumno.Name = "lblAlumno";
             lblAlumno.Size = new Size(79, 21);
             lblAlumno.TabIndex = 40;
@@ -139,9 +139,9 @@
             // btnSalir
             // 
             btnSalir.BackColor = Color.FromArgb(255, 192, 192);
-            btnSalir.Location = new Point(443, 502);
+            btnSalir.Location = new Point(501, 459);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(75, 23);
+            btnSalir.Size = new Size(56, 29);
             btnSalir.TabIndex = 39;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = false;
@@ -150,7 +150,7 @@
             // btnActualizarContraseña
             // 
             btnActualizarContraseña.BackColor = SystemColors.ActiveCaption;
-            btnActualizarContraseña.Location = new Point(346, 410);
+            btnActualizarContraseña.Location = new Point(345, 339);
             btnActualizarContraseña.Name = "btnActualizarContraseña";
             btnActualizarContraseña.Size = new Size(177, 23);
             btnActualizarContraseña.TabIndex = 38;
@@ -202,7 +202,7 @@
             groupBox1.Controls.Add(btnVerPromedios);
             groupBox1.Controls.Add(btnRegistrarAlumno);
             groupBox1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(30, 462);
+            groupBox1.Location = new Point(49, 391);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(382, 85);
             groupBox1.TabIndex = 32;
@@ -211,7 +211,7 @@
             // 
             // btnVerPromedios
             // 
-            btnVerPromedios.BackColor = Color.FromArgb(192, 255, 192);
+            btnVerPromedios.BackColor = Color.FromArgb(224, 224, 224);
             btnVerPromedios.Location = new Point(201, 24);
             btnVerPromedios.Name = "btnVerPromedios";
             btnVerPromedios.RightToLeft = RightToLeft.Yes;
@@ -223,8 +223,8 @@
             // 
             // btnRegistrarAlumno
             // 
-            btnRegistrarAlumno.BackColor = Color.FromArgb(192, 255, 192);
-            btnRegistrarAlumno.Location = new Point(25, 24);
+            btnRegistrarAlumno.BackColor = Color.FromArgb(224, 224, 224);
+            btnRegistrarAlumno.Location = new Point(23, 26);
             btnRegistrarAlumno.Name = "btnRegistrarAlumno";
             btnRegistrarAlumno.RightToLeft = RightToLeft.Yes;
             btnRegistrarAlumno.Size = new Size(146, 37);
@@ -237,7 +237,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(569, 559);
+            ClientSize = new Size(569, 500);
             Controls.Add(panel1);
             IsMdiContainer = true;
             Margin = new Padding(4, 3, 4, 3);

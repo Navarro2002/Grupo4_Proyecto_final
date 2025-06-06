@@ -57,6 +57,19 @@ namespace Grupo4_Proyecto_final.Views.Admin
                 string usuario = txtUsuario.Text.Trim();
                 int rolId = (int)cmbRol.SelectedValue;
 
+                if (string.IsNullOrWhiteSpace(usuario))
+                {
+                    MessageBox.Show("El campo 'Usuario' es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtUsuario.Focus();
+                    return;
+                }
+
+                if (cmbRol.SelectedIndex <= 0 || cmbRol.SelectedValue == null)
+                {
+                    MessageBox.Show("Debe seleccionar un rol válido.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cmbRol.Focus();
+                    return;
+                }
 
                 AdminController controller = new AdminController();
 

@@ -63,5 +63,10 @@ namespace Grupo4_Proyecto_final.Views.Admin
             GestionMateriasForm form = new GestionMateriasForm();
             form.Show();
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

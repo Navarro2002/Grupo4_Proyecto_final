@@ -40,14 +40,27 @@ namespace Grupo4_Proyecto_final.Views.Admin
         {
             try
             {
-                if (
-                    string.IsNullOrWhiteSpace(txtUsuario.Text) ||
-                    string.IsNullOrWhiteSpace(txtContrasenia.Text) ||
-                    cmbRol.SelectedIndex == 0 || cmbRol.SelectedIndex == -1)
+                if (string.IsNullOrWhiteSpace(txtUsuario.Text))
                 {
-                    MessageBox.Show("Por favor, complete todos los campos y seleccione un rol.", "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("El campo 'Usuario' es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtUsuario.Focus();
                     return;
                 }
+
+                if (string.IsNullOrWhiteSpace(txtContrasenia.Text))
+                {
+                    MessageBox.Show("El campo 'Contraseña' es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtContrasenia.Focus();
+                    return;
+                }
+
+                if (cmbRol.SelectedIndex == 0 || cmbRol.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Debe seleccionar un rol válido.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cmbRol.Focus();
+                    return;
+                }
+
 
                 string usuario = txtUsuario.Text;
                 string contrasenia = txtContrasenia.Text;
@@ -79,6 +92,11 @@ namespace Grupo4_Proyecto_final.Views.Admin
             {
                 MessageBox.Show("Ocurrió un error al crear el usuario:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -47,6 +47,7 @@
             label4 = new Label();
             pictureBox1 = new PictureBox();
             label1 = new Label();
+            btnCerrar = new Button();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -55,6 +56,7 @@
             // panel1
             // 
             panel1.BackColor = Color.BurlyWood;
+            panel1.Controls.Add(btnCerrar);
             panel1.Controls.Add(btnActualizarContraseña);
             panel1.Controls.Add(lblSeccion);
             panel1.Controls.Add(label6);
@@ -72,14 +74,14 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(534, 460);
+            panel1.Size = new Size(576, 460);
             panel1.TabIndex = 4;
             panel1.Paint += panel1_Paint;
             // 
             // btnActualizarContraseña
             // 
             btnActualizarContraseña.BackColor = SystemColors.ActiveCaption;
-            btnActualizarContraseña.Location = new Point(347, 103);
+            btnActualizarContraseña.Location = new Point(369, 105);
             btnActualizarContraseña.Name = "btnActualizarContraseña";
             btnActualizarContraseña.Size = new Size(177, 23);
             btnActualizarContraseña.TabIndex = 39;
@@ -154,7 +156,7 @@
             // 
             lblUser.AutoSize = true;
             lblUser.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            lblUser.Location = new Point(461, 83);
+            lblUser.Location = new Point(483, 85);
             lblUser.Name = "lblUser";
             lblUser.Size = new Size(40, 17);
             lblUser.TabIndex = 27;
@@ -164,7 +166,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            label2.Location = new Point(405, 83);
+            label2.Location = new Point(427, 85);
             label2.Name = "label2";
             label2.Size = new Size(57, 17);
             label2.TabIndex = 24;
@@ -175,7 +177,7 @@
             groupBox1.Controls.Add(btnRegistrarAlumno);
             groupBox1.Controls.Add(btnAlumnos);
             groupBox1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(46, 335);
+            groupBox1.Location = new Point(46, 323);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(451, 89);
             groupBox1.TabIndex = 23;
@@ -184,23 +186,25 @@
             // 
             // btnRegistrarAlumno
             // 
+            btnRegistrarAlumno.BackColor = Color.FromArgb(224, 224, 224);
             btnRegistrarAlumno.Location = new Point(233, 35);
             btnRegistrarAlumno.Name = "btnRegistrarAlumno";
             btnRegistrarAlumno.RightToLeft = RightToLeft.Yes;
             btnRegistrarAlumno.Size = new Size(146, 37);
             btnRegistrarAlumno.TabIndex = 13;
             btnRegistrarAlumno.Text = "Registrar alumno";
-            btnRegistrarAlumno.UseVisualStyleBackColor = true;
+            btnRegistrarAlumno.UseVisualStyleBackColor = false;
             btnRegistrarAlumno.Click += btnRegistrarAlumno_Click;
             // 
             // btnAlumnos
             // 
+            btnAlumnos.BackColor = Color.FromArgb(224, 224, 224);
             btnAlumnos.Location = new Point(15, 35);
             btnAlumnos.Name = "btnAlumnos";
             btnAlumnos.Size = new Size(173, 37);
             btnAlumnos.TabIndex = 12;
             btnAlumnos.Text = "Administrar Evaluaciones";
-            btnAlumnos.UseVisualStyleBackColor = true;
+            btnAlumnos.UseVisualStyleBackColor = false;
             btnAlumnos.Click += btnAlumnos_Click;
             // 
             // lblCantAlumnos
@@ -244,11 +248,22 @@
             label1.TabIndex = 16;
             label1.Text = "Colegio Anders Hejlsberg";
             // 
+            // btnCerrar
+            // 
+            btnCerrar.BackColor = Color.FromArgb(255, 192, 192);
+            btnCerrar.Location = new Point(489, 430);
+            btnCerrar.Name = "btnCerrar";
+            btnCerrar.Size = new Size(75, 23);
+            btnCerrar.TabIndex = 40;
+            btnCerrar.Text = "Cerrar";
+            btnCerrar.UseVisualStyleBackColor = false;
+            btnCerrar.Click += btnCerrar_Click;
+            // 
             // HomeDocenteForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(534, 460);
+            ClientSize = new Size(576, 460);
             Controls.Add(panel1);
             IsMdiContainer = true;
             Margin = new Padding(4, 3, 4, 3);
@@ -281,6 +296,7 @@
         private Label lblGrado;
         private Label label5;
         private Button btnActualizarContraseña;
+        private Button btnCerrar;
     }
 }
 

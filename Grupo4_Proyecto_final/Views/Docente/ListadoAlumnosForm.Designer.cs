@@ -37,7 +37,6 @@
             lbAprobados = new Label();
             lblReprobados = new Label();
             lblAprobados = new Label();
-            button3 = new Button();
             btnAsignarEvalucacion = new Button();
             btnSalir = new Button();
             btnLimpiar = new Button();
@@ -69,7 +68,6 @@
             panel1.BackColor = Color.BurlyWood;
             panel1.Controls.Add(fechalbl);
             panel1.Controls.Add(groupBox2);
-            panel1.Controls.Add(button3);
             panel1.Controls.Add(btnAsignarEvalucacion);
             panel1.Controls.Add(btnSalir);
             panel1.Controls.Add(btnLimpiar);
@@ -145,41 +143,33 @@
             lblAprobados.TabIndex = 0;
             lblAprobados.Text = "Porcentaje aprobados:";
             // 
-            // button3
-            // 
-            button3.ForeColor = SystemColors.ActiveCaptionText;
-            button3.Location = new Point(368, 514);
-            button3.Name = "button3";
-            button3.Size = new Size(117, 40);
-            button3.TabIndex = 53;
-            button3.Text = "Generar Reporte";
-            button3.UseVisualStyleBackColor = true;
-            // 
             // btnAsignarEvalucacion
             // 
+            btnAsignarEvalucacion.BackColor = Color.FromArgb(224, 224, 224);
             btnAsignarEvalucacion.ForeColor = SystemColors.ActiveCaptionText;
             btnAsignarEvalucacion.Location = new Point(53, 514);
             btnAsignarEvalucacion.Name = "btnAsignarEvalucacion";
             btnAsignarEvalucacion.Size = new Size(117, 40);
             btnAsignarEvalucacion.TabIndex = 52;
             btnAsignarEvalucacion.Text = "Asignar Evaluación";
-            btnAsignarEvalucacion.UseVisualStyleBackColor = true;
+            btnAsignarEvalucacion.UseVisualStyleBackColor = false;
             btnAsignarEvalucacion.Click += btnAsignarEvalucacion_Click;
             // 
             // btnSalir
             // 
+            btnSalir.BackColor = Color.FromArgb(255, 192, 192);
             btnSalir.Location = new Point(850, 558);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(60, 40);
             btnSalir.TabIndex = 50;
             btnSalir.Text = "Salir";
-            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.UseVisualStyleBackColor = false;
             btnSalir.Click += btnSalir_Click;
             // 
             // btnLimpiar
             // 
             btnLimpiar.BackColor = SystemColors.ScrollBar;
-            btnLimpiar.Location = new Point(587, 138);
+            btnLimpiar.Location = new Point(317, 140);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(66, 35);
             btnLimpiar.TabIndex = 48;
@@ -339,7 +329,6 @@
         private GroupBox groupBox1;
         private TextBox txtNombre;
         private Label label2;
-        private Button button3;
         private Button btnAsignarEvalucacion;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Nombre;

@@ -28,5 +28,10 @@ namespace Grupo4_Proyecto_final.Views.Admin
         {
 
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

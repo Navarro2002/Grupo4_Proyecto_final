@@ -75,14 +75,43 @@ namespace Grupo4_Proyecto_final.Views.Docente
         {
             try
             {
-                // Validación de campos vacíos o inválidos
-                if (string.IsNullOrWhiteSpace(cmbMateria.Text)
-                    || string.IsNullOrWhiteSpace(cmbTrimestre.Text)
-                    || string.IsNullOrWhiteSpace(txtCalificacion.Text)
-                    || !decimal.TryParse(txtCalificacion.Text, out decimal calificacion)
-                    || calificacion < 0 || calificacion > 10)
+                // Validar materia seleccionada
+                if (string.IsNullOrWhiteSpace(cmbMateria.Text))
                 {
-                    MessageBox.Show("Por favor complete todos los campos correctamente.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Debe seleccionar una materia.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cmbMateria.Focus();
+                    return;
+                }
+
+                // Validar trimestre seleccionado
+                if (string.IsNullOrWhiteSpace(cmbTrimestre.Text))
+                {
+                    MessageBox.Show("Debe seleccionar un trimestre.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cmbTrimestre.Focus();
+                    return;
+                }
+
+                // Validar que la calificación no esté vacía
+                if (string.IsNullOrWhiteSpace(txtCalificacion.Text))
+                {
+                    MessageBox.Show("El campo 'Calificación' es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtCalificacion.Focus();
+                    return;
+                }
+
+                // Validar que sea un número decimal válido
+                if (!decimal.TryParse(txtCalificacion.Text, out decimal calificacion))
+                {
+                    MessageBox.Show("La calificación debe ser un número válido.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtCalificacion.Focus();
+                    return;
+                }
+
+                // Validar que esté en el rango permitido
+                if (calificacion < 0 || calificacion > 10)
+                {
+                    MessageBox.Show("La calificación debe estar entre 0 y 10.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtCalificacion.Focus();
                     return;
                 }
 
@@ -103,10 +132,7 @@ namespace Grupo4_Proyecto_final.Views.Docente
                     MessageBox.Show(resumen, "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     CargarEvaluaciones();
                 }
-                else
-                {
-                    MessageBox.Show("El alumno ya tiene una calificación asignada o ocurrió un error.");
-                }
+                
             }
             catch (Exception ex)
             {

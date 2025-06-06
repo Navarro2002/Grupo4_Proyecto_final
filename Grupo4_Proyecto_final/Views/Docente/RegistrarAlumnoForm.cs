@@ -49,17 +49,35 @@ namespace Grupo4_Proyecto_final.Views.Docente
         {
             try
             {
-                // Validación de campos
-                if (
-                    string.IsNullOrWhiteSpace(txtUsuario.Text) ||
-                    string.IsNullOrWhiteSpace(txtContrasenia.Text) ||
-                    string.IsNullOrWhiteSpace(txtNombre.Text) ||
-                    string.IsNullOrWhiteSpace(txtApellido.Text) ||
-                    string.IsNullOrWhiteSpace(txtTelefono.Text) ||
-                    txtEdad.Value == 0
-                )
+                // Validar nombre
+                if (string.IsNullOrWhiteSpace(txtNombre.Text))
                 {
-                    MessageBox.Show("Por favor complete todos los campos correctamente.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("El campo 'Nombre' es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtNombre.Focus();
+                    return;
+                }
+
+                // Validar apellido
+                if (string.IsNullOrWhiteSpace(txtApellido.Text))
+                {
+                    MessageBox.Show("El campo 'Apellido' es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtApellido.Focus();
+                    return;
+                }
+
+                // Validar teléfono
+                if (string.IsNullOrWhiteSpace(txtTelefono.Text))
+                {
+                    MessageBox.Show("El campo 'Teléfono' es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtTelefono.Focus();
+                    return;
+                }
+
+                // Validar edad
+                if (txtEdad.Value == 0)
+                {
+                    MessageBox.Show("Debe ingresar una edad válida (mayor que 0).", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtEdad.Focus();
                     return;
                 }
 

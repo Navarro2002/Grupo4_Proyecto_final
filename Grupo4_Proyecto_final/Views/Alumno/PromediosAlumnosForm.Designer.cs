@@ -35,6 +35,10 @@
             cmbTrimestre = new ComboBox();
             label3 = new Label();
             dataGridProMaterias = new DataGridView();
+            Materia = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            Estado = new DataGridViewTextBoxColumn();
             lblAlumno = new Label();
             label2 = new Label();
             btnCerrar = new Button();
@@ -43,10 +47,6 @@
             Trimestre = new DataGridViewTextBoxColumn();
             Promedio = new DataGridViewTextBoxColumn();
             label1 = new Label();
-            Materia = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            Estado = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridProMaterias).BeginInit();
@@ -110,6 +110,26 @@
             dataGridProMaterias.Size = new Size(432, 150);
             dataGridProMaterias.TabIndex = 1;
             // 
+            // Materia
+            // 
+            Materia.HeaderText = "Materia";
+            Materia.Name = "Materia";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.HeaderText = "Trimestre";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.HeaderText = "Promedio";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // Estado
+            // 
+            Estado.HeaderText = "Estado";
+            Estado.Name = "Estado";
+            // 
             // lblAlumno
             // 
             lblAlumno.AutoSize = true;
@@ -131,7 +151,7 @@
             // 
             // btnCerrar
             // 
-            btnCerrar.BackColor = SystemColors.ControlDark;
+            btnCerrar.BackColor = Color.FromArgb(255, 192, 192);
             btnCerrar.Location = new Point(573, 542);
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new Size(75, 31);
@@ -174,31 +194,11 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(198, 23);
+            label1.Location = new Point(245, 23);
             label1.Name = "label1";
             label1.Size = new Size(184, 25);
             label1.TabIndex = 0;
             label1.Text = "Promedios Alumno";
-            // 
-            // Materia
-            // 
-            Materia.HeaderText = "Materia";
-            Materia.Name = "Materia";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.HeaderText = "Trimestre";
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.HeaderText = "Promedio";
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // Estado
-            // 
-            Estado.HeaderText = "Estado";
-            Estado.Name = "Estado";
             // 
             // PromediosAlumnosForm
             // 

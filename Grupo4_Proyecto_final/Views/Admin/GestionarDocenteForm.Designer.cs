@@ -66,6 +66,7 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.BurlyWood;
             panel1.Controls.Add(groupBox2);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(btnSalir);
