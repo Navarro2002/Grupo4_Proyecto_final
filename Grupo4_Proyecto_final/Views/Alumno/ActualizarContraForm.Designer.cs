@@ -68,22 +68,24 @@
             // 
             // txtCancelar
             // 
+            txtCancelar.BackColor = Color.FromArgb(224, 224, 224);
             txtCancelar.Location = new Point(172, 187);
             txtCancelar.Name = "txtCancelar";
             txtCancelar.Size = new Size(75, 26);
             txtCancelar.TabIndex = 4;
             txtCancelar.Text = "Cancelar";
-            txtCancelar.UseVisualStyleBackColor = true;
+            txtCancelar.UseVisualStyleBackColor = false;
             txtCancelar.Click += txtCancelar_Click;
             // 
             // btnActualizar
             // 
+            btnActualizar.BackColor = Color.FromArgb(224, 224, 224);
             btnActualizar.Location = new Point(48, 187);
             btnActualizar.Name = "btnActualizar";
             btnActualizar.Size = new Size(75, 26);
             btnActualizar.TabIndex = 3;
             btnActualizar.Text = "Actualizar";
-            btnActualizar.UseVisualStyleBackColor = true;
+            btnActualizar.UseVisualStyleBackColor = false;
             btnActualizar.Click += btnActualizar_Click;
             // 
             // txtContrasenia

@@ -24,7 +24,7 @@ namespace Grupo4_Proyecto_final.Views.Admin
 
         private void GestionSeccionForm_Load(object sender, EventArgs e)
         {
-
+            lblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void CargarSecciones()

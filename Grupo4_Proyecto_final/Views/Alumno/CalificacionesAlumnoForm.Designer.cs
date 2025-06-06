@@ -150,7 +150,7 @@
             // btnCerrar
             // 
             btnCerrar.BackColor = Color.FromArgb(255, 192, 192);
-            btnCerrar.Location = new Point(455, 395);
+            btnCerrar.Location = new Point(475, 395);
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new Size(75, 23);
             btnCerrar.TabIndex = 2;

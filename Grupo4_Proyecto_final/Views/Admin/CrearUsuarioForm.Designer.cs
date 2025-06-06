@@ -41,12 +41,14 @@
             label4 = new Label();
             txtUsuario = new TextBox();
             label2 = new Label();
+            btnCerrar = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.BurlyWood;
+            panel1.Controls.Add(btnCerrar);
             panel1.Controls.Add(txtLimpiar);
             panel1.Controls.Add(btnCrear);
             panel1.Controls.Add(cmbRol);
@@ -59,7 +61,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(310, 279);
+            panel1.Size = new Size(308, 306);
             panel1.TabIndex = 4;
             // 
             // txtLimpiar
@@ -142,11 +144,22 @@
             label2.TabIndex = 23;
             label2.Text = "Crear Usuario";
             // 
+            // btnCerrar
+            // 
+            btnCerrar.BackColor = Color.FromArgb(255, 192, 192);
+            btnCerrar.Location = new Point(219, 274);
+            btnCerrar.Name = "btnCerrar";
+            btnCerrar.Size = new Size(78, 29);
+            btnCerrar.TabIndex = 34;
+            btnCerrar.Text = "Cerrar";
+            btnCerrar.UseVisualStyleBackColor = false;
+            btnCerrar.Click += btnCerrar_Click;
+            // 
             // CrearUsuarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(310, 279);
+            ClientSize = new Size(308, 306);
             Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
@@ -171,6 +184,7 @@
         private Label label4;
         private TextBox txtUsuario;
         private Label label2;
+        private Button btnCerrar;
     }
 }
 

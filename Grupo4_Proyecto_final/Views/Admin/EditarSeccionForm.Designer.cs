@@ -41,6 +41,7 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.BurlyWood;
             panel1.Controls.Add(btnCancelar);
             panel1.Controls.Add(btnEditar);
             panel1.Controls.Add(txtNombre);
@@ -54,24 +55,27 @@
             // 
             // btnCancelar
             // 
+            btnCancelar.BackColor = Color.FromArgb(224, 224, 224);
             btnCancelar.Font = new Font("Segoe UI Symbol", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCancelar.Location = new Point(159, 111);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(62, 32);
             btnCancelar.TabIndex = 15;
             btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
             // btnEditar
             // 
+            btnEditar.BackColor = Color.FromArgb(224, 224, 224);
             btnEditar.Font = new Font("Segoe UI Symbol", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEditar.Location = new Point(55, 111);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(62, 32);
             btnEditar.TabIndex = 14;
             btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
             // txtNombre
             // 

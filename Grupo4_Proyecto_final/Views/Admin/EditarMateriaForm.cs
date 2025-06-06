@@ -40,6 +40,12 @@ namespace Grupo4_Proyecto_final.Views.Admin
                 int id = int.Parse(txtId.Text);
                 string nombre = txtNombre.Text.Trim();
 
+                if (string.IsNullOrWhiteSpace(nombre))
+                {
+                    MessageBox.Show("El campo 'Nombre' es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtNombre.Focus();
+                    return;
+                }
 
                 AdminController controller = new AdminController();
 

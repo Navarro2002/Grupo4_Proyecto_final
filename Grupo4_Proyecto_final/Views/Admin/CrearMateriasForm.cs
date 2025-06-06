@@ -34,7 +34,8 @@ namespace Grupo4_Proyecto_final.Views.Admin
             txtNombre.Text = txtNombre.Text.Trim();
             if (string.IsNullOrEmpty(txtNombre.Text))
             {
-                MessageBox.Show("El nombre de la materia no puede estar vacío.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNombre.Focus();
+                MessageBox.Show("El nombre de la materia es obligatorio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             try

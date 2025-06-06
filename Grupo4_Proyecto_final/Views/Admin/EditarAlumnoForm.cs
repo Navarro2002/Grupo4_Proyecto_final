@@ -47,6 +47,49 @@ namespace Grupo4_Proyecto_final.Views.Admin
         {
             try
             {
+
+                if (string.IsNullOrWhiteSpace(txtNombre.Text))
+                {
+                    MessageBox.Show("El campo 'Nombre' es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtNombre.Focus();
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtApellido.Text))
+                {
+                    MessageBox.Show("El campo 'Apellido' es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtApellido.Focus();
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtTelefono.Text))
+                {
+                    MessageBox.Show("El campo 'Teléfono' es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtTelefono.Focus();
+                    return;
+                }
+
+                if (txtEdad.Value == 0)
+                {
+                    MessageBox.Show("La edad debe ser mayor a 0.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtEdad.Focus();
+                    return;
+                }
+
+                if (cmbGrado.SelectedIndex <= 0)
+                {
+                    MessageBox.Show("Seleccione un grado.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cmbGrado.Focus();
+                    return;
+                }
+
+                if (cmbSeccion.SelectedIndex <= 0)
+                {
+                    MessageBox.Show("Seleccione una sección.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cmbSeccion.Focus();
+                    return;
+                }
+
                 int id = int.Parse(txtId.Text);
                 string nombre = txtNombre.Text.Trim();
                 string apellido = txtApellido.Text.Trim();

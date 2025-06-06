@@ -52,21 +52,48 @@ namespace Grupo4_Proyecto_final.Views.Admin
         {
             try
             {
-                // Validación de campos
-                if (
-                    string.IsNullOrWhiteSpace(txtUsuario.Text) ||
-                    string.IsNullOrWhiteSpace(txtContrasenia.Text) ||
-                    string.IsNullOrWhiteSpace(txtNombre.Text) ||
-                    string.IsNullOrWhiteSpace(txtApellido.Text) ||
-                    string.IsNullOrWhiteSpace(txtTelefono.Text) ||
-                    txtEdad.Value == 0 ||
-                    cmbGrado.SelectedIndex <= 0 ||
-                    cmbSeccion.SelectedIndex <= 0
-                )
+                if (string.IsNullOrWhiteSpace(txtNombre.Text))
                 {
-                    MessageBox.Show("Por favor complete todos los campos correctamente.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("El campo 'Nombre' es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtNombre.Focus();
                     return;
                 }
+
+                if (string.IsNullOrWhiteSpace(txtApellido.Text))
+                {
+                    MessageBox.Show("El campo 'Apellido' es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtApellido.Focus();
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtTelefono.Text))
+                {
+                    MessageBox.Show("El campo 'Teléfono' es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtTelefono.Focus();
+                    return;
+                }
+
+                if (txtEdad.Value == 0)
+                {
+                    MessageBox.Show("La edad debe ser mayor a 0.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtEdad.Focus();
+                    return;
+                }
+
+                if (cmbGrado.SelectedIndex <= 0)
+                {
+                    MessageBox.Show("Seleccione un grado.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cmbGrado.Focus();
+                    return;
+                }
+
+                if (cmbSeccion.SelectedIndex <= 0)
+                {
+                    MessageBox.Show("Seleccione una sección.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cmbSeccion.Focus();
+                    return;
+                }
+
 
                 // Captura de datos
                 string usuario = txtUsuario.Text;

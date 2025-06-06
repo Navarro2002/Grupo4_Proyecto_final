@@ -67,6 +67,7 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.BurlyWood;
             panel1.Controls.Add(groupBox2);
             panel1.Controls.Add(btnSalir);
             panel1.Controls.Add(btnLimpiar);
@@ -309,7 +310,7 @@
             IsMdiContainer = true;
             Margin = new Padding(4, 3, 4, 3);
             Name = "GestionAlumnoForm";
-            Text = "GestionAlumnoForm";
+            Text = "Gestión alumnos";
             Load += GestionAlumnoForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

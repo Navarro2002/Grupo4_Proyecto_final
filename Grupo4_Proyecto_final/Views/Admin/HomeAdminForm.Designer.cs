@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             toolTip = new ToolTip(components);
             panel1 = new Panel();
+            btnCerrar = new Button();
             lblCantDocentes = new Label();
             groupBox1 = new GroupBox();
             BtnGrados = new Button();
@@ -55,6 +56,7 @@
             // panel1
             // 
             panel1.BackColor = Color.BurlyWood;
+            panel1.Controls.Add(btnCerrar);
             panel1.Controls.Add(lblCantDocentes);
             panel1.Controls.Add(groupBox1);
             panel1.Controls.Add(lblCantUsuarios);
@@ -67,8 +69,19 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(668, 570);
+            panel1.Size = new Size(690, 595);
             panel1.TabIndex = 4;
+            // 
+            // btnCerrar
+            // 
+            btnCerrar.BackColor = Color.FromArgb(255, 192, 192);
+            btnCerrar.Location = new Point(594, 560);
+            btnCerrar.Name = "btnCerrar";
+            btnCerrar.Size = new Size(74, 23);
+            btnCerrar.TabIndex = 16;
+            btnCerrar.Text = "Cerrar";
+            btnCerrar.UseVisualStyleBackColor = false;
+            btnCerrar.Click += btnCerrar_Click;
             // 
             // lblCantDocentes
             // 
@@ -99,61 +112,67 @@
             // 
             // BtnGrados
             // 
+            BtnGrados.BackColor = Color.FromArgb(224, 224, 224);
             BtnGrados.Location = new Point(383, 102);
             BtnGrados.Name = "BtnGrados";
             BtnGrados.Size = new Size(133, 37);
             BtnGrados.TabIndex = 15;
             BtnGrados.Text = "Grados";
-            BtnGrados.UseVisualStyleBackColor = true;
+            BtnGrados.UseVisualStyleBackColor = false;
             // 
             // btnSeccion
             // 
+            btnSeccion.BackColor = Color.FromArgb(224, 224, 224);
             btnSeccion.Location = new Point(88, 102);
             btnSeccion.Name = "btnSeccion";
             btnSeccion.Size = new Size(133, 37);
             btnSeccion.TabIndex = 14;
             btnSeccion.Text = "Secciones";
-            btnSeccion.UseVisualStyleBackColor = true;
+            btnSeccion.UseVisualStyleBackColor = false;
             btnSeccion.Click += btnSeccion_Click;
             // 
             // btnMaterias
             // 
+            btnMaterias.BackColor = Color.FromArgb(224, 224, 224);
             btnMaterias.Location = new Point(477, 48);
             btnMaterias.Name = "btnMaterias";
             btnMaterias.Size = new Size(133, 37);
             btnMaterias.TabIndex = 13;
             btnMaterias.Text = "Materias";
-            btnMaterias.UseVisualStyleBackColor = true;
+            btnMaterias.UseVisualStyleBackColor = false;
             btnMaterias.Click += btnMaterias_Click;
             // 
             // btnAlumnos
             // 
+            btnAlumnos.BackColor = Color.FromArgb(224, 224, 224);
             btnAlumnos.Location = new Point(329, 48);
             btnAlumnos.Name = "btnAlumnos";
             btnAlumnos.Size = new Size(133, 37);
             btnAlumnos.TabIndex = 12;
             btnAlumnos.Text = "Alumnos";
-            btnAlumnos.UseVisualStyleBackColor = true;
+            btnAlumnos.UseVisualStyleBackColor = false;
             btnAlumnos.Click += btnAlumnos_Click;
             // 
             // btnAdministrarUsuarios
             // 
+            btnAdministrarUsuarios.BackColor = Color.FromArgb(224, 224, 224);
             btnAdministrarUsuarios.Location = new Point(18, 48);
             btnAdministrarUsuarios.Name = "btnAdministrarUsuarios";
             btnAdministrarUsuarios.Size = new Size(133, 37);
             btnAdministrarUsuarios.TabIndex = 11;
             btnAdministrarUsuarios.Text = "Usuarios";
-            btnAdministrarUsuarios.UseVisualStyleBackColor = true;
+            btnAdministrarUsuarios.UseVisualStyleBackColor = false;
             btnAdministrarUsuarios.Click += btnAdministrarUsuarios_Click;
             // 
             // btnAdministrarDocentes
             // 
+            btnAdministrarDocentes.BackColor = Color.FromArgb(224, 224, 224);
             btnAdministrarDocentes.Location = new Point(172, 48);
             btnAdministrarDocentes.Name = "btnAdministrarDocentes";
             btnAdministrarDocentes.Size = new Size(133, 37);
             btnAdministrarDocentes.TabIndex = 10;
             btnAdministrarDocentes.Text = "Docentes";
-            btnAdministrarDocentes.UseVisualStyleBackColor = true;
+            btnAdministrarDocentes.UseVisualStyleBackColor = false;
             btnAdministrarDocentes.Click += btnAdministrarDocentes_Click;
             // 
             // lblCantUsuarios
@@ -237,7 +256,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(668, 570);
+            ClientSize = new Size(690, 595);
             Controls.Add(panel1);
             IsMdiContainer = true;
             Margin = new Padding(4, 3, 4, 3);
@@ -270,6 +289,7 @@
         private Label lblCantDocentes;
         private Button btnSeccion;
         private Button BtnGrados;
+        private Button btnCerrar;
     }
 }
 

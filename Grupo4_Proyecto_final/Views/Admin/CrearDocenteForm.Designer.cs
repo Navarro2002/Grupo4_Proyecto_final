@@ -62,6 +62,7 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.BurlyWood;
             panel1.Controls.Add(btnCancelar);
             panel1.Controls.Add(btnCrear);
             panel1.Controls.Add(groupBox2);
@@ -76,24 +77,26 @@
             // 
             // btnCancelar
             // 
+            btnCancelar.BackColor = Color.FromArgb(224, 224, 224);
             btnCancelar.Font = new Font("Segoe UI Symbol", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCancelar.Location = new Point(387, 454);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(82, 32);
             btnCancelar.TabIndex = 4;
             btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
             // btnCrear
             // 
+            btnCrear.BackColor = Color.FromArgb(224, 224, 224);
             btnCrear.Font = new Font("Segoe UI Symbol", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCrear.Location = new Point(177, 454);
             btnCrear.Name = "btnCrear";
             btnCrear.Size = new Size(82, 32);
             btnCrear.TabIndex = 3;
             btnCrear.Text = "Crear";
-            btnCrear.UseVisualStyleBackColor = true;
+            btnCrear.UseVisualStyleBackColor = false;
             btnCrear.Click += btnCrear_Click;
             // 
             // groupBox2

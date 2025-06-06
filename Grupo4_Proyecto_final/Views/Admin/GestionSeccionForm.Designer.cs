@@ -40,11 +40,11 @@
             Nombre = new DataGridViewTextBoxColumn();
             btnLimpiar = new Button();
             lblFecha = new Label();
-            label4 = new Label();
             groupBox1 = new GroupBox();
             label2 = new Label();
             txtNombre = new TextBox();
             label1 = new Label();
+            label4 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridSecciones).BeginInit();
             groupBox1.SuspendLayout();
@@ -52,6 +52,7 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.BurlyWood;
             panel1.Controls.Add(btnSalir);
             panel1.Controls.Add(btnEliminar);
             panel1.Controls.Add(btnEditar);
@@ -150,15 +151,6 @@
             lblFecha.Size = new Size(0, 15);
             lblFecha.TabIndex = 34;
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(341, 63);
-            label4.Name = "label4";
-            label4.Size = new Size(44, 15);
-            label4.TabIndex = 33;
-            label4.Text = "Fecha: ";
-            // 
             // groupBox1
             // 
             groupBox1.Controls.Add(label2);
@@ -197,6 +189,15 @@
             label1.TabIndex = 0;
             label1.Text = "Gestión de secciones";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(341, 63);
+            label4.Name = "label4";
+            label4.Size = new Size(44, 15);
+            label4.TabIndex = 33;
+            label4.Text = "Fecha: ";
+            // 
             // GestionSeccionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -228,11 +229,11 @@
         private DataGridViewTextBoxColumn Nombre;
         private Button btnLimpiar;
         private Label lblFecha;
-        private Label label4;
         private Button btnSalir;
         private Button btnEliminar;
         private Button btnEditar;
         private Button btnNuevo;
+        private Label label4;
     }
 }
 

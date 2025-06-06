@@ -64,5 +64,10 @@ namespace Grupo4_Proyecto_final.Views.Docente
             ActualizarContraForm actualizarContraForm = new ActualizarContraForm(idUser, user);
             actualizarContraForm.ShowDialog();
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

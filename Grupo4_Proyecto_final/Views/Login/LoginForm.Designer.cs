@@ -36,6 +36,7 @@
             label2 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
+            btnCerrar = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -115,13 +116,25 @@
             pictureBox1.TabIndex = 14;
             pictureBox1.TabStop = false;
             // 
+            // btnCerrar
+            // 
+            btnCerrar.BackColor = Color.FromArgb(255, 192, 192);
+            btnCerrar.Location = new Point(274, 356);
+            btnCerrar.Name = "btnCerrar";
+            btnCerrar.Size = new Size(75, 30);
+            btnCerrar.TabIndex = 15;
+            btnCerrar.Text = "Cerrar";
+            btnCerrar.UseVisualStyleBackColor = false;
+            btnCerrar.Click += btnCerrar_Click;
+            // 
             // LoginForm
             // 
             AllowDrop = true;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.BurlyWood;
-            ClientSize = new Size(361, 407);
+            ClientSize = new Size(361, 398);
+            Controls.Add(btnCerrar);
             Controls.Add(pictureBox1);
             Controls.Add(label3);
             Controls.Add(btnLimpiar);
@@ -148,5 +161,6 @@
         private Label label2;
         private Label label1;
         private PictureBox pictureBox1;
+        private Button btnCerrar;
     }
 }
