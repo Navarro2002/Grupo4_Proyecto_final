@@ -24,7 +24,7 @@ namespace Grupo4_Proyecto_final.Connection
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=localhost,1433;Database=db_registro_alumnos;User Id=sa;Password=Admin123!;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer("Server=localhost,1433;Database=db_registro_alumnos;User Id=sa;Password=Password123!;TrustServerCertificate=True;");
         }
     }
 }
