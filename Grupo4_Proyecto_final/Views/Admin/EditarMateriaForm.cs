@@ -33,7 +33,7 @@ namespace Grupo4_Proyecto_final.Views.Admin
             this.Close();
         }
 
-        private void btnCrear_Click(object sender, EventArgs e)
+        private void btnEditar_Click_1(object sender, EventArgs e)
         {
             try
             {

@@ -27,6 +27,7 @@ namespace Grupo4_Proyecto_final.Views.Docente
             this.idUser = id;
             this.idRol = idRol;
             CargarAlumnos();
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -53,6 +54,7 @@ namespace Grupo4_Proyecto_final.Views.Docente
                 if (result == DialogResult.OK)
                 {
                     CargarAlumnos();
+
                 }
             }
             else
@@ -63,6 +65,8 @@ namespace Grupo4_Proyecto_final.Views.Docente
 
         private void ListadoAlumnosForm_Load(object sender, EventArgs e)
         {
+            lblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            CargarAlumnos();
             AlumnoController controller = new AlumnoController();
             List<PorcentajeAlumnosDTO> porcentaje = controller.ObtenerPorcentajeAlumnos();
             if (porcentaje.Any())
@@ -120,7 +124,7 @@ namespace Grupo4_Proyecto_final.Views.Docente
                     alumno.IdGrado,
                     alumno.SeccionNombre,
                     alumno.IdSeccion,
-                    alumno.Promedio
+                    alumno.Promedio.ToString("F2")
                 );
             }
         }

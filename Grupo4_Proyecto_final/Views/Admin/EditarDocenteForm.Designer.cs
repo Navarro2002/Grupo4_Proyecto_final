@@ -306,7 +306,7 @@
             IsMdiContainer = true;
             Margin = new Padding(4, 3, 4, 3);
             Name = "EditarDocenteForm";
-            Text = "EditarDocenteForm";
+            Text = "Editar Docente";
             Load += EditarDocenteForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

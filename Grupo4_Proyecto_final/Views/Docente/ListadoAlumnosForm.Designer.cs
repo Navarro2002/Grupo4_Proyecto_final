@@ -31,7 +31,6 @@
             components = new System.ComponentModel.Container();
             toolTip = new ToolTip(components);
             panel1 = new Panel();
-            fechalbl = new Label();
             groupBox2 = new GroupBox();
             lbReprobados = new Label();
             lbAprobados = new Label();
@@ -66,7 +65,6 @@
             // panel1
             // 
             panel1.BackColor = Color.BurlyWood;
-            panel1.Controls.Add(fechalbl);
             panel1.Controls.Add(groupBox2);
             panel1.Controls.Add(btnAsignarEvalucacion);
             panel1.Controls.Add(btnSalir);
@@ -82,15 +80,6 @@
             panel1.Size = new Size(931, 614);
             panel1.TabIndex = 4;
             panel1.Paint += panel1_Paint;
-            // 
-            // fechalbl
-            // 
-            fechalbl.AutoSize = true;
-            fechalbl.Location = new Point(807, 148);
-            fechalbl.Name = "fechalbl";
-            fechalbl.Size = new Size(38, 15);
-            fechalbl.TabIndex = 55;
-            fechalbl.Text = "label3";
             // 
             // groupBox2
             // 
@@ -179,7 +168,7 @@
             // lblFecha
             // 
             lblFecha.AutoSize = true;
-            lblFecha.Location = new Point(807, 148);
+            lblFecha.Location = new Point(721, 148);
             lblFecha.Name = "lblFecha";
             lblFecha.RightToLeft = RightToLeft.No;
             lblFecha.Size = new Size(0, 15);
@@ -188,7 +177,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(757, 148);
+            label4.Location = new Point(671, 150);
             label4.Name = "label4";
             label4.Size = new Size(44, 15);
             label4.TabIndex = 46;
@@ -198,7 +187,7 @@
             // 
             dataGridViewAlumnos.AllowUserToOrderColumns = true;
             dataGridViewAlumnos.Columns.AddRange(new DataGridViewColumn[] { Id, Nombre, Edad, Telefono, FechaNacimiento, Grado, IdGrado, Seccion, IdSeccion, Promedio });
-            dataGridViewAlumnos.Location = new Point(53, 189);
+            dataGridViewAlumnos.Location = new Point(26, 183);
             dataGridViewAlumnos.Name = "dataGridViewAlumnos";
             dataGridViewAlumnos.RightToLeft = RightToLeft.No;
             dataGridViewAlumnos.Size = new Size(843, 226);
@@ -343,7 +332,6 @@
         private GroupBox groupBox2;
         private Label lblAprobados;
         private Label lblReprobados;
-        private Label fechalbl;
         private Label lbReprobados;
         private Label lbAprobados;
     }

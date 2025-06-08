@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             toolTip = new ToolTip(components);
             panel1 = new Panel();
+            btnCerrar = new Button();
             groupBox1 = new GroupBox();
             label8 = new Label();
             label7 = new Label();
@@ -54,7 +55,6 @@
             lblNombreAlumno = new Label();
             label2 = new Label();
             label1 = new Label();
-            btnCerrar = new Button();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridNotas).BeginInit();
@@ -85,6 +85,17 @@
             panel1.Size = new Size(826, 370);
             panel1.TabIndex = 4;
             // 
+            // btnCerrar
+            // 
+            btnCerrar.Location = new Point(700, 335);
+            btnCerrar.Name = "btnCerrar";
+            btnCerrar.Size = new Size(75, 23);
+            btnCerrar.TabIndex = 17;
+            btnCerrar.Text = "Cerrar";
+            btnCerrar.TextAlign = ContentAlignment.TopCenter;
+            btnCerrar.UseVisualStyleBackColor = true;
+            btnCerrar.Click += btnCerrar_Click;
+            // 
             // groupBox1
             // 
             groupBox1.Controls.Add(label8);
@@ -103,7 +114,7 @@
             label8.AutoSize = true;
             label8.Location = new Point(258, 25);
             label8.Name = "label8";
-            label8.Size = new Size(62, 15);
+            label8.Size = new Size(61, 15);
             label8.TabIndex = 17;
             label8.Text = "Trimestre: ";
             // 
@@ -234,7 +245,7 @@
             label5.AutoSize = true;
             label5.Location = new Point(45, 188);
             label5.Name = "label5";
-            label5.Size = new Size(62, 15);
+            label5.Size = new Size(61, 15);
             label5.TabIndex = 5;
             label5.Text = "Trimestre: ";
             // 
@@ -285,17 +296,6 @@
             label1.TabIndex = 0;
             label1.Text = "Asignar Calificación";
             // 
-            // btnCerrar
-            // 
-            btnCerrar.Location = new Point(700, 335);
-            btnCerrar.Name = "btnCerrar";
-            btnCerrar.Size = new Size(75, 23);
-            btnCerrar.TabIndex = 17;
-            btnCerrar.Text = "Cerrar";
-            btnCerrar.TextAlign = ContentAlignment.TopCenter;
-            btnCerrar.UseVisualStyleBackColor = true;
-            btnCerrar.Click += btnCerrar_Click;
-            // 
             // AsignarEvaluacionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -305,7 +305,7 @@
             IsMdiContainer = true;
             Margin = new Padding(4, 3, 4, 3);
             Name = "AsignarEvaluacionForm";
-            Text = "AsignarEvaluaciónForm";
+            Text = "Asignar Evaluación";
             Load += AsignarEvaluaciónForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

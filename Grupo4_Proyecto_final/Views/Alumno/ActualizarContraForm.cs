@@ -36,7 +36,7 @@ namespace Grupo4_Proyecto_final.Views.Alumno
         {
             try
             {
-                if ( string.IsNullOrWhiteSpace(txtContrasenia.Text))
+                if (string.IsNullOrWhiteSpace(txtContrasenia.Text))
                 {
                     MessageBox.Show("Ingrese la nueva contraseña por favor", "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -45,7 +45,7 @@ namespace Grupo4_Proyecto_final.Views.Alumno
                 string contrasenia = txtContrasenia.Text;
 
                 var controller = new AlumnoController();
-                bool creado = controller.ActualizarContresenia(idUser,contrasenia);
+                bool creado = controller.ActualizarContresenia(idUser, contrasenia);
 
                 if (creado)
                 {
@@ -60,6 +60,11 @@ namespace Grupo4_Proyecto_final.Views.Alumno
             {
                 MessageBox.Show("Ocurrió un error al actualizar .a contraseña:\n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

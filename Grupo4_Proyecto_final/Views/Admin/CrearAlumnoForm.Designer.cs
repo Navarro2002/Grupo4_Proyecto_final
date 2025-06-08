@@ -311,7 +311,7 @@
             IsMdiContainer = true;
             Margin = new Padding(4, 3, 4, 3);
             Name = "CrearAlumnoForm";
-            Text = "CrearAlumnoForm";
+            Text = "Crear Alumno";
             Load += CrearAlumnoForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

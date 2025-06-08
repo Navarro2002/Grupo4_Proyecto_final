@@ -17,7 +17,7 @@ namespace Grupo4_Proyecto_final.Models
         public string Nombre { get; set; }
 
         [Column("id_seccion")]
-        public int SeccionId { get; set; }
+        public int? SeccionId { get; set; }
 
         [ForeignKey("SeccionId")]
         public SeccionModel Seccion { get; set; }

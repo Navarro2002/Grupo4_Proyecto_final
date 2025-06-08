@@ -76,19 +76,6 @@ namespace Grupo4_Proyecto_final.Views.Admin
                     return;
                 }
 
-                if (cmbGrado.SelectedIndex <= 0)
-                {
-                    MessageBox.Show("Seleccione un grado.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    cmbGrado.Focus();
-                    return;
-                }
-
-                if (cmbSeccion.SelectedIndex <= 0)
-                {
-                    MessageBox.Show("Seleccione una sección.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    cmbSeccion.Focus();
-                    return;
-                }
 
                 int id = int.Parse(txtId.Text);
                 string nombre = txtNombre.Text.Trim();

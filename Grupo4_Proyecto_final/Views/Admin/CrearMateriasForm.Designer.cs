@@ -57,7 +57,7 @@
             // 
             btnCancelar.BackColor = Color.FromArgb(224, 224, 224);
             btnCancelar.Font = new Font("Segoe UI Symbol", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCancelar.Location = new Point(154, 121);
+            btnCancelar.Location = new Point(156, 132);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(62, 32);
             btnCancelar.TabIndex = 16;
@@ -69,7 +69,7 @@
             // 
             btnCrear.BackColor = Color.FromArgb(224, 224, 224);
             btnCrear.Font = new Font("Segoe UI Symbol", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCrear.Location = new Point(46, 121);
+            btnCrear.Location = new Point(46, 132);
             btnCrear.Name = "btnCrear";
             btnCrear.Size = new Size(62, 32);
             btnCrear.TabIndex = 15;
@@ -112,7 +112,7 @@
             IsMdiContainer = true;
             Margin = new Padding(4, 3, 4, 3);
             Name = "CrearMateriasForm";
-            Text = "CrearMateriasForm";
+            Text = "Crear Materias";
             Load += CrearMateriasForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

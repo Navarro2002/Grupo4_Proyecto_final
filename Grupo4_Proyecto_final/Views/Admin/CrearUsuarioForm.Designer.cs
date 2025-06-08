@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CrearUsuarioForm));
             toolTip = new ToolTip(components);
             panel1 = new Panel();
+            btnCerrar = new Button();
             txtLimpiar = new Button();
             btnCrear = new Button();
             cmbRol = new ComboBox();
@@ -41,7 +42,6 @@
             label4 = new Label();
             txtUsuario = new TextBox();
             label2 = new Label();
-            btnCerrar = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -63,6 +63,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(308, 306);
             panel1.TabIndex = 4;
+            // 
+            // btnCerrar
+            // 
+            btnCerrar.BackColor = Color.FromArgb(255, 192, 192);
+            btnCerrar.Location = new Point(219, 274);
+            btnCerrar.Name = "btnCerrar";
+            btnCerrar.Size = new Size(78, 29);
+            btnCerrar.TabIndex = 34;
+            btnCerrar.Text = "Cerrar";
+            btnCerrar.UseVisualStyleBackColor = false;
+            btnCerrar.Click += btnCerrar_Click;
             // 
             // txtLimpiar
             // 
@@ -97,7 +108,7 @@
             // 
             txtContrasenia.Location = new Point(85, 135);
             txtContrasenia.Name = "txtContrasenia";
-            txtContrasenia.Size = new Size(212, 23);
+            txtContrasenia.Size = new Size(132, 23);
             txtContrasenia.TabIndex = 30;
             // 
             // label6
@@ -131,7 +142,7 @@
             // 
             txtUsuario.Location = new Point(81, 81);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(212, 23);
+            txtUsuario.Size = new Size(136, 23);
             txtUsuario.TabIndex = 29;
             // 
             // label2
@@ -144,17 +155,6 @@
             label2.TabIndex = 23;
             label2.Text = "Crear Usuario";
             // 
-            // btnCerrar
-            // 
-            btnCerrar.BackColor = Color.FromArgb(255, 192, 192);
-            btnCerrar.Location = new Point(219, 274);
-            btnCerrar.Name = "btnCerrar";
-            btnCerrar.Size = new Size(78, 29);
-            btnCerrar.TabIndex = 34;
-            btnCerrar.Text = "Cerrar";
-            btnCerrar.UseVisualStyleBackColor = false;
-            btnCerrar.Click += btnCerrar_Click;
-            // 
             // CrearUsuarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -165,7 +165,7 @@
             IsMdiContainer = true;
             Margin = new Padding(4, 3, 4, 3);
             Name = "CrearUsuarioForm";
-            Text = "CrearUsuario";
+            Text = "Crear Usuario";
             Load += CrearUsuario_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

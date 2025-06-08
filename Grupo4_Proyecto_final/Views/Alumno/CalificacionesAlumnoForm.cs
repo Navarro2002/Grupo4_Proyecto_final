@@ -60,7 +60,6 @@ namespace Grupo4_Proyecto_final.Views.Alumno
         {
             AlumnoController controller = new AlumnoController();
 
-            // Leer el id de materia seleccionado, si hay alguno
             int? trimestreId = null;
             if (cmbTrimestre.SelectedValue != null && int.TryParse(cmbTrimestre.SelectedValue.ToString(), out int idTrimestre) && idTrimestre != 0)
             {
@@ -72,10 +71,8 @@ namespace Grupo4_Proyecto_final.Views.Alumno
             {
                 materiaId = idMateria;
             }
-            // Trimestre fijo por ahora (1), puedes cambiarlo también a una variable
             List<EvaluacionlistadoDTO> promedios = controller.ListarEvaluaciones(idAlumno, materiaId, trimestreId);
 
-            // Agregamos columnas si están vacías
             if (dataGridEvaluaciones.Columns.Count == 0)
             {
 
@@ -85,10 +82,8 @@ namespace Grupo4_Proyecto_final.Views.Alumno
                 dataGridEvaluaciones.Columns.Add("Nota", "Nota");
             }
 
-            // Limpiamos filas
             dataGridEvaluaciones.Rows.Clear();
 
-            // Cargamos los datos
             foreach (var promedio in promedios)
             {
                 dataGridEvaluaciones.Rows.Add(promedio.Evaluacion, promedio.Trimestre, promedio.Materia, promedio.Nota.ToString("F2"));

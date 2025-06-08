@@ -36,7 +36,7 @@ namespace Grupo4_Proyecto_final.Views.Docente
         {
             lblUser.Text = user;
             var controller = new DocenteController();
-            var docente = controller.ObtenerDocente(idUser); // Realizar un casteo explícito a la clase esperada  
+            var docente = controller.ObtenerDocente(idUser); 
             var cantidadAlumnos = controller.cantidadAlumnos(idUser);
             lblCantAlumnos.Text = cantidadAlumnos.ToString();
 
@@ -67,7 +67,7 @@ namespace Grupo4_Proyecto_final.Views.Docente
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
     }
 }

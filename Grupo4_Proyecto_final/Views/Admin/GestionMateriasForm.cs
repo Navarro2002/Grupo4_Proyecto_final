@@ -125,6 +125,10 @@ namespace Grupo4_Proyecto_final.Views.Admin
                     }
                 }
             }
+            else
+            {
+                MessageBox.Show("Seleccione una materia de la lista para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void txtNombre_TextChanged(object sender, EventArgs e)

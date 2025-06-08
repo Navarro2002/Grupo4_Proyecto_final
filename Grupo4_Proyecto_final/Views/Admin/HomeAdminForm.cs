@@ -66,7 +66,19 @@ namespace Grupo4_Proyecto_final.Views.Admin
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
+        }
+
+        private void BtnGrados_Click(object sender, EventArgs e)
+        {
+            GestionGradosForm form = new GestionGradosForm();
+            form.Show();
+        }
+
+        private void btnTrimestre_Click(object sender, EventArgs e)
+        {
+            GestionTrimestresForm form = new GestionTrimestresForm();
+            form.Show();
         }
     }
 }
