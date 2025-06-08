@@ -131,6 +131,9 @@ namespace Grupo4_Proyecto_final.Views.Docente
                 cmbTrimestre.SelectedIndex = 0;
                 txtCalificacion.Clear();
                 txtEvaluacion.Clear();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+
 
             }
             catch (Exception ex)

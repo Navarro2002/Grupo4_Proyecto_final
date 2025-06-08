@@ -151,6 +151,10 @@ namespace Grupo4_Proyecto_final.Views.Admin
                     MessageBox.Show("Seleccione una sección de la lista para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+            else
+            {
+                MessageBox.Show("Seleccione una sección de la lista para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

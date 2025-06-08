@@ -148,6 +148,7 @@
             btnLimpiar.TabIndex = 45;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // lblFecha
             // 

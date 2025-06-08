@@ -148,10 +148,10 @@ namespace Grupo4_Proyecto_final.Views.Admin
                         MessageBox.Show("Ocurrió un error al eliminar el grado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Seleccione un grado de la lista para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un grado de la lista para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

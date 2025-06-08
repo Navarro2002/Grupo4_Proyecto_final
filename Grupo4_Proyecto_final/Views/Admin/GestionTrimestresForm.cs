@@ -138,12 +138,17 @@ namespace Grupo4_Proyecto_final.Views.Admin
                         MessageBox.Show("Ocurrió un error al eliminar el trimetre.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Seleccione un trimestre de la lista para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un trimestre de la lista para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            }
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtNombre.Text = "";
+        }
+    }
 }
