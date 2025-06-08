@@ -95,10 +95,6 @@ namespace Grupo4_Proyecto_final.Controllers
                         return false;
 
                     usuarioExistente.Usuario = usuario;
-                    //if (!string.IsNullOrEmpty(clave))
-                    //{
-                    //    usuarioExistente.Contrasenia = HashHelper.Sha256(clave);
-                    //}
                     usuarioExistente.RolId = rolId;
 
                     context.SaveChanges();
@@ -149,7 +145,7 @@ namespace Grupo4_Proyecto_final.Controllers
                             FechaNacimiento = d.FechaNacimiento,
                             GradoNombre = g.Nombre,
                             IdGrado = d.GradoId,
-                            SeccionNombre = s.Nombre, 
+                            SeccionNombre = s.Nombre,
                             IdSeccion = d.SeccionId,
                             Telefono = d.Telefono,
                             Usuario = u.Usuario,
@@ -167,11 +163,9 @@ namespace Grupo4_Proyecto_final.Controllers
             {
                 using (var context = new AppDbContext())
                 {
-                    // Verificar si el usuario ya existe
                     if (context.Usuarios.Any(u => u.Usuario == usuarioLogin))
                         return false;
 
-                    // Crear usuario
                     var nuevoUsuario = new UsuarioModel
                     {
                         Usuario = usuarioLogin,
@@ -180,9 +174,8 @@ namespace Grupo4_Proyecto_final.Controllers
                     };
 
                     context.Usuarios.Add(nuevoUsuario);
-                    context.SaveChanges(); // Importante: para que se genere el ID
+                    context.SaveChanges(); 
 
-                    // Crear docente usando el ID del usuario recién creado
                     var nuevoDocente = new DocenteModel
                     {
                         Nombres = nombres,
@@ -216,13 +209,11 @@ namespace Grupo4_Proyecto_final.Controllers
             {
                 using (var context = new AppDbContext())
                 {
-                    // Buscar al docente existente
                     var docente = context.Docentes.FirstOrDefault(d => d.Id == docenteId);
 
                     if (docente == null)
                         return false;
 
-                    // Actualizar datos del docente
                     docente.Nombres = nuevosNombres;
                     docente.Apellidos = nuevosApellidos;
                     docente.Telefono = nuevoTelefono;
@@ -316,7 +307,7 @@ namespace Grupo4_Proyecto_final.Controllers
                     };
 
                     context.Usuarios.Add(nuevoUsuario);
-                    context.SaveChanges(); 
+                    context.SaveChanges();
 
                     var nuevoAlumnno = new AlumnoModel
                     {
@@ -420,7 +411,7 @@ namespace Grupo4_Proyecto_final.Controllers
                 {
                     var nuevaSeccion = new SeccionModel
                     {
-                        Nombre = nombre 
+                        Nombre = nombre
                     };
 
                     context.Secciones.Add(nuevaSeccion);
@@ -556,6 +547,167 @@ namespace Grupo4_Proyecto_final.Controllers
                 return false;
             }
         }
+    
 
+    // Grados 
+     public List<GradosListadoDTO> ListarGrados()
+        {
+            using (var context = new AppDbContext())
+            {
+                return (from d in context.Grados
+                        select new GradosListadoDTO
+                        {
+                            Id = d.Id,
+                            Nombre = d.Nombre
+                        }).ToList();
+            }
         }
+
+
+        public bool CrearGrado(string nombre)
+        {
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+                    var nuevoGrado = new GradoModel
+                    {
+                        Nombre = nombre
+                    };
+                    context.Grados.Add(nuevoGrado);
+                    context.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al crear el grado: {ex.Message}");
+                return false;
+            }
+        }
+
+        public bool EditarGrado(int id, string nuevoNombre)
+        {
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+                    var grado = context.Grados.FirstOrDefault(m => m.Id == id);
+                    if (grado == null)
+                        return false;
+                    grado.Nombre = nuevoNombre;
+                    context.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al editar el grado: {ex.Message}");
+                return false;
+            }
+        }
+
+        public bool EliminarGrado(int id)
+        {
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+                    var grado = context.Grados.FirstOrDefault(m => m.Id == id);
+                    if (grado == null)
+                        return false;
+                    context.Grados.Remove(grado);
+                    context.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al eliminar el grado: {ex.Message}");
+                return false;
+            }
+        }
+
+        public List<TrimestresListadoDTO> ListarTrimestres()
+        {
+            using (var context = new AppDbContext())
+            {
+                return (from d in context.Trimestres
+                        select new TrimestresListadoDTO
+                        {
+                            Id = d.Id,
+                            Trimestre = d.Trimestre,
+                            NotaMinima = d.NotaMinima
+                        }).ToList();
+            }
+        }
+
+
+        public bool CrearTrimestre(string nombre, double notaMinima)
+        {
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+                    var nuevoTrimestre = new TrimestreModel
+                    {
+                        Trimestre = nombre,
+                        NotaMinima = notaMinima
+                    };
+                    context.Trimestres.Add(nuevoTrimestre);
+                    context.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al crear el trimestre: {ex.Message}");
+                return false;
+            }
+        }
+
+        public bool EditarTrimestre(int id, string nuevoNombre, double notaMinima)
+        {
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+                    var trimestre = context.Trimestres.FirstOrDefault(m => m.Id == id);
+                    if (trimestre == null)
+                        return false;
+                    trimestre.Trimestre = nuevoNombre;
+                    trimestre.NotaMinima = notaMinima;
+                    context.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al editar el trimestre: {ex.Message}");
+                return false;
+            }
+        }
+
+        public bool EliminarTrimestre(int id)
+        {
+            try
+            {
+                using (var context = new AppDbContext())
+                {
+                    var trimestre = context.Trimestres.FirstOrDefault(m => m.Id == id);
+                    if (trimestre == null)
+                        return false;
+                    context.Trimestres.Remove(trimestre);
+                    context.SaveChanges();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al eliminar el trimestre: {ex.Message}");
+                return false;
+            }
+        }
+    }
+    
 }

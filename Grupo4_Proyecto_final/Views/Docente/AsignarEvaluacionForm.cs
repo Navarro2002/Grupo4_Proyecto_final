@@ -75,7 +75,6 @@ namespace Grupo4_Proyecto_final.Views.Docente
         {
             try
             {
-                // Validar materia seleccionada
                 if (string.IsNullOrWhiteSpace(cmbMateria.Text))
                 {
                     MessageBox.Show("Debe seleccionar una materia.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -83,7 +82,6 @@ namespace Grupo4_Proyecto_final.Views.Docente
                     return;
                 }
 
-                // Validar trimestre seleccionado
                 if (string.IsNullOrWhiteSpace(cmbTrimestre.Text))
                 {
                     MessageBox.Show("Debe seleccionar un trimestre.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -91,7 +89,6 @@ namespace Grupo4_Proyecto_final.Views.Docente
                     return;
                 }
 
-                // Validar que la calificación no esté vacía
                 if (string.IsNullOrWhiteSpace(txtCalificacion.Text))
                 {
                     MessageBox.Show("El campo 'Calificación' es obligatorio.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -99,7 +96,6 @@ namespace Grupo4_Proyecto_final.Views.Docente
                     return;
                 }
 
-                // Validar que sea un número decimal válido
                 if (!decimal.TryParse(txtCalificacion.Text, out decimal calificacion))
                 {
                     MessageBox.Show("La calificación debe ser un número válido.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -107,7 +103,6 @@ namespace Grupo4_Proyecto_final.Views.Docente
                     return;
                 }
 
-                // Validar que esté en el rango permitido
                 if (calificacion < 0 || calificacion > 10)
                 {
                     MessageBox.Show("La calificación debe estar entre 0 y 10.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -122,7 +117,7 @@ namespace Grupo4_Proyecto_final.Views.Docente
                 var controller = new DocenteController();
 
                 bool creado = controller.AsignarCalificacion(idEstudiante, materia, trimestre, (double)calificacion, nombreEvaluacion);
-
+                
                 if (creado)
                 {
                     string resumen = "Calificación registrada con éxito:\n" +
@@ -132,7 +127,11 @@ namespace Grupo4_Proyecto_final.Views.Docente
                     MessageBox.Show(resumen, "Registro exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     CargarEvaluaciones();
                 }
-                
+                cmbMateria.SelectedIndex = 0;
+                cmbTrimestre.SelectedIndex = 0;
+                txtCalificacion.Clear();
+                txtEvaluacion.Clear();
+
             }
             catch (Exception ex)
             {
@@ -161,7 +160,7 @@ namespace Grupo4_Proyecto_final.Views.Docente
                 if (valor > 10)
                 {
                     MessageBox.Show("La calificacion no puede ser mayor que 10.");
-                    txtCalificacion.Text = "10"; // Podés limpiar o redondear también
+                    txtCalificacion.Text = "10"; 
                 }
             }
             else
@@ -173,12 +172,6 @@ namespace Grupo4_Proyecto_final.Views.Docente
 
         private void CargarEvaluaciones()
         {
-            // Validar que el usuario haya seleccionado una materia y trimestre válidos
-            //if (cmbMateriaBusq.SelectedIndex <= 0 || cmbTrimestreBusq.SelectedIndex <= 0)
-            //{
-            //    MessageBox.Show("Seleccione una materia y un trimestre para aplicar el filtro.", "Filtro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
 
             int idMateria = Convert.ToInt32(cmbMateriaBusq.SelectedValue);
             int idTrimestre = Convert.ToInt32(cmbTrimestreBusq.SelectedValue);

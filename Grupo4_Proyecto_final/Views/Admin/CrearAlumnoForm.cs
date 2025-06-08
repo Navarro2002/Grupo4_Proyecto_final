@@ -95,7 +95,6 @@ namespace Grupo4_Proyecto_final.Views.Admin
                 }
 
 
-                // Captura de datos
                 string usuario = txtUsuario.Text;
                 string contrasenia = txtContrasenia.Text;
                 string nombre = txtNombre.Text;
@@ -106,7 +105,6 @@ namespace Grupo4_Proyecto_final.Views.Admin
                 int gradoId = Convert.ToInt32(cmbGrado.SelectedValue);
                 int seccionId = Convert.ToInt32(cmbSeccion.SelectedValue);
 
-                // Crear usuario
                 var controller = new AdminController();
 
                 bool creado = controller.CrearAlumno(usuario, contrasenia, nombre, apellido, telefono, edad, fechaNacimiento, gradoId, seccionId);

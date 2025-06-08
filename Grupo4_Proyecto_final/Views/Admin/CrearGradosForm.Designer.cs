@@ -1,6 +1,6 @@
 ﻿namespace Grupo4_Proyecto_final.Views.Admin
 {
-    partial class EditarMateriaForm
+    partial class CrearGradosForm
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -31,10 +31,8 @@
             components = new System.ComponentModel.Container();
             toolTip = new ToolTip(components);
             panel1 = new Panel();
-            txtId = new TextBox();
-            label3 = new Label();
             btnCancelar = new Button();
-            btnEditar = new Button();
+            btnCrear = new Button();
             txtNombre = new TextBox();
             label2 = new Label();
             label1 = new Label();
@@ -44,112 +42,92 @@
             // panel1
             // 
             panel1.BackColor = Color.BurlyWood;
-            panel1.Controls.Add(txtId);
-            panel1.Controls.Add(label3);
             panel1.Controls.Add(btnCancelar);
-            panel1.Controls.Add(btnEditar);
+            panel1.Controls.Add(btnCrear);
             panel1.Controls.Add(txtNombre);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(251, 173);
+            panel1.Size = new Size(253, 187);
             panel1.TabIndex = 4;
-            // 
-            // txtId
-            // 
-            txtId.Enabled = false;
-            txtId.Location = new Point(91, 62);
-            txtId.Name = "txtId";
-            txtId.Size = new Size(42, 23);
-            txtId.TabIndex = 23;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(24, 70);
-            label3.Name = "label3";
-            label3.Size = new Size(17, 15);
-            label3.TabIndex = 22;
-            label3.Text = "Id";
             // 
             // btnCancelar
             // 
             btnCancelar.BackColor = Color.FromArgb(224, 224, 224);
             btnCancelar.Font = new Font("Segoe UI Symbol", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCancelar.Location = new Point(143, 129);
+            btnCancelar.Location = new Point(164, 119);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(62, 32);
-            btnCancelar.TabIndex = 21;
+            btnCancelar.TabIndex = 16;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
-            // btnEditar
+            // btnCrear
             // 
-            btnEditar.BackColor = Color.FromArgb(224, 224, 224);
-            btnEditar.Font = new Font("Segoe UI Symbol", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnEditar.Location = new Point(37, 129);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(62, 32);
-            btnEditar.TabIndex = 20;
-            btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = false;
-            btnEditar.Click += btnEditar_Click_1;
+            btnCrear.BackColor = Color.FromArgb(224, 224, 224);
+            btnCrear.Font = new Font("Segoe UI Symbol", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCrear.Location = new Point(56, 119);
+            btnCrear.Name = "btnCrear";
+            btnCrear.Size = new Size(62, 32);
+            btnCrear.TabIndex = 15;
+            btnCrear.Text = "Crear";
+            btnCrear.UseVisualStyleBackColor = false;
+            btnCrear.Click += btnCrear_Click;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(91, 91);
+            txtNombre.Location = new Point(80, 81);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(131, 23);
-            txtNombre.TabIndex = 19;
+            txtNombre.TabIndex = 14;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(24, 94);
+            label2.Location = new Point(23, 89);
             label2.Name = "label2";
             label2.Size = new Size(51, 15);
-            label2.TabIndex = 18;
+            label2.TabIndex = 13;
             label2.Text = "Nombre";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(91, 30);
+            label1.Location = new Point(80, 22);
             label1.Name = "label1";
-            label1.Size = new Size(95, 17);
-            label1.TabIndex = 17;
-            label1.Text = "Editar Materia";
+            label1.Size = new Size(89, 17);
+            label1.TabIndex = 12;
+            label1.Text = "Nuevo Grado";
             // 
-            // EditarMateriaForm
+            // CrearGradosForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(251, 173);
+            ClientSize = new Size(253, 187);
             Controls.Add(panel1);
             IsMdiContainer = true;
             Margin = new Padding(4, 3, 4, 3);
-            Name = "EditarMateriaForm";
-            Text = "Editar ";
-            Load += EditarMateriaForm_Load;
+            Name = "CrearGradosForm";
+            Text = "Crear Grados";
+            Load += CrearGradosForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
+
         }
 
         #endregion
         private System.Windows.Forms.ToolTip toolTip;
         private Panel panel1;
         private Button btnCancelar;
-        private Button btnEditar;
+        private Button btnCrear;
         private TextBox txtNombre;
         private Label label2;
         private Label label1;
-        private TextBox txtId;
-        private Label label3;
     }
 }
 

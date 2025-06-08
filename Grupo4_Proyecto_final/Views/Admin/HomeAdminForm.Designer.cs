@@ -48,6 +48,7 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             imageList1 = new ImageList(components);
+            btnTrimestre = new Button();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -96,6 +97,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btnTrimestre);
             groupBox1.Controls.Add(BtnGrados);
             groupBox1.Controls.Add(btnSeccion);
             groupBox1.Controls.Add(btnMaterias);
@@ -113,12 +115,13 @@
             // BtnGrados
             // 
             BtnGrados.BackColor = Color.FromArgb(224, 224, 224);
-            BtnGrados.Location = new Point(383, 102);
+            BtnGrados.Location = new Point(414, 102);
             BtnGrados.Name = "BtnGrados";
             BtnGrados.Size = new Size(133, 37);
             BtnGrados.TabIndex = 15;
             BtnGrados.Text = "Grados";
             BtnGrados.UseVisualStyleBackColor = false;
+            BtnGrados.Click += BtnGrados_Click;
             // 
             // btnSeccion
             // 
@@ -252,6 +255,17 @@
             imageList1.ImageSize = new Size(16, 16);
             imageList1.TransparentColor = Color.Transparent;
             // 
+            // btnTrimestre
+            // 
+            btnTrimestre.BackColor = Color.FromArgb(224, 224, 224);
+            btnTrimestre.Location = new Point(251, 102);
+            btnTrimestre.Name = "btnTrimestre";
+            btnTrimestre.Size = new Size(133, 37);
+            btnTrimestre.TabIndex = 16;
+            btnTrimestre.Text = "Trimestres";
+            btnTrimestre.UseVisualStyleBackColor = false;
+            btnTrimestre.Click += btnTrimestre_Click;
+            // 
             // HomeAdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -290,6 +304,7 @@
         private Button btnSeccion;
         private Button BtnGrados;
         private Button btnCerrar;
+        private Button btnTrimestre;
     }
 }
 

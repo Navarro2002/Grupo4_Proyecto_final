@@ -36,7 +36,6 @@ namespace Grupo4_Proyecto_final.Views.Admin
 
                 grados.Insert(0, new GradoModel { Id = 0, Nombre = "Seleccione" });
 
-                // Asignar al ComboBox
                 cmbGrado.DataSource = grados;
                 cmbGrado.DisplayMember = "nombre";
                 cmbGrado.ValueMember = "id";
@@ -215,6 +214,11 @@ namespace Grupo4_Proyecto_final.Views.Admin
                 MessageBox.Show("Seleccione un docente de la lista para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

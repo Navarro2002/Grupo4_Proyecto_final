@@ -84,6 +84,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(874, 523);
             panel1.TabIndex = 4;
+            panel1.Paint += panel1_Paint;
             // 
             // groupBox2
             // 
@@ -307,7 +308,7 @@
             IsMdiContainer = true;
             Margin = new Padding(4, 3, 4, 3);
             Name = "GestionarDocenteForm";
-            Text = "GestionarDocenteForm";
+            Text = "Gestionar Docente";
             Load += GestionarDocenteForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

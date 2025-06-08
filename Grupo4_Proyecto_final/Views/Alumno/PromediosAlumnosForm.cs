@@ -37,7 +37,6 @@ namespace Grupo4_Proyecto_final.Views.Alumno
 
                 trimestre.Insert(0, new TrimestreModel { Id = 0, Trimestre = "Seleccione" });
 
-                // Asignar al ComboBox
                 cmbTrimestre.DataSource = trimestre;
                 cmbTrimestre.DisplayMember = "trimestre";
                 cmbTrimestre.ValueMember = "id";
@@ -55,17 +54,14 @@ namespace Grupo4_Proyecto_final.Views.Alumno
             AlumnoController controller = new AlumnoController();
             List<PromedioTrimestreDTO> promedios = controller.ObtenerPromedioPorTrimestre(idAlumno);
 
-            // Agregamos columnas si están vacías
             if (dataGridPromediosTrimestres.Columns.Count == 0)
             {
                 dataGridPromediosTrimestres.Columns.Add("Trimestre", "Trimestre");
                 dataGridPromediosTrimestres.Columns.Add("Promedio", "Promedio");
             }
 
-            // Limpiamos filas
             dataGridPromediosTrimestres.Rows.Clear();
 
-            // Cargamos los datos
             foreach (var promedio in promedios)
             {
                 dataGridPromediosTrimestres.Rows.Add(promedio.Trimestre, promedio.Promedio.ToString("F2"));
@@ -93,10 +89,8 @@ namespace Grupo4_Proyecto_final.Views.Alumno
                 dataGridProMaterias.Columns.Add("Estado", "Estado");
             }
 
-            // Limpiamos filas
             dataGridProMaterias.Rows.Clear();
 
-            // Cargamos los datos
             foreach (var promedio in promedios)
             {
                 dataGridProMaterias.Rows.Add(promedio.Materia, promedio.Trimestre, promedio.Promedio.ToString("F2"), promedio.Estado.ToString());

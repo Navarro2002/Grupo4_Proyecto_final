@@ -63,6 +63,7 @@ namespace Grupo4_Proyecto_final.Views.Docente
 
         private void ListadoAlumnosForm_Load(object sender, EventArgs e)
         {
+            lblFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
             AlumnoController controller = new AlumnoController();
             List<PorcentajeAlumnosDTO> porcentaje = controller.ObtenerPorcentajeAlumnos();
             if (porcentaje.Any())

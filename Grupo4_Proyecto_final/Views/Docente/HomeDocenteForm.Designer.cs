@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             toolTip = new ToolTip(components);
             panel1 = new Panel();
+            btnCerrar = new Button();
             btnActualizarContraseña = new Button();
             lblSeccion = new Label();
             label6 = new Label();
@@ -47,7 +48,6 @@
             label4 = new Label();
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            btnCerrar = new Button();
             panel1.SuspendLayout();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -77,6 +77,17 @@
             panel1.Size = new Size(576, 460);
             panel1.TabIndex = 4;
             panel1.Paint += panel1_Paint;
+            // 
+            // btnCerrar
+            // 
+            btnCerrar.BackColor = Color.FromArgb(255, 192, 192);
+            btnCerrar.Location = new Point(489, 430);
+            btnCerrar.Name = "btnCerrar";
+            btnCerrar.Size = new Size(75, 23);
+            btnCerrar.TabIndex = 40;
+            btnCerrar.Text = "Cerrar";
+            btnCerrar.UseVisualStyleBackColor = false;
+            btnCerrar.Click += btnCerrar_Click;
             // 
             // btnActualizarContraseña
             // 
@@ -248,17 +259,6 @@
             label1.TabIndex = 16;
             label1.Text = "Colegio Anders Hejlsberg";
             // 
-            // btnCerrar
-            // 
-            btnCerrar.BackColor = Color.FromArgb(255, 192, 192);
-            btnCerrar.Location = new Point(489, 430);
-            btnCerrar.Name = "btnCerrar";
-            btnCerrar.Size = new Size(75, 23);
-            btnCerrar.TabIndex = 40;
-            btnCerrar.Text = "Cerrar";
-            btnCerrar.UseVisualStyleBackColor = false;
-            btnCerrar.Click += btnCerrar_Click;
-            // 
             // HomeDocenteForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -268,7 +268,7 @@
             IsMdiContainer = true;
             Margin = new Padding(4, 3, 4, 3);
             Name = "HomeDocenteForm";
-            Text = "HomeDocenteForm";
+            Text = "Home Docente";
             Load += HomeDocenteForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

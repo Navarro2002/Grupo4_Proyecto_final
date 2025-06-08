@@ -11,28 +11,20 @@ using System.Windows.Forms;
 
 namespace Grupo4_Proyecto_final.Views.Admin
 {
-    public partial class EditarSeccionForm : Form
+    public partial class EditarGradoForm : Form
     {
-        private int childFormNumber = 0;
-        public int id;
-        public string nombre;
-        public EditarSeccionForm(int id, string nombre)
+        protected int idGrado;
+        public EditarGradoForm(int id, string nombre)
         {
             InitializeComponent();
-            this.id = id;
-            this.nombre = nombre;
-            txtId.Text = id.ToString();
+            this.idGrado = id;
+            txtId.Text = id.ToString();    
             txtNombre.Text = nombre;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void EditarSeccionForm_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -51,34 +43,24 @@ namespace Grupo4_Proyecto_final.Views.Admin
 
                 AdminController controller = new AdminController();
 
-                bool resultado = controller.EditarSeccion(id, nombre);
+                bool resultado = controller.EditarGrado(id, nombre);
 
                 if (resultado)
                 {
-                    MessageBox.Show("Sección editada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Grado editado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo editar la sección. Verifique los datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se pudo editar el grado. Verifique los datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

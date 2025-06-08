@@ -29,6 +29,7 @@ namespace Grupo4_Proyecto_final.Views.Login
             var user = controller.Autenticar(txtUsuario.Text, txtContrasenia.Text);
             if (user != null)
             {
+
                 MessageBox.Show($"Bienvenido {user.Usuario}, rol: {user.Rol.nombre}");
                 if (user.Rol.nombre == "Administrador")
                 {
@@ -61,7 +62,7 @@ namespace Grupo4_Proyecto_final.Views.Login
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            //
+           
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

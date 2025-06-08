@@ -54,6 +54,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(322, 249);
             panel1.TabIndex = 4;
+            panel1.Paint += panel1_Paint;
             // 
             // lblUsuario
             // 

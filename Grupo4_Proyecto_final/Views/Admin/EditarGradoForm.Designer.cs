@@ -1,6 +1,6 @@
 ﻿namespace Grupo4_Proyecto_final.Views.Admin
 {
-    partial class EditarUsuarioForm
+    partial class EditarGradoForm
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -32,14 +32,12 @@
             toolTip = new ToolTip(components);
             panel1 = new Panel();
             txtId = new TextBox();
-            label2 = new Label();
-            label1 = new Label();
+            label3 = new Label();
             btnCancelar = new Button();
             btnEditar = new Button();
-            cmbRol = new ComboBox();
-            label6 = new Label();
-            label4 = new Label();
-            txtUsuario = new TextBox();
+            txtNombre = new TextBox();
+            label2 = new Label();
+            label1 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -47,55 +45,43 @@
             // 
             panel1.BackColor = Color.BurlyWood;
             panel1.Controls.Add(txtId);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(label3);
             panel1.Controls.Add(btnCancelar);
             panel1.Controls.Add(btnEditar);
-            panel1.Controls.Add(cmbRol);
-            panel1.Controls.Add(label6);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(txtUsuario);
+            panel1.Controls.Add(txtNombre);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(339, 343);
+            panel1.Size = new Size(278, 202);
             panel1.TabIndex = 4;
             // 
             // txtId
             // 
-            txtId.AcceptsReturn = true;
-            txtId.Location = new Point(100, 115);
+            txtId.Enabled = false;
+            txtId.Location = new Point(98, 57);
             txtId.Name = "txtId";
-            txtId.ReadOnly = true;
-            txtId.Size = new Size(54, 23);
-            txtId.TabIndex = 47;
+            txtId.Size = new Size(38, 23);
+            txtId.TabIndex = 24;
             // 
-            // label2
+            // label3
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(27, 123);
-            label2.Name = "label2";
-            label2.Size = new Size(23, 15);
-            label2.TabIndex = 46;
-            label2.Text = "Id: ";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(113, 55);
-            label1.Name = "label1";
-            label1.Size = new Size(122, 21);
-            label1.TabIndex = 45;
-            label1.Text = "Editar Usuario ";
+            label3.AutoSize = true;
+            label3.Location = new Point(38, 57);
+            label3.Name = "label3";
+            label3.Size = new Size(20, 15);
+            label3.TabIndex = 23;
+            label3.Text = "Id:";
             // 
             // btnCancelar
             // 
             btnCancelar.BackColor = Color.FromArgb(224, 224, 224);
-            btnCancelar.Location = new Point(214, 282);
+            btnCancelar.Font = new Font("Segoe UI Symbol", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCancelar.Location = new Point(180, 150);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(75, 23);
-            btnCancelar.TabIndex = 44;
+            btnCancelar.Size = new Size(62, 32);
+            btnCancelar.TabIndex = 22;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
@@ -103,75 +89,67 @@
             // btnEditar
             // 
             btnEditar.BackColor = Color.FromArgb(224, 224, 224);
-            btnEditar.Location = new Point(56, 282);
+            btnEditar.Font = new Font("Segoe UI Symbol", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEditar.Location = new Point(74, 150);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(75, 23);
-            btnEditar.TabIndex = 43;
+            btnEditar.Size = new Size(62, 32);
+            btnEditar.TabIndex = 21;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
             btnEditar.Click += btnEditar_Click;
             // 
-            // cmbRol
+            // txtNombre
             // 
-            cmbRol.FormattingEnabled = true;
-            cmbRol.Location = new Point(100, 205);
-            cmbRol.Name = "cmbRol";
-            cmbRol.Size = new Size(121, 23);
-            cmbRol.TabIndex = 42;
+            txtNombre.Location = new Point(98, 101);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(131, 23);
+            txtNombre.TabIndex = 20;
             // 
-            // label6
+            // label2
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(27, 213);
-            label6.Name = "label6";
-            label6.Size = new Size(30, 15);
-            label6.TabIndex = 38;
-            label6.Text = "Rol: ";
+            label2.AutoSize = true;
+            label2.Location = new Point(38, 109);
+            label2.Name = "label2";
+            label2.Size = new Size(54, 15);
+            label2.TabIndex = 19;
+            label2.Text = "Nombre:";
             // 
-            // label4
+            // label1
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(27, 158);
-            label4.Name = "label4";
-            label4.Size = new Size(50, 15);
-            label4.TabIndex = 36;
-            label4.Text = "Usuario:";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(100, 20);
+            label1.Name = "label1";
+            label1.Size = new Size(85, 17);
+            label1.TabIndex = 18;
+            label1.Text = "Editar Grado";
             // 
-            // txtUsuario
-            // 
-            txtUsuario.Location = new Point(100, 158);
-            txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(121, 23);
-            txtUsuario.TabIndex = 40;
-            // 
-            // EditarUsuarioForm
+            // EditarGradoForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(339, 343);
+            ClientSize = new Size(278, 202);
             Controls.Add(panel1);
             IsMdiContainer = true;
             Margin = new Padding(4, 3, 4, 3);
-            Name = "EditarUsuarioForm";
-            Text = "Editar Usuario";
-            Load += EditarUsuarioForm_Load;
+            Name = "EditarGradoForm";
+            Text = "Editar Grado";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
+
         }
 
         #endregion
         private System.Windows.Forms.ToolTip toolTip;
         private Panel panel1;
         private TextBox txtId;
-        private Label label2;
-        private Label label1;
+        private Label label3;
         private Button btnCancelar;
         private Button btnEditar;
-        private ComboBox cmbRol;
-        private Label label6;
-        private Label label4;
-        private TextBox txtUsuario;
+        private TextBox txtNombre;
+        private Label label2;
+        private Label label1;
     }
 }
 

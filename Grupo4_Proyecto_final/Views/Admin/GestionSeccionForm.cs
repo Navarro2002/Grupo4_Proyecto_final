@@ -91,5 +91,66 @@ namespace Grupo4_Proyecto_final.Views.Admin
         {
             this.Close();
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (dataGridSecciones.SelectedRows.Count > 0)
+            {
+                DataGridViewRow fila = dataGridSecciones.SelectedRows[0];
+                int id = Convert.ToInt32(fila.Cells["Id"].Value);
+                string nombre = fila.Cells["Nombre"].Value.ToString();
+
+                EditarSeccionForm editarForm = new EditarSeccionForm(id, nombre);
+
+                DialogResult result = editarForm.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    CargarSecciones();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione una sección de la lista para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dataGridSecciones.SelectedRows.Count > 0)
+            {
+                DataGridViewRow fila = dataGridSecciones.SelectedRows[0];
+                int id = Convert.ToInt32(fila.Cells["Id"].Value);
+                string nombre = fila.Cells["Nombre"].Value.ToString();
+
+
+                DialogResult confirmacion = MessageBox.Show(
+                    $"¿Estás seguro que deseas eliminar la sección'{nombre}'?",
+                    "Confirmar eliminación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                if (confirmacion == DialogResult.Yes)
+                {
+                    var controller = new AdminController();
+                    bool eliminado = controller.EliminarSeccion(id);
+
+                    if (eliminado)
+                    {
+                        MessageBox.Show("Sección eliminada correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CargarSecciones();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ocurrió un error al eliminar la sección.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione una sección de la lista para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
     }
 }
